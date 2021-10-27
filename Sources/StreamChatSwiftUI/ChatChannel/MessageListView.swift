@@ -6,8 +6,11 @@ import StreamChat
 import SwiftUI
 
 struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
+    @Injected(\.utils) var utils
+    
     var factory: Factory
     @Binding var messages: LazyCachedMapCollection<ChatMessage>
+    @Binding var messagesGroupingInfo: [String: String]
     @Binding var scrolledId: String?
     @Binding var showScrollToLatestButton: Bool
     @Binding var currentDateString: String?
@@ -19,12 +22,18 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     @State private var height: CGFloat?
     @State private var keyboardShown = false
     
+    private var dateFormatter: DateFormatter {
+        utils.dateFormatter
+    }
+    
+    private let scrollAreaId = "scrollArea"
+    
     var body: some View {
         ZStack {
             ScrollViewReader { scrollView in
                 ScrollView {
                     GeometryReader { proxy in
-                        let frame = proxy.frame(in: .named("scrollArea"))
+                        let frame = proxy.frame(in: .named(scrollAreaId))
                         let offset = frame.minY
                         let width = frame.width
                         let height = frame.height
@@ -35,24 +44,26 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                     
                     LazyVStack {
                         ForEach(messages.indices, id: \.self) { index in
+                            let message = messages[index]
                             MessageView(
                                 factory: factory,
-                                message: messages[index],
+                                message: message,
                                 width: width,
-                                onDoubleTap: {
+                                showsAllInfo: showsAllData(for: message),
+                                onLongPress: { _ in
                                     // viewModel.addReaction(to: viewModel.messages[index])
                                 }
                             )
-                            .padding()
+                            .padding(.horizontal)
                             .flippedUpsideDown()
                             .onAppear {
                                 onMessageAppear(index)
                             }
-                            .id(messages[index].id)
+                            .id(message.id)
                         }
                     }
                 }
-                .coordinateSpace(name: "scrollArea")
+                .coordinateSpace(name: scrollAreaId)
                 .onPreferenceChange(WidthPreferenceKey.self) { value in
                     if let value = value, value != width {
                         self.width = value
@@ -103,6 +114,13 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
             keyboardShown = visible
         }
         .modifier(HideKeyboardOnTapGesture(shouldAdd: keyboardShown))
+    }
+    
+    private func showsAllData(for message: ChatMessage) -> Bool {
+        let dateString = dateFormatter.string(from: message.createdAt)
+        let prefix = message.isSentByCurrentUser ? "current" : "other"
+        let key = "\(prefix)-\(dateString)"
+        return messagesGroupingInfo[key] == message.id
     }
 }
 

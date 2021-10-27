@@ -26,6 +26,7 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             MessageListView(
                 factory: factory,
                 messages: $viewModel.messages,
+                messagesGroupingInfo: $viewModel.messagesGroupingInfo,
                 scrolledId: $viewModel.scrolledId,
                 showScrollToLatestButton: $viewModel.showScrollToLatestButton,
                 currentDateString: $viewModel.currentDateString,
@@ -35,6 +36,11 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             .onAppear {
                 viewModel.subscribeToChannelChanges()
             }
+            
+            MessageComposerView(
+                text: $viewModel.text,
+                sendMessageTapped: viewModel.sendMessage
+            )
         }
         .modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))
     }

@@ -13,11 +13,21 @@ public struct MessageAvatarView: View {
         if let url = author.imageURL?.absoluteString {
             LazyImage(source: url)
                 .clipShape(Circle())
-                .frame(width: 40, height: 40)
+                .frame(
+                    width: CGSize.messageAvatarSize.width,
+                    height: CGSize.messageAvatarSize.height
+                )
         } else {
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(
+                    width: CGSize.messageAvatarSize.width,
+                    height: CGSize.messageAvatarSize.height
+                )
         }
     }
+}
+
+extension CGSize {
+    static var messageAvatarSize = CGSize(width: 36, height: 36)
 }

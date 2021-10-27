@@ -541,6 +541,7 @@
 		8425E3D02729323A00EE7D68 /* ChannelHeaderLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3CF2729323A00EE7D68 /* ChannelHeaderLoader.swift */; };
 		8425E3D2272949D400EE7D68 /* DefaultViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3D1272949D300EE7D68 /* DefaultViewFactory.swift */; };
 		8425E3D4272962E400EE7D68 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3D3272962E400EE7D68 /* Modifiers.swift */; };
+		8425E3D62729828F00EE7D68 /* MessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3D52729828F00EE7D68 /* MessageComposerView.swift */; };
 		842685FD27221A550083D97B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842685FC27221A550083D97B /* LoadingView.swift */; };
 		842685FF2722A0560083D97B /* ChatChannelListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842685FE2722A0560083D97B /* ChatChannelListHeader.swift */; };
 		8431843B26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json in Resources */ = {isa = PBXBuildFile; fileRef = 8431843A26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json */; };
@@ -2079,6 +2080,7 @@
 		8425E3CF2729323A00EE7D68 /* ChannelHeaderLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelHeaderLoader.swift; sourceTree = "<group>"; };
 		8425E3D1272949D300EE7D68 /* DefaultViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewFactory.swift; sourceTree = "<group>"; };
 		8425E3D3272962E400EE7D68 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		8425E3D52729828F00EE7D68 /* MessageComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposerView.swift; sourceTree = "<group>"; };
 		842685FC27221A550083D97B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		842685FE2722A0560083D97B /* ChatChannelListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatChannelListHeader.swift; sourceTree = "<group>"; };
 		8431843A26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "NotificationMessageNew+MissingFields.json"; sourceTree = "<group>"; };
@@ -4522,6 +4524,7 @@
 				84EAC8732719D47C0042AA98 /* ChatChannelView.swift */,
 				8425E3B927289A5900EE7D68 /* MessageListView.swift */,
 				8425E3BF27289FEC00EE7D68 /* MessageView.swift */,
+				8425E3D52729828F00EE7D68 /* MessageComposerView.swift */,
 				8425E3C72728A13800EE7D68 /* MessageAvatarView.swift */,
 				8425E3C12728A01C00EE7D68 /* MessageAttachmentView.swift */,
 				8425E3C32728A05A00EE7D68 /* ImageAttachmentView.swift */,
@@ -7470,6 +7473,7 @@
 				84EAC87E271D6ACE0042AA98 /* ImageMerger.swift in Sources */,
 				84A660C7271EB8D800501FE6 /* Utils.swift in Sources */,
 				84EAC880271D8BE40042AA98 /* ImageLoading.swift in Sources */,
+				8425E3D62729828F00EE7D68 /* MessageComposerView.swift in Sources */,
 				84EAC85D27199F9C0042AA98 /* NoChannelsView.swift in Sources */,
 				8425E3D02729323A00EE7D68 /* ChannelHeaderLoader.swift in Sources */,
 				84EAC84427197A960042AA98 /* ColorPalette.swift in Sources */,

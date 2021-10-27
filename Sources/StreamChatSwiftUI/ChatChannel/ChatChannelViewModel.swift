@@ -8,6 +8,7 @@ import SwiftUI
 
 public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelegate {
     @Injected(\.chatClient) var chatClient
+    @Injected(\.utils) var utils
     
     private var cancellables = Set<AnyCancellable>()
     private var timer: Timer?
@@ -28,6 +29,8 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         return df
     }()
     
+    private lazy var messagesDateFormatter = utils.dateFormatter
+    
     @Atomic private var loadingPreviousMessages: Bool = false
     
     private var channelController: ChatChannelController
@@ -44,7 +47,22 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     @Published var showScrollToLatestButton = false
     @Published var currentDateString: String?
     @Published var typingUsers = [String]()
-    @Published var messages = LazyCachedMapCollection<ChatMessage>()
+    @Published var messages = LazyCachedMapCollection<ChatMessage>() {
+        didSet {
+            var temp = [String: String]()
+            for message in messages {
+                let dateString = messagesDateFormatter.string(from: message.createdAt)
+                let prefix = message.isSentByCurrentUser ? "current" : "other"
+                let key = "\(prefix)-\(dateString)"
+                if temp[key] == nil {
+                    temp[key] = message.id
+                }
+            }
+            messagesGroupingInfo = temp
+        }
+    }
+
+    @Published var messagesGroupingInfo = [String: String]()
     
     var channel: ChatChannel {
         channelController.channel!

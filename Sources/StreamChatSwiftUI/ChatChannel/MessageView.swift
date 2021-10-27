@@ -9,26 +9,49 @@ import StreamChat
 import SwiftUI
 
 struct MessageView<Factory: ViewFactory>: View {
+    @Injected(\.utils) var utils
+    @Injected(\.fonts) var fonts
+    @Injected(\.colors) var colors
+    
+    private var dateFormatter: DateFormatter {
+        utils.dateFormatter
+    }
+    
     var factory: Factory
     let message: ChatMessage
     var width: CGFloat?
-    var onDoubleTap: () -> Void
+    var showsAllInfo: Bool
+    var onLongPress: (ChatMessage) -> Void
     
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom) {
             if message.isSentByCurrentUser {
                 MessageSpacer(spacerWidth: spacerWidth)
             } else {
-                factory.makeMessageAvatarView(for: message.author)
+                if showsAllInfo {
+                    factory.makeMessageAvatarView(for: message.author)
+                } else {
+                    Color.clear
+                        .frame(width: CGSize.messageAvatarSize.width)
+                }
             }
             
-            MessageAttachmentView(
-                message: message,
-                contentWidth: contentWidth
-            )
-            .onTapGesture(count: 2) {
-                onDoubleTap()
+            VStack(alignment: message.isSentByCurrentUser ? .trailing : .leading) {
+                MessageAttachmentView(
+                    message: message,
+                    contentWidth: contentWidth
+                )
+                .onLongPressGesture {
+                    onLongPress(message)
+                }
+                
+                if showsAllInfo {
+                    Text(dateFormatter.string(from: message.createdAt))
+                        .font(fonts.footnote)
+                        .foregroundColor(Color(colors.textLowEmphasis))
+                }
             }
+            
 //            .overlay(
 //                !message.reactionScores.isEmpty ?
 //                    ReactionsContainer(message: message) : nil
