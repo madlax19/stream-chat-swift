@@ -540,6 +540,7 @@
 		8425E3CE2728AFEE00EE7D68 /* ChannelAvatarsMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3CD2728AFEE00EE7D68 /* ChannelAvatarsMerger.swift */; };
 		8425E3D02729323A00EE7D68 /* ChannelHeaderLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3CF2729323A00EE7D68 /* ChannelHeaderLoader.swift */; };
 		8425E3D2272949D400EE7D68 /* DefaultViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3D1272949D300EE7D68 /* DefaultViewFactory.swift */; };
+		8425E3D4272962E400EE7D68 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425E3D3272962E400EE7D68 /* Modifiers.swift */; };
 		842685FD27221A550083D97B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842685FC27221A550083D97B /* LoadingView.swift */; };
 		842685FF2722A0560083D97B /* ChatChannelListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842685FE2722A0560083D97B /* ChatChannelListHeader.swift */; };
 		8431843B26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json in Resources */ = {isa = PBXBuildFile; fileRef = 8431843A26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json */; };
@@ -2077,6 +2078,7 @@
 		8425E3CD2728AFEE00EE7D68 /* ChannelAvatarsMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelAvatarsMerger.swift; sourceTree = "<group>"; };
 		8425E3CF2729323A00EE7D68 /* ChannelHeaderLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelHeaderLoader.swift; sourceTree = "<group>"; };
 		8425E3D1272949D300EE7D68 /* DefaultViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewFactory.swift; sourceTree = "<group>"; };
+		8425E3D3272962E400EE7D68 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		842685FC27221A550083D97B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		842685FE2722A0560083D97B /* ChatChannelListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatChannelListHeader.swift; sourceTree = "<group>"; };
 		8431843A26FB53B400B5B25E /* NotificationMessageNew+MissingFields.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "NotificationMessageNew+MissingFields.json"; sourceTree = "<group>"; };
@@ -4480,6 +4482,7 @@
 				84528423272683C6009857B8 /* ViewExtensions.swift */,
 				845284252726C7B6009857B8 /* DefaultChannelActions.swift */,
 				8425E3BB27289D7600EE7D68 /* KeyboardHandling.swift */,
+				8425E3D3272962E400EE7D68 /* Modifiers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -7455,6 +7458,7 @@
 				84A660C5271EB8B200501FE6 /* DateFormatter+Extensions.swift in Sources */,
 				84528424272683C6009857B8 /* ViewExtensions.swift in Sources */,
 				8425E3C62728A0A000EE7D68 /* VideoAttachmentView.swift in Sources */,
+				8425E3D4272962E400EE7D68 /* Modifiers.swift in Sources */,
 				84EAC87A271D55DC0042AA98 /* ChatChannelListItem.swift in Sources */,
 				84EAC85227198A370042AA98 /* Images.swift in Sources */,
 				84EAC830271979400042AA98 /* StreamChat.swift in Sources */,

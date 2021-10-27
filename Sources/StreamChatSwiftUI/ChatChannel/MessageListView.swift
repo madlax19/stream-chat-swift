@@ -107,6 +107,11 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
 }
 
 public struct ScrollToBottomButton: View {
+    @Injected(\.images) var images
+    @Injected(\.colors) var colors
+    
+    private let buttonSize: CGFloat = 40
+    
     var onScrollToBottom: () -> Void
     
     public var body: some View {
@@ -114,13 +119,10 @@ public struct ScrollToBottomButton: View {
             Button {
                 onScrollToBottom()
             } label: {
-                Image(systemName: "arrow.down")
-                    .resizable()
+                Image(uiImage: images.scrollDownArrow)
                     .aspectRatio(contentMode: .fit)
-                    .padding(.all, 8)
-                    .background(Color.white.clipShape(Circle()))
-                    .frame(width: 40, height: 40)
-                    .foregroundColor(.blue)
+                    .frame(width: buttonSize, height: buttonSize)
+                    .modifier(ShadowViewModifier(cornerRadius: buttonSize / 2))
             }
             .padding()
         }
@@ -128,16 +130,21 @@ public struct ScrollToBottomButton: View {
 }
 
 public struct DateIndicatorView: View {
+    @Injected(\.colors) var colors
+    @Injected(\.fonts) var fonts
+    
     var date: String
     
     public var body: some View {
         VStack {
             Text(date)
-                .padding(.all, 4)
+                .font(fonts.footnote)
+                .padding(.vertical, 4)
+                .padding(.horizontal, 8)
                 .foregroundColor(.white)
-                .background(Color.gray)
-                .cornerRadius(8)
-                .padding(.all, 4)
+                .background(Color(colors.textLowEmphasis))
+                .cornerRadius(16)
+                .padding(.all, 8)
             Spacer()
         }
     }
