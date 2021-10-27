@@ -42,7 +42,7 @@ struct HeightPreferenceKey: PreferenceKey {
     }
 }
 
-/// View container that allows injecting another view in its top right corner.
+/// View container that allows injecting another view in its bottom right corner.
 public struct BottomRightView<Content: View>: View {
     var content: () -> Content
     
@@ -53,6 +53,21 @@ public struct BottomRightView<Content: View>: View {
                 Spacer()
                 content()
             }
+        }
+    }
+}
+
+/// View container that allows injecting another view in its bottom left corner.
+public struct BottomLeftView<Content: View>: View {
+    var content: () -> Content
+    
+    public var body: some View {
+        HStack {
+            VStack {
+                Spacer()
+                content()
+            }
+            Spacer()
         }
     }
 }

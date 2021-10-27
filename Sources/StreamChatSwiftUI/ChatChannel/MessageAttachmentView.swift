@@ -8,6 +8,7 @@ import SwiftUI
 struct MessageAttachmentView: View {
     var message: ChatMessage
     var contentWidth: CGFloat
+    var isFirst: Bool
     
     var body: some View {
         // TODO: temporary logic
@@ -22,7 +23,7 @@ struct MessageAttachmentView: View {
         } else if !message.videoAttachments.isEmpty {
             VideoAttachmentsContainer(message: message, width: contentWidth)
         } else {
-            MessageTextView(message: message)
+            MessageTextView(message: message, isFirst: isFirst)
         }
     }
 }
@@ -34,24 +35,35 @@ public struct MessageTextView: View {
     private let cornerRadius: CGFloat = 24
     
     var message: ChatMessage
+    var isFirst: Bool
     
     public var body: some View {
         Text(message.text)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .background(Color(backgroundColor))
+            .overlay(
+                BubbleBackgroundShape(cornerRadius: cornerRadius, corners: corners)
+                    .stroke(
+                        Color(colors.innerBorder),
+                        lineWidth: 1.0
+                    )
+            )
+            .clipShape(BubbleBackgroundShape(cornerRadius: cornerRadius, corners: corners))
             .foregroundColor(Color(colors.text))
             .font(fonts.body)
-            .overlay(
-                !message.isSentByCurrentUser ?
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(
-                        Color(colors.background6),
-                        lineWidth: 1
-                    )
-                    : nil
-            )
-            .cornerRadius(message.isSentByCurrentUser ? cornerRadius : 0)
+    }
+    
+    private var corners: UIRectCorner {
+        if !isFirst {
+            return [.topLeft, .topRight, .bottomLeft, .bottomRight]
+        }
+        
+        if message.isSentByCurrentUser {
+            return [.topLeft, .topRight, .bottomLeft]
+        } else {
+            return [.topLeft, .topRight, .bottomRight]
+        }
     }
     
     private var backgroundColor: UIColor {
@@ -64,5 +76,20 @@ public struct MessageTextView: View {
         } else {
             return colors.background8
         }
+    }
+}
+
+struct BubbleBackgroundShape: Shape {
+    var cornerRadius: CGFloat
+    var corners: UIRectCorner
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+        )
+        
+        return Path(path.cgPath)
     }
 }

@@ -39,7 +39,8 @@ struct MessageView<Factory: ViewFactory>: View {
             VStack(alignment: message.isSentByCurrentUser ? .trailing : .leading) {
                 MessageAttachmentView(
                     message: message,
-                    contentWidth: contentWidth
+                    contentWidth: contentWidth,
+                    isFirst: showsAllInfo
                 )
                 .onLongPressGesture {
                     onLongPress(message)
