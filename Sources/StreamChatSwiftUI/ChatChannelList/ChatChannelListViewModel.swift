@@ -25,12 +25,30 @@ public class ChatChannelListViewModel: ObservableObject, ChatChannelListControll
     /// Used when screen is shown from a deeplink.
     private var selectedChannelId: String?
     
+    /// Temporarly holding changes while message list is shown.
+    private var queuedChannelsChanges = LazyCachedMapCollection<ChatChannel>()
+    
     /// Controls loading the channels.
     @Atomic private var loadingNextChannels: Bool = false
     
     /// Published variables.
-    @Published var channels = LazyCachedMapCollection<ChatChannel>()
-    @Published var selectedChannel: ChatChannel?
+    @Published var channels = LazyCachedMapCollection<ChatChannel>() {
+        didSet {
+            queuedChannelsChanges = []
+        }
+    }
+
+    @Published var selectedChannel: ChatChannel? {
+        didSet {
+            if oldValue != nil && selectedChannel == nil {
+                // pop happened, apply the queued changes.
+                if !queuedChannelsChanges.isEmpty {
+                    channels = queuedChannelsChanges
+                }
+            }
+        }
+    }
+
     @Published var deeplinkChannel: ChatChannel?
     @Published var loadedImages = [String: UIImage]()
     @Published var currentChannelId: String?
@@ -133,14 +151,14 @@ public class ChatChannelListViewModel: ObservableObject, ChatChannelListControll
     // MARK: - ChatChannelListControllerDelegate
     
     public func controllerWillChangeChannels(_ controller: ChatChannelListController) {
-        channels = controller.channels
+        handleChannelListChanges(controller)
     }
     
     public func controller(
         _ controller: ChatChannelListController,
         didChangeChannels changes: [ListChange<ChatChannel>]
     ) {
-        channels = controller.channels
+        handleChannelListChanges(controller)
     }
     
     public func controller(
@@ -158,6 +176,14 @@ public class ChatChannelListViewModel: ObservableObject, ChatChannelListControll
     }
     
     // MARK: - private
+    
+    private func handleChannelListChanges(_ controller: ChatChannelListController) {
+        if selectedChannel != nil {
+            queuedChannelsChanges = controller.channels
+        } else {
+            channels = controller.channels
+        }
+    }
     
     private func checkForDeeplinks() {
         if let selectedChannelId = selectedChannelId,

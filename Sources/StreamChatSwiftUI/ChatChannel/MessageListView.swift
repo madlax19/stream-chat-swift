@@ -10,7 +10,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     
     var factory: Factory
     @Binding var messages: LazyCachedMapCollection<ChatMessage>
-    @Binding var messagesGroupingInfo: [String: String]
+    @Binding var messagesGroupingInfo: [String: [String]]
     @Binding var scrolledId: String?
     @Binding var showScrollToLatestButton: Bool
     @Binding var currentDateString: String?
@@ -120,7 +120,8 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
         let dateString = dateFormatter.string(from: message.createdAt)
         let prefix = message.isSentByCurrentUser ? "current" : "other"
         let key = "\(prefix)-\(dateString)"
-        return messagesGroupingInfo[key] == message.id
+        let inMessagingGroup = messagesGroupingInfo[key]?.contains(message.id) ?? false
+        return inMessagingGroup
     }
 }
 

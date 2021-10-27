@@ -49,20 +49,30 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     @Published var typingUsers = [String]()
     @Published var messages = LazyCachedMapCollection<ChatMessage>() {
         didSet {
-            var temp = [String: String]()
-            for message in messages {
+            var temp = [String: [String]]()
+            for (index, message) in messages.enumerated() {
                 let dateString = messagesDateFormatter.string(from: message.createdAt)
                 let prefix = message.isSentByCurrentUser ? "current" : "other"
                 let key = "\(prefix)-\(dateString)"
                 if temp[key] == nil {
-                    temp[key] = message.id
+                    temp[key] = [message.id]
+                } else {
+                    // check if the previous message is not sent by the same user.
+                    let previousIndex = index - 1
+                    if previousIndex >= 0 {
+                        let previous = messages[previousIndex]
+                        let shouldAddKey = message.isSentByCurrentUser != previous.isSentByCurrentUser
+                        if shouldAddKey {
+                            temp[key]?.append(message.id)
+                        }
+                    }
                 }
             }
             messagesGroupingInfo = temp
         }
     }
 
-    @Published var messagesGroupingInfo = [String: String]()
+    @Published var messagesGroupingInfo = [String: [String]]()
     
     var channel: ChatChannel {
         channelController.channel!
