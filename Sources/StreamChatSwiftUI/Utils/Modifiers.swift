@@ -32,3 +32,19 @@ struct ShadowModifier: ViewModifier {
             .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
     }
 }
+
+/// View modifier that applies default padding to elements.
+struct StandardPaddingModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+    }
+}
+
+extension View {
+    /// View extension that applies default padding to elements.
+    func standardPadding() -> some View {
+        modifier(StandardPaddingModifier())
+    }
+}

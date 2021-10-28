@@ -11,6 +11,7 @@ struct ImageAttachmentContainer: View {
     let message: ChatMessage
     let sources: [URL]
     let width: CGFloat
+    let isFirst: Bool
         
     var body: some View {
         if message.text.isEmpty {
@@ -19,8 +20,9 @@ struct ImageAttachmentContainer: View {
                 sources: sources,
                 width: width
             )
+            .messageBubble(for: message, isFirst: isFirst)
         } else {
-            VStack {
+            VStack(spacing: 0) {
                 if !sources.isEmpty {
                     ImageAttachmentView(
                         message: message,
@@ -29,14 +31,13 @@ struct ImageAttachmentContainer: View {
                     )
                 }
 
-                Text(message.text)
-                    .padding(.bottom)
+                HStack {
+                    Text(message.text)
+                        .standardPadding()
+                    Spacer()
+                }
             }
-            .background(
-                message.isSentByCurrentUser ?
-                    Color.secondary.opacity(0.7) : Color.secondary.opacity(0.3)
-            )
-            .cornerRadius(24)
+            .messageBubble(for: message, isFirst: isFirst)
         }
     }
 }
@@ -115,8 +116,6 @@ struct ImageAttachmentView: View {
             }
         }
         .frame(maxWidth: width)
-        .clipped()
-        .cornerRadius(24)
     }
 }
 

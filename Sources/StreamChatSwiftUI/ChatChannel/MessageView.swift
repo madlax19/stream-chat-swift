@@ -42,9 +42,10 @@ struct MessageView<Factory: ViewFactory>: View {
                     contentWidth: contentWidth,
                     isFirst: showsAllInfo
                 )
-                .onLongPressGesture {
-                    onLongPress(message)
-                }
+                // TODO: interferes with scrolling.
+//                .onLongPressGesture {
+//                    onLongPress(message)
+//                }
                 
                 if showsAllInfo {
                     Text(dateFormatter.string(from: message.createdAt))
