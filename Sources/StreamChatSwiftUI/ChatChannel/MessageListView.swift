@@ -42,7 +42,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                         Color.clear.preference(key: HeightPreferenceKey.self, value: height)
                     }
                     
-                    LazyVStack {
+                    LazyVStack(spacing: 0) {
                         ForEach(messages.indices, id: \.self) { index in
                             let message = messages[index]
                             MessageView(
@@ -55,6 +55,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                                 }
                             )
                             .padding(.horizontal)
+                            .padding(.bottom, showsAllData(for: message) ? 8 : 2)
                             .flippedUpsideDown()
                             .onAppear {
                                 onMessageAppear(index)
