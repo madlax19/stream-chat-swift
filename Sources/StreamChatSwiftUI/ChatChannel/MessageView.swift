@@ -66,10 +66,10 @@ struct MessageView<Factory: ViewFactory>: View {
     }
     
     private var contentWidth: CGFloat {
-        let padding: CGFloat = 16
+        let padding: CGFloat = 8
         let minimumWidth: CGFloat = 240
-        let available = max(minimumWidth, (width ?? 0) - spacerWidth) - padding
-        let avatarSize: CGFloat = 40
+        let available = max(minimumWidth, (width ?? 0) - spacerWidth) - 2 * padding
+        let avatarSize: CGFloat = CGSize.messageAvatarSize.width + padding
         let totalWidth = message.isSentByCurrentUser ? available : available - avatarSize
         return totalWidth
     }

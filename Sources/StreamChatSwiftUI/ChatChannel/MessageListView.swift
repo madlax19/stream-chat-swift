@@ -54,7 +54,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                                     // viewModel.addReaction(to: viewModel.messages[index])
                                 }
                             )
-                            .padding(.horizontal)
+                            .padding(.horizontal, 8)
                             .padding(.bottom, showsAllData(for: message) ? 8 : 2)
                             .flippedUpsideDown()
                             .onAppear {
@@ -119,7 +119,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     
     private func showsAllData(for message: ChatMessage) -> Bool {
         let dateString = dateFormatter.string(from: message.createdAt)
-        let prefix = message.isSentByCurrentUser ? "current" : "other"
+        let prefix = message.author.id
         let key = "\(prefix)-\(dateString)"
         let inMessagingGroup = messagesGroupingInfo[key]?.contains(message.id) ?? false
         return inMessagingGroup

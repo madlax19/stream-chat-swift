@@ -12,7 +12,13 @@ struct MessageAttachmentView: View {
     
     var body: some View {
         // TODO: temporary logic
-        if !message.imageAttachments.isEmpty {
+        if !message.fileAttachments.isEmpty {
+            FileAttachmentsContainer(
+                message: message,
+                width: contentWidth,
+                isFirst: isFirst
+            )
+        } else if !message.imageAttachments.isEmpty {
             ImageAttachmentContainer(message: message, sources: message.imageAttachments.map { attachment in
                 attachment.imagePreviewURL
             }, width: contentWidth, isFirst: isFirst)

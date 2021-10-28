@@ -523,6 +523,7 @@
 		84232EF0272A914D00EBED48 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84232EEF272A914D00EBED48 /* MessageBubble.swift */; };
 		84232EF2272A942A00EBED48 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84232EF1272A942A00EBED48 /* LaunchScreen.swift */; };
 		84232EF4272A975B00EBED48 /* LaunchAnimationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84232EF3272A975B00EBED48 /* LaunchAnimationState.swift */; };
+		84232EF6272ABC8B00EBED48 /* FileAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84232EF5272ABC8B00EBED48 /* FileAttachmentView.swift */; };
 		8424225A271706E0003730E1 /* StreamChatSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84242252271706E0003730E1 /* StreamChatSwiftUI.framework */; };
 		8424225F271706E0003730E1 /* StreamChatSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424225E271706E0003730E1 /* StreamChatSwiftUITests.swift */; };
 		84242260271706E0003730E1 /* StreamChatSwiftUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 84242254271706E0003730E1 /* StreamChatSwiftUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2061,6 +2062,7 @@
 		84232EEF272A914D00EBED48 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		84232EF1272A942A00EBED48 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		84232EF3272A975B00EBED48 /* LaunchAnimationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationState.swift; sourceTree = "<group>"; };
+		84232EF5272ABC8B00EBED48 /* FileAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAttachmentView.swift; sourceTree = "<group>"; };
 		84242252271706E0003730E1 /* StreamChatSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreamChatSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84242254271706E0003730E1 /* StreamChatSwiftUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamChatSwiftUI.h; sourceTree = "<group>"; };
 		84242259271706E0003730E1 /* StreamChatSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamChatSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4538,6 +4540,7 @@
 				8425E3C12728A01C00EE7D68 /* MessageAttachmentView.swift */,
 				8425E3C32728A05A00EE7D68 /* ImageAttachmentView.swift */,
 				8425E3C52728A0A000EE7D68 /* VideoAttachmentView.swift */,
+				84232EF5272ABC8B00EBED48 /* FileAttachmentView.swift */,
 				8425E3C92728A70700EE7D68 /* ChatChannelHeaderViewModifier.swift */,
 				84EAC8752719D4880042AA98 /* ChatChannelViewModel.swift */,
 				8425E3BD27289F2D00EE7D68 /* ChatChannelHelpers.swift */,
@@ -7517,6 +7520,7 @@
 				84EAC86D2719CC3F0042AA98 /* ChatChannelList.swift in Sources */,
 				84EAC8612719A6A50042AA98 /* UIFont+Extensions.swift in Sources */,
 				842685FF2722A0560083D97B /* ChatChannelListHeader.swift in Sources */,
+				84232EF6272ABC8B00EBED48 /* FileAttachmentView.swift in Sources */,
 				84EAC85B271999E80042AA98 /* ViewFactory.swift in Sources */,
 				845284262726C7B6009857B8 /* DefaultChannelActions.swift in Sources */,
 			);

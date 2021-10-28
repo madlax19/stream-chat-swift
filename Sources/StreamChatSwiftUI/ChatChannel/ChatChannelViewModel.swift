@@ -52,7 +52,7 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
             var temp = [String: [String]]()
             for (index, message) in messages.enumerated() {
                 let dateString = messagesDateFormatter.string(from: message.createdAt)
-                let prefix = message.isSentByCurrentUser ? "current" : "other"
+                let prefix = message.author.id
                 let key = "\(prefix)-\(dateString)"
                 if temp[key] == nil {
                     temp[key] = [message.id]
@@ -61,7 +61,8 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
                     let previousIndex = index - 1
                     if previousIndex >= 0 {
                         let previous = messages[previousIndex]
-                        let shouldAddKey = message.isSentByCurrentUser != previous.isSentByCurrentUser
+                        
+                        let shouldAddKey = message.author.id != previous.author.id
                         if shouldAddKey {
                             temp[key]?.append(message.id)
                         }
