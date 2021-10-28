@@ -49,8 +49,7 @@ public struct ChannelList<ChannelDestination: View>: View {
     public var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(channels.indices, id: \.self) { index in
-                    let channel = channels[index]
+                ForEach(channels) { channel in
                     ChatChannelSwipeableListItem(
                         currentChannelId: $currentChannelId,
                         channel: channel,
@@ -65,11 +64,13 @@ public struct ChannelList<ChannelDestination: View>: View {
                         onMoreTapped: onMoreTapped
                     )
                     .frame(height: 48)
-                    .padding(.bottom, index == channels.count - 1 ? 20 : 0)
                     .onAppear {
-                        onItemAppear(index)
+                        if let index = channels.firstIndex(where: { chatChannel in
+                            chatChannel.id == channel.id
+                        }) {
+                            onItemAppear(index)
+                        }
                     }
-                    .id(channel.id)
                     
                     Divider()
                 }

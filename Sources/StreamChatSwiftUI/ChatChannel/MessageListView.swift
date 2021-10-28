@@ -43,8 +43,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                     }
                     
                     LazyVStack(spacing: 0) {
-                        ForEach(messages.indices, id: \.self) { index in
-                            let message = messages[index]
+                        ForEach(messages) { message in
                             MessageView(
                                 factory: factory,
                                 message: message,
@@ -58,9 +57,14 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                             .padding(.bottom, showsAllData(for: message) ? 8 : 2)
                             .flippedUpsideDown()
                             .onAppear {
-                                onMessageAppear(index)
+                                let index = messages.firstIndex { msg in
+                                    msg.id == message.id
+                                }
+                                
+                                if let index = index {
+                                    onMessageAppear(index)
+                                }
                             }
-                            .id(message.id)
                         }
                     }
                 }
