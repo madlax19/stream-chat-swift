@@ -11,25 +11,6 @@ open class ChatMessageListView: UITableView, Customizable, ComponentsProvider {
     private var isInitialized: Bool = false
     /// Used for mapping `ListChanges` to sets of `IndexPath` and verifying possible conflicts
     private let collectionUpdatesMapper = CollectionUpdatesMapper()
-    
-    // In some cases updates coming one by one might require scrolling to bottom.
-    //
-    // Scheduling the action and canceling the previous one ensures the scroll to bottom
-    // is done only once.
-    //
-    // Having a delay gives layout a chance to calculate the correct size for bottom cells
-    // so they are fully visible when scroll to bottom happens.
-    private var scrollToBottomAction: DispatchWorkItem? {
-        didSet {
-            oldValue?.cancel()
-            if let action = scrollToBottomAction {
-                DispatchQueue.main.asyncAfter(
-                    deadline: .now() + .milliseconds(200),
-                    execute: action
-                )
-            }
-        }
-    }
 
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -172,6 +153,10 @@ open class ChatMessageListView: UITableView, Customizable, ComponentsProvider {
         with changes: [ListChange<ChatMessage>],
         completion: (() -> Void)? = nil
     ) {
+        defer {
+            completion?()
+        }
+        
         guard let _ = collectionUpdatesMapper.mapToSetsOfIndexPaths(
             changes: changes,
             onConflict: {
@@ -184,27 +169,21 @@ open class ChatMessageListView: UITableView, Customizable, ComponentsProvider {
             return
         }
 
-        changes.forEach {
-            switch $0 {
-            case let .insert(message, index: index):
-                UIView.performWithoutAnimation {
-                    self.reloadData()
-                }
-                if message.isSentByCurrentUser, index == IndexPath(item: 0, section: 0) {
-                    self.scrollToBottomAction = .init { [weak self] in
-                        self?.scrollToMostRecentMessage()
-                    }
-                }
-
-            case let .move(_, fromIndex: fromIndex, toIndex: toIndex):
-                self.moveRow(at: fromIndex, to: toIndex)
-
-            case let .update(_, index: index):
-                self.reloadRows(at: [index], with: .automatic)
-
-            case .remove:
-                self.reloadData()
+        switch changes.first {
+        case .insert:
+            UIView.performWithoutAnimation {
+                reloadData()
             }
+        case let .move(_, fromIndex: fromIndex, toIndex: toIndex):
+            moveRow(at: fromIndex, to: toIndex)
+            
+        case let .update(_, index: index):
+            reloadRows(at: [index], with: .automatic)
+            
+        case .remove:
+            reloadData()
+        default:
+            break
         }
     }
 

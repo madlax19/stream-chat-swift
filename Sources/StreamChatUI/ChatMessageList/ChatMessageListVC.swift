@@ -191,7 +191,34 @@ open class ChatMessageListVC:
 
     /// Updates the collection view data with given `changes`.
     open func updateMessages(with changes: [ListChange<ChatMessage>], completion: (() -> Void)? = nil) {
-        listView.updateMessages(with: changes, completion: completion)
+        listView.updateMessages(with: changes) {
+            if self.shouldScrollToMostRecentMessage(changes) {
+                self.listView.scrollToMostRecentMessage()
+            }
+            
+            completion?()
+        }
+    }
+    
+    /// Decides whether the message list should be scrolled to most recent message after applying the given changes.
+    ///
+    /// It is invoked automatically when the message list changes are observed and applied.
+    ///
+    /// - Parameter changes: The applied changes.
+    /// - Returns: The boolean flag saying if the message list needs to be scrolled.
+    open func shouldScrollToMostRecentMessage(_ changes: [ListChange<ChatMessage>]) -> Bool {
+        guard !router.messagePopUpTransitionController.isPresenting else {
+            return false
+        }
+        
+        return changes.contains {
+            switch $0 {
+            case let .insert(message, index):
+                return message.isSentByCurrentUser && index == IndexPath(item: 0, section: 0)
+            default:
+                return false
+            }
+        }
     }
 
     /// Handles tap action on the table view.
