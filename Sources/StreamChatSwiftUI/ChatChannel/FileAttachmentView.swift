@@ -30,24 +30,33 @@ public struct FileAttachmentView: View {
     @Injected(\.fonts) var fonts
     @Injected(\.colors) var colors
     
+    @State private var fullScreenShown = false
+    
     var attachment: ChatMessageFileAttachment
     var width: CGFloat
     var isFirst: Bool
     
     public var body: some View {
         HStack {
-            Image(uiImage: previewImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 34, height: 40)
-            VStack(alignment: .leading, spacing: 8) {
-                Text(attachment.title ?? "")
-                    .font(fonts.bodyBold)
-                    .lineLimit(1)
-                Text(attachment.file.sizeString)
-                    .font(fonts.footnote)
-                    .lineLimit(1)
-                    .foregroundColor(Color(colors.textLowEmphasis))
+            Button {
+                fullScreenShown = true
+            } label: {
+                HStack {
+                    Image(uiImage: previewImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 34, height: 40)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(attachment.title ?? "")
+                            .font(fonts.bodyBold)
+                            .lineLimit(1)
+                            .foregroundColor(Color(colors.text))
+                        Text(attachment.file.sizeString)
+                            .font(fonts.footnote)
+                            .lineLimit(1)
+                            .foregroundColor(Color(colors.textLowEmphasis))
+                    }
+                }
             }
             
             Spacer()
@@ -60,6 +69,9 @@ public struct FileAttachmentView: View {
                 .stroke(Color(colors.innerBorder), lineWidth: 1)
         )
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        .sheet(isPresented: $fullScreenShown) {
+            FileAttachmentPreview(url: attachment.assetURL)
+        }
     }
     
     private var previewImage: UIImage {
