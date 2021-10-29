@@ -2,11 +2,14 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
 /// Provides the colors used throughout the SDK.
 public struct ColorPalette {
     public init() {}
+    
+    public var tintColor: Color = .accentColor
     
     // MARK: - Text
 
@@ -82,7 +85,7 @@ private extension UIColor {
     static let streamAccentRed = mode(0xff3742, 0xff3742)
     static let streamAccentGreen = mode(0x20e070, 0x20e070)
     static let streamGrayDisabledText = mode(0x72767e, 0x72767e)
-    static let streamInnerBorder = mode(0xdbdde1, 0xdbdde1)
+    static let streamInnerBorder = mode(0xdbdde1, 0x272a30)
     
     // Currently we are not using the correct shadow color from figma's color palette. This is to avoid
     // an issue with snapshots inconsistency between Intel vs M1. We can't use shadows with transparency.

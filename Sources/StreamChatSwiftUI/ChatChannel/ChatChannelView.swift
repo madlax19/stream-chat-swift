@@ -7,6 +7,8 @@ import SwiftUI
 
 /// View for the chat channel.
 public struct ChatChannelView<Factory: ViewFactory>: View {
+    @Injected(\.colors) var colors
+    
     @StateObject private var viewModel: ChatChannelViewModel
     
     private var factory: Factory
@@ -43,5 +45,6 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             )
         }
         .modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))
+        .accentColor(colors.tintColor)
     }
 }

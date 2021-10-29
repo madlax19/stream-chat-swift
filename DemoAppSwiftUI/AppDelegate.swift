@@ -5,6 +5,7 @@
 import StreamChat
 import StreamChatSwiftUI
 import UIKit
+import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -58,7 +59,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let token = try! Token(rawValue: credentials.token)
         LogConfig.level = .warning
         
-        streamChat = StreamChat(chatClient: chatClient)
+        var colors = ColorPalette()
+        colors.tintColor = Color(.streamBlue)
+        
+        let appearance = Appearance(colors: colors)
+        
+        streamChat = StreamChat(chatClient: chatClient, appearance: appearance)
         
         chatClient.connectUser(
                 userInfo: .init(id: credentials.id, name: credentials.name, imageURL: credentials.avatarURL),
@@ -72,3 +78,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
 }
+
+extension UIColor {
+    static let streamBlue = UIColor(red: 0, green: 108.0 / 255.0, blue: 255.0 / 255.0, alpha: 1)
+}
+
