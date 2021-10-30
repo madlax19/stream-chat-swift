@@ -66,7 +66,9 @@
     },
     {
       "SwiftUI Components": [
-        "swiftui/swiftui-overview"
+        "swiftui/swiftui-overview",
+        "swiftui/getting-started",
+        "swiftui/view-customizations"
       ]
     }
   ]
