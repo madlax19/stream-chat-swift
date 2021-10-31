@@ -16,7 +16,7 @@ public struct ChatChannelListScreen: View {
     public init(
         title: String = "Stream Chat",
         channelListController: ChatChannelListController? = nil,
-        selectedChannelId: String?
+        selectedChannelId: String? = nil
     ) {
         self.title = title
         self.channelListController = channelListController

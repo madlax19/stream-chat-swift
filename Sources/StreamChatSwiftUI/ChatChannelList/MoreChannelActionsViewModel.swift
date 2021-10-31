@@ -120,6 +120,12 @@ public struct ChannelAction: Identifiable {
 
 /// Model describing confirmation popup data.
 public struct ConfirmationPopup {
+    public init(title: String, message: String?, buttonTitle: String) {
+        self.title = title
+        self.message = message
+        self.buttonTitle = buttonTitle
+    }
+    
     let title: String
     let message: String?
     let buttonTitle: String

@@ -21,7 +21,7 @@ struct DemoAppSwiftUIApp: App {
 //            } else {
 //                ChatChannelListView(viewFactory: CustomFactory.shared)
 //            }
-            ChatChannelListView(viewFactory: CustomFactory.shared)
+            ChatChannelListView()
             /*
             //Example of custom query filters.
             ChatChannelListView(
@@ -49,6 +49,18 @@ struct DemoAppSwiftUIApp: App {
     }
 }
 
+struct CustomChannelDestination: View {
+    
+    var channel: ChatChannel
+    
+    var body: some View {
+        VStack {
+            Text("This is the channel \(channel.name ?? "")")
+        }
+    }
+    
+}
+
 class CustomFactory: ViewFactory {
     
     @Injected(\.chatClient) public var chatClient
@@ -57,33 +69,92 @@ class CustomFactory: ViewFactory {
     
     public static let shared = CustomFactory()
     
+    func makeChannelDestination() -> (ChatChannel) -> CustomChannelDestination {
+        { channel in
+            CustomChannelDestination(channel: channel)
+        }
+    }
+    
+    func makeLoadingView() -> some View {
+        VStack {
+            Text("This is custom loading view")
+            ProgressView()
+        }
+    }
+    
+    func makeNoChannelsView() -> some View {
+        VStack {
+            Spacer()
+            Text("This is our own custom no channels view.")
+            Spacer()
+        }
+    }
+    
     func makeChannelListHeaderViewModifier(title: String) -> some ChannelListHeaderViewModifier {
         CustomChannelModifier(title: title)
     }
     
-    /*
+    
     // Example for an injected action. Uncomment to see it in action.
     func suppotedMoreChannelActions(
         for channel: ChatChannel,
-        onDismiss: @escaping () -> Void
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void
     ) -> [ChannelAction] {
         var defaultActions = ChannelAction.defaultActions(
             for: channel,
             chatClient: chatClient,
-            onDismiss: onDismiss
+            onDismiss: onDismiss,
+            onError: onError
         )
         
-        let injectedAction = ChannelAction(
-            title: "Injected",
-            iconName: "plus",
-            action: onDismiss,
-            confirmationPopup: nil,
+        let freeze = {
+            let controller = self.chatClient.channelController(for: channel.cid)
+            controller.freezeChannel { error in
+                if let error = error {
+                    onError(error)
+                } else {
+                    onDismiss()
+                }
+            }
+        }
+        
+        let confirmationPopup = ConfirmationPopup(
+            title: "Freeze channel",
+            message: "Are you sure you want to freeze this channel?",
+            buttonTitle: "Freeze"
+        )
+        
+        let channelAction = ChannelAction(
+            title: "Freeze channel",
+            iconName: "person.crop.circle.badge.minus",
+            action: freeze,
+            confirmationPopup: confirmationPopup,
             isDestructive: false
         )
         
-        defaultActions.insert(injectedAction, at: 0)
+        defaultActions.insert(channelAction, at: 0)
         return defaultActions
     }
-     */
+    
+    func makeMoreChannelActionsView(
+        for channel: ChatChannel,
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void) -> some View {
+            VStack {
+                Text("This is our custom view")
+                Spacer()
+                HStack {
+                    Button {
+                        onDismiss()
+                    } label: {
+                        Text("Action")
+                    }
+
+                }
+                .padding()
+            }
+    }
+    
     
 }

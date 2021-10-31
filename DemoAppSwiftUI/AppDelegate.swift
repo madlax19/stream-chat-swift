@@ -59,12 +59,29 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let token = try! Token(rawValue: credentials.token)
         LogConfig.level = .warning
         
+        /*
+        //Customizations, uncomment to customize.
         var colors = ColorPalette()
         colors.tintColor = Color(.streamBlue)
         
-        let appearance = Appearance(colors: colors)
+        var fonts = Fonts()
+        fonts.footnoteBold = Font.footnote
         
-        streamChat = StreamChat(chatClient: chatClient, appearance: appearance)
+        let images = Images()
+        images.reactionLoveBig = UIImage(systemName: "heart.fill")!
+        
+        let appearance = Appearance(colors: colors, images: images, fonts: fonts)
+        
+        let channelNamer: ChatChannelNamer = { channel, currentUserId in
+            "This is our custom name: \(channel.name ?? "no name")"
+        }
+        let utils = Utils(channelNamer: channelNamer)
+         
+        streamChat = StreamChat(chatClient: chatClient, appearance: appearance, utils: utils)
+
+        */
+        
+        streamChat = StreamChat(chatClient: chatClient)
         
         chatClient.connectUser(
                 userInfo: .init(id: credentials.id, name: credentials.name, imageURL: credentials.avatarURL),

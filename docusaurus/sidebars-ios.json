@@ -70,7 +70,11 @@
         "swiftui/getting-started",
         "swiftui/view-customizations",
         "swiftui/channel-list-header",
-        "swiftui/swipe-actions-channels"
+        "swiftui/swipe-actions-channels",
+        "swiftui/helper-views",
+        "swiftui/list-tap-events",
+        "swiftui/custom-avatar",
+        "swiftui/channel-header"
       ]
     }
   ]
