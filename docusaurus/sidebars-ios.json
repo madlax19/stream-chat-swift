@@ -68,7 +68,9 @@
       "SwiftUI Components": [
         "swiftui/swiftui-overview",
         "swiftui/getting-started",
-        "swiftui/view-customizations"
+        "swiftui/view-customizations",
+        "swiftui/channel-list-header",
+        "swiftui/swipe-actions-channels"
       ]
     }
   ]
