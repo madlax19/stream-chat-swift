@@ -71,6 +71,7 @@
         "swiftui/view-customizations",
         "swiftui/channel-list-header",
         "swiftui/swipe-actions-channels",
+        "swiftui/query-filters",
         "swiftui/helper-views",
         "swiftui/list-tap-events",
         "swiftui/custom-avatar",
