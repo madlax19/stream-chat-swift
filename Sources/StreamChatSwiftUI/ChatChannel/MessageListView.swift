@@ -44,7 +44,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                     
                     LazyVStack(spacing: 0) {
                         ForEach(messages) { message in
-                            MessageView(
+                            MessageContainerView(
                                 factory: factory,
                                 message: message,
                                 width: width,

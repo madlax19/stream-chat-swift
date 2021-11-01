@@ -15,6 +15,7 @@ public class Utils {
     public var imageMerger: ImageMerging
     public var channelNamer: ChatChannelNamer
     public var channelAvatarsMerger: ChannelAvatarsMerging
+    public var messageTypeResolver: MessageTypeResolving
     
     public init(
         dateFormatter: DateFormatter = .makeDefault(),
@@ -24,6 +25,7 @@ public class Utils {
         imageProcessor: ImageProcessor = NukeImageProcessor(),
         imageMerger: ImageMerging = DefaultImageMerger(),
         channelAvatarsMerger: ChannelAvatarsMerging = ChannelAvatarsMerger(),
+        messageTypeResolver: MessageTypeResolving = MessageTypeResolver(),
         channelNamer: @escaping ChatChannelNamer = DefaultChatChannelNamer()
     ) {
         self.dateFormatter = dateFormatter
@@ -34,5 +36,6 @@ public class Utils {
         self.imageMerger = imageMerger
         self.channelNamer = channelNamer
         self.channelAvatarsMerger = channelAvatarsMerger
+        self.messageTypeResolver = messageTypeResolver
     }
 }

@@ -155,6 +155,14 @@ extension ViewFactory {
             isFirst: isFirst
         )
     }
+    
+    public func makeCustomAttachmentViewType(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> EmptyView {
+        EmptyView()
+    }
 }
 
 /// Default class conforming to `ViewFactory`, used throughout the SDK.

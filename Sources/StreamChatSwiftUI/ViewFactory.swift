@@ -145,4 +145,18 @@ public protocol ViewFactory: AnyObject {
         isFirst: Bool,
         availableWidth: CGFloat
     ) -> DeletedMessageViewType
+    
+    associatedtype CustomAttachmentViewType: View
+    /// Creates custom attachment view.
+    /// If support for more than one custom view is needed, just do if-else check inside the view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the custom attachment slot.
+    func makeCustomAttachmentViewType(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> CustomAttachmentViewType
 }
