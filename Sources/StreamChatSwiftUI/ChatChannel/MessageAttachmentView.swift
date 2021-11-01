@@ -5,7 +5,8 @@
 import StreamChat
 import SwiftUI
 
-struct MessageAttachmentView: View {
+struct MessageAttachmentView<Factory: ViewFactory>: View {
+    var factory: Factory
     var message: ChatMessage
     var contentWidth: CGFloat
     var isFirst: Bool
@@ -13,31 +14,41 @@ struct MessageAttachmentView: View {
     var body: some View {
         // TODO: temporary logic
         if message.isDeleted {
-            DeletedMessageView(message: message, isFirst: isFirst)
+            factory.makeDeletedMessageView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
+            )
         } else if !message.linkAttachments.isEmpty {
-            LinkAttachmentContainer(
-                message: message,
-                width: contentWidth,
-                isFirst: isFirst
+            factory.makeLinkAttachmentView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
             )
         } else if !message.fileAttachments.isEmpty {
-            FileAttachmentsContainer(
-                message: message,
-                width: contentWidth,
-                isFirst: isFirst
+            factory.makeFileAttachmentView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
             )
-        } else if !message.imageAttachments.isEmpty {
-            ImageAttachmentContainer(message: message, sources: message.imageAttachments.map { attachment in
-                attachment.imagePreviewURL
-            }, width: contentWidth, isFirst: isFirst)
-        } else if !message.giphyAttachments.isEmpty {
-            ImageAttachmentContainer(message: message, sources: message.giphyAttachments.map { attachment in
-                attachment.previewURL
-            }, width: contentWidth, isFirst: isFirst)
+        } else if !message.imageAttachments.isEmpty || !message.giphyAttachments.isEmpty {
+            factory.makeImageAttachmentView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
+            )
         } else if !message.videoAttachments.isEmpty {
-            VideoAttachmentsContainer(message: message, width: contentWidth)
+            factory.makeVideoAttachmentView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
+            )
         } else {
-            MessageTextView(message: message, isFirst: isFirst)
+            factory.makeMessageTextView(
+                for: message,
+                isFirst: isFirst,
+                availableWidth: contentWidth
+            )
         }
     }
 }

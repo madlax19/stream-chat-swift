@@ -80,6 +80,81 @@ extension ViewFactory {
     ) -> some ChatChannelHeaderViewModifier {
         DefaultChannelHeaderModifier(channel: channel)
     }
+    
+    public func makeMessageTextView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> MessageTextView {
+        MessageTextView(message: message, isFirst: isFirst)
+    }
+    
+    public func makeImageAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> ImageAttachmentContainer {
+        var sources = [URL]()
+        sources += message.imageAttachments.map { attachment in
+            attachment.imagePreviewURL
+        }
+        sources += message.giphyAttachments.map { attachment in
+            attachment.previewURL
+        }
+        
+        return ImageAttachmentContainer(
+            message: message,
+            sources: sources,
+            width: availableWidth,
+            isFirst: isFirst
+        )
+    }
+    
+    public func makeLinkAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> LinkAttachmentContainer {
+        LinkAttachmentContainer(
+            message: message,
+            width: availableWidth,
+            isFirst: isFirst
+        )
+    }
+    
+    public func makeFileAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> FileAttachmentsContainer {
+        FileAttachmentsContainer(
+            message: message,
+            width: availableWidth,
+            isFirst: isFirst
+        )
+    }
+    
+    public func makeVideoAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> VideoAttachmentsContainer {
+        VideoAttachmentsContainer(
+            message: message,
+            width: availableWidth
+        )
+    }
+    
+    public func makeDeletedMessageView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> DeletedMessageView {
+        DeletedMessageView(
+            message: message,
+            isFirst: isFirst
+        )
+    }
 }
 
 /// Default class conforming to `ViewFactory`, used throughout the SDK.

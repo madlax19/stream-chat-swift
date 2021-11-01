@@ -7,13 +7,13 @@ import NukeUI
 import StreamChat
 import SwiftUI
 
-struct ImageAttachmentContainer: View {
+public struct ImageAttachmentContainer: View {
     let message: ChatMessage
     let sources: [URL]
     let width: CGFloat
     let isFirst: Bool
         
-    var body: some View {
+    public var body: some View {
         if message.text.isEmpty {
             ImageAttachmentView(
                 message: message,

@@ -41,6 +41,7 @@ struct MessageView<Factory: ViewFactory>: View {
                 
                 VStack(alignment: message.isSentByCurrentUser ? .trailing : .leading) {
                     MessageAttachmentView(
+                        factory: factory,
                         message: message,
                         contentWidth: contentWidth,
                         isFirst: showsAllInfo

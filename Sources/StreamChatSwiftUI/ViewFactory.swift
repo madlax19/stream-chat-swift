@@ -67,4 +67,82 @@ public protocol ViewFactory: AnyObject {
     /// Creates the channel header view modifier.
     /// - Parameter channel: the displayed channel.
     func makeChannelHeaderViewModifier(for channel: ChatChannel) -> ChatHeaderViewModifier
+    
+    associatedtype MessageTextViewType: View
+    /// Creates the message text view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the text message slot.
+    func makeMessageTextView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> MessageTextViewType
+    
+    associatedtype ImageAttachmentViewType: View
+    /// Creates the image attachment view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the image attachment slot.
+    func makeImageAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> ImageAttachmentViewType
+    
+    associatedtype LinkAttachmentViewType: View
+    /// Creates the link attachment view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the link attachment slot.
+    func makeLinkAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> LinkAttachmentViewType
+    
+    associatedtype FileAttachmentViewType: View
+    /// Creates the file attachment view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the file attachment slot.
+    func makeFileAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> FileAttachmentViewType
+    
+    associatedtype VideoAttachmentViewType: View
+    /// Creates the video attachment view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the video attachment slot.
+    func makeVideoAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> VideoAttachmentViewType
+    
+    associatedtype DeletedMessageViewType: View
+    /// Creates the deleted message view.
+    /// - Parameters:
+    ///   - message: the deleted message that will be displayed with indicator.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the deleted message slot.
+    func makeDeletedMessageView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> DeletedMessageViewType
 }
