@@ -24,10 +24,10 @@ struct MessageView<Factory: ViewFactory>: View {
     var onLongPress: (ChatMessage) -> Void
     
     var body: some View {
-        if message.type == .system {
-            SystemMessageView(message: message.text)
-        } else {
-            HStack(alignment: .bottom) {
+        HStack(alignment: .bottom) {
+            if message.type == .system {
+                SystemMessageView(message: message.text)
+            } else {
                 if message.isSentByCurrentUser {
                     MessageSpacer(spacerWidth: spacerWidth)
                 } else {
