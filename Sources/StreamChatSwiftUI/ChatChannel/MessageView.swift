@@ -24,43 +24,47 @@ struct MessageView<Factory: ViewFactory>: View {
     var onLongPress: (ChatMessage) -> Void
     
     var body: some View {
-        HStack(alignment: .bottom) {
-            if message.isSentByCurrentUser {
-                MessageSpacer(spacerWidth: spacerWidth)
-            } else {
-                if showsAllInfo {
-                    factory.makeMessageAvatarView(for: message.author)
+        if message.type == .system {
+            SystemMessageView(message: message.text)
+        } else {
+            HStack(alignment: .bottom) {
+                if message.isSentByCurrentUser {
+                    MessageSpacer(spacerWidth: spacerWidth)
                 } else {
-                    Color.clear
-                        .frame(width: CGSize.messageAvatarSize.width)
+                    if showsAllInfo {
+                        factory.makeMessageAvatarView(for: message.author)
+                    } else {
+                        Color.clear
+                            .frame(width: CGSize.messageAvatarSize.width)
+                    }
                 }
-            }
-            
-            VStack(alignment: message.isSentByCurrentUser ? .trailing : .leading) {
-                MessageAttachmentView(
-                    message: message,
-                    contentWidth: contentWidth,
-                    isFirst: showsAllInfo
-                )
-                // TODO: interferes with scrolling.
-//                .onLongPressGesture {
-//                    onLongPress(message)
-//                }
                 
-                if showsAllInfo && !message.isDeleted {
-                    Text(dateFormatter.string(from: message.createdAt))
-                        .font(fonts.footnote)
-                        .foregroundColor(Color(colors.textLowEmphasis))
+                VStack(alignment: message.isSentByCurrentUser ? .trailing : .leading) {
+                    MessageAttachmentView(
+                        message: message,
+                        contentWidth: contentWidth,
+                        isFirst: showsAllInfo
+                    )
+                    // TODO: interferes with scrolling.
+                    //                .onLongPressGesture {
+                    //                    onLongPress(message)
+                    //                }
+                    
+                    if showsAllInfo && !message.isDeleted {
+                        Text(dateFormatter.string(from: message.createdAt))
+                            .font(fonts.footnote)
+                            .foregroundColor(Color(colors.textLowEmphasis))
+                    }
                 }
-            }
-            
-//            .overlay(
-//                !message.reactionScores.isEmpty ?
-//                    ReactionsContainer(message: message) : nil
-//            )
-            
-            if !message.isSentByCurrentUser {
-                MessageSpacer(spacerWidth: spacerWidth)
+                
+                //            .overlay(
+                //                !message.reactionScores.isEmpty ?
+                //                    ReactionsContainer(message: message) : nil
+                //            )
+                
+                if !message.isSentByCurrentUser {
+                    MessageSpacer(spacerWidth: spacerWidth)
+                }
             }
         }
     }
