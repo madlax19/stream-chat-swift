@@ -74,7 +74,8 @@
         "swiftui/helper-views",
         "swiftui/list-tap-events",
         "swiftui/custom-avatar",
-        "swiftui/channel-header"
+        "swiftui/channel-header",
+        "swiftui/attachments"
       ]
     }
   ]

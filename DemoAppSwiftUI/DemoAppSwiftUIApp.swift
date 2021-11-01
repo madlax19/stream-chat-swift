@@ -69,12 +69,6 @@ class CustomFactory: ViewFactory {
     
     public static let shared = CustomFactory()
     
-    func makeChannelDestination() -> (ChatChannel) -> CustomChannelDestination {
-        { channel in
-            CustomChannelDestination(channel: channel)
-        }
-    }
-    
     func makeLoadingView() -> some View {
         VStack {
             Text("This is custom loading view")
@@ -154,6 +148,29 @@ class CustomFactory: ViewFactory {
                 }
                 .padding()
             }
+    }
+    
+    func makeMessageTextView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> some View {
+        CustomMessageTextView(
+            message: message,
+            isFirst: isFirst
+        )
+    }
+    
+    func makeCustomAttachmentViewType(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> some View {
+        CustomAttachmentView(
+            message: message,
+            width: availableWidth,
+            isFirst: isFirst
+        )
     }
     
     

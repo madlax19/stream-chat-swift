@@ -46,6 +46,10 @@ struct HeightPreferenceKey: PreferenceKey {
 public struct BottomRightView<Content: View>: View {
     var content: () -> Content
     
+    public init(content: @escaping () -> Content) {
+        self.content = content
+    }
+    
     public var body: some View {
         HStack {
             Spacer()
