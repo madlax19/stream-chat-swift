@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: StreamChat object
 ---
 
 ## Creating the SwiftUI context provider object

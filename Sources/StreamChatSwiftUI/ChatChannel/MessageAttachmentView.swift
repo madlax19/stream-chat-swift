@@ -12,7 +12,9 @@ struct MessageAttachmentView: View {
     
     var body: some View {
         // TODO: temporary logic
-        if !message.linkAttachments.isEmpty {
+        if message.isDeleted {
+            DeletedMessageView(message: message, isFirst: isFirst)
+        } else if !message.linkAttachments.isEmpty {
             LinkAttachmentContainer(
                 message: message,
                 width: contentWidth,

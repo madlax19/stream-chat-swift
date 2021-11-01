@@ -47,7 +47,7 @@ struct MessageView<Factory: ViewFactory>: View {
 //                    onLongPress(message)
 //                }
                 
-                if showsAllInfo {
+                if showsAllInfo && !message.isDeleted {
                     Text(dateFormatter.string(from: message.createdAt))
                         .font(fonts.footnote)
                         .foregroundColor(Color(colors.textLowEmphasis))
