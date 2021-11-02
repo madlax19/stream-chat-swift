@@ -33,6 +33,7 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                 showScrollToLatestButton: $viewModel.showScrollToLatestButton,
                 currentDateString: $viewModel.currentDateString,
                 isGroup: !viewModel.channel.isDirectMessageChannel,
+                unreadCount: viewModel.channel.unreadCount.messages,
                 onMessageAppear: viewModel.handleMessageAppear(index:),
                 onScrollToBottom: viewModel.scrollToLastMessage
             )

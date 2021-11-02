@@ -15,6 +15,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     @Binding var showScrollToLatestButton: Bool
     @Binding var currentDateString: String?
     var isGroup: Bool
+    var unreadCount: Int
     
     var onMessageAppear: (Int) -> Void
     var onScrollToBottom: () -> Void
@@ -110,7 +111,10 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
 //            }
 //
             if showScrollToLatestButton {
-                ScrollToBottomButton(onScrollToBottom: onScrollToBottom)
+                ScrollToBottomButton(
+                    unreadCount: unreadCount,
+                    onScrollToBottom: onScrollToBottom
+                )
             }
             
             if let date = currentDateString {
@@ -138,6 +142,7 @@ public struct ScrollToBottomButton: View {
     
     private let buttonSize: CGFloat = 40
     
+    var unreadCount: Int
     var onScrollToBottom: () -> Void
     
     public var body: some View {
@@ -151,7 +156,34 @@ public struct ScrollToBottomButton: View {
                     .modifier(ShadowViewModifier(cornerRadius: buttonSize / 2))
             }
             .padding()
+            .overlay(
+                unreadCount > 0 ?
+                    UnreadButtonIndicator(unreadCount: unreadCount) : nil
+            )
         }
+    }
+}
+
+struct UnreadButtonIndicator: View {
+    @Injected(\.colors) var colors
+    @Injected(\.fonts) var fonts
+    
+    private let size: CGFloat = 16
+    
+    var unreadCount: Int
+    
+    var body: some View {
+        Text("\(unreadCount)")
+            .lineLimit(1)
+            .padding(.horizontal, 4)
+            .padding(.vertical, 2)
+            .font(fonts.footnoteBold)
+            .frame(width: unreadCount < 10 ? size : nil, height: size)
+            .padding(.horizontal, unreadCount < 10 ? 2 : 6)
+            .background(Color(colors.highlightedAccentBackground))
+            .cornerRadius(9)
+            .foregroundColor(Color(colors.staticColorText))
+            .offset(y: -size)
     }
 }
 
