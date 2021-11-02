@@ -43,11 +43,15 @@ public struct ImageAttachmentContainer: View {
 }
 
 struct ImageAttachmentView: View {
+    @Injected(\.colors) var colors
+    @Injected(\.fonts) var fonts
+    
     let message: ChatMessage
     let sources: [URL]
     let width: CGFloat
     
     private let spacing: CGFloat = 2
+    private let maxDisplayedImages = 4
     
     var body: some View {
         Group {
@@ -106,16 +110,31 @@ struct ImageAttachmentView: View {
                             source: sources[2],
                             width: width / 2
                         )
-                        MultiImageView(
-                            source: sources[3],
-                            width: width / 2
-                        )
+                        
+                        ZStack {
+                            MultiImageView(
+                                source: sources[3],
+                                width: width / 2
+                            )
+                            
+                            if notDisplayedImages > 0 {
+                                Color.black.opacity(0.4)
+                                
+                                Text("+\(notDisplayedImages)")
+                                    .foregroundColor(Color(colors.staticColorText))
+                                    .font(fonts.title)
+                            }
+                        }
                     }
                 }
                 .aspectRatio(1, contentMode: .fill)
             }
         }
         .frame(maxWidth: width)
+    }
+    
+    private var notDisplayedImages: Int {
+        sources.count > maxDisplayedImages ? sources.count - maxDisplayedImages : 0
     }
 }
 
