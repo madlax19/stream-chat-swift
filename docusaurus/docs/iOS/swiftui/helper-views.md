@@ -1,5 +1,5 @@
 ---
-title: Channel list helper views
+title: Channel list views
 ---
 
 ## Changing the loading view
@@ -45,5 +45,41 @@ func makeNoChannelsView() -> some View {
         Text("This is our own custom no channels view.")
         Spacer()
     }
+}
+```
+
+## Changing the chat channel list item
+
+You can swap the channel list item that is displayed in the channel list with your own implementation. In order to do that, you should implement the `makeChannelListItem` in the `ViewFactory` protocol.
+
+Here's an example on how to do that.
+
+```swift
+public func makeChannelListItem(
+    currentChannelId: Binding<String?>,
+    channel: ChatChannel,
+    channelName: String,
+    avatar: UIImage,
+    onlineIndicatorShown: Bool,
+    disabled: Bool,
+    selectedChannel: Binding<ChatChannel?>,
+    channelDestination: @escaping (ChatChannel) -> ChannelDestination,
+    onItemTap: @escaping (ChatChannel) -> Void,
+    onDelete: @escaping (ChatChannel) -> Void,
+    onMoreTapped: @escaping (ChatChannel) -> Void
+) -> CustomChannelListItem<ChannelDestination> {
+    CustomChannelListItem(
+        currentChannelId: currentChannelId,
+        channel: channel,
+        channelName: channelName,
+        avatar: avatar,
+        onlineIndicatorShown: onlineIndicatorShown,
+        disabled: disabled,
+        selectedChannel: selectedChannel,
+        channelDestination: channelDestination,
+        onItemTap: onItemTap,
+        onDelete: onDelete,
+        onMoreTapped: onMoreTapped
+    )
 }
 ```

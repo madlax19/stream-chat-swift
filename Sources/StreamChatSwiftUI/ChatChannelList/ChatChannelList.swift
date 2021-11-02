@@ -7,7 +7,8 @@ import SwiftUI
 
 /// Stateless component for the channel list.
 /// If used directly, you should provide the channel list.
-public struct ChannelList<ChannelDestination: View>: View {
+public struct ChannelList<Factory: ViewFactory>: View {
+    private var factory: Factory
     var channels: LazyCachedMapCollection<ChatChannel>
     @Binding var selectedChannel: ChatChannel?
     @Binding var currentChannelId: String?
@@ -16,11 +17,12 @@ public struct ChannelList<ChannelDestination: View>: View {
     private var onItemTap: (ChatChannel) -> Void
     private var onItemAppear: (Int) -> Void
     private var channelNaming: (ChatChannel) -> String
-    private var channelDestination: (ChatChannel) -> ChannelDestination
+    private var channelDestination: (ChatChannel) -> Factory.ChannelDestination
     private var onDelete: (ChatChannel) -> Void
     private var onMoreTapped: (ChatChannel) -> Void
     
     public init(
+        factory: Factory,
         channels: LazyCachedMapCollection<ChatChannel>,
         selectedChannel: Binding<ChatChannel?>,
         currentChannelId: Binding<String?>,
@@ -29,10 +31,11 @@ public struct ChannelList<ChannelDestination: View>: View {
         onItemTap: @escaping (ChatChannel) -> Void,
         onItemAppear: @escaping (Int) -> Void,
         channelNaming: @escaping (ChatChannel) -> String,
-        channelDestination: @escaping (ChatChannel) -> ChannelDestination,
+        channelDestination: @escaping (ChatChannel) -> Factory.ChannelDestination,
         onDelete: @escaping (ChatChannel) -> Void,
         onMoreTapped: @escaping (ChatChannel) -> Void
     ) {
+        self.factory = factory
         self.channels = channels
         self.onItemTap = onItemTap
         self.onItemAppear = onItemAppear
@@ -50,7 +53,7 @@ public struct ChannelList<ChannelDestination: View>: View {
         ScrollView {
             LazyVStack {
                 ForEach(channels) { channel in
-                    ChatChannelSwipeableListItem(
+                    factory.makeChannelListItem(
                         currentChannelId: $currentChannelId,
                         channel: channel,
                         channelName: channelNaming(channel),

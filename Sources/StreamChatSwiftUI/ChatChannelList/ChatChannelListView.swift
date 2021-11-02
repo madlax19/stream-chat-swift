@@ -60,6 +60,7 @@ public struct ChatChannelListView<Factory: ViewFactory>: View {
                         )
                         
                         ChannelList(
+                            factory: viewFactory,
                             channels: viewModel.channels,
                             selectedChannel: $viewModel.selectedChannel,
                             currentChannelId: $viewModel.currentChannelId,

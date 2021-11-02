@@ -56,6 +56,34 @@ extension ViewFactory {
         )
     }
     
+    public func makeChannelListItem(
+        currentChannelId: Binding<String?>,
+        channel: ChatChannel,
+        channelName: String,
+        avatar: UIImage,
+        onlineIndicatorShown: Bool,
+        disabled: Bool,
+        selectedChannel: Binding<ChatChannel?>,
+        channelDestination: @escaping (ChatChannel) -> ChannelDestination,
+        onItemTap: @escaping (ChatChannel) -> Void,
+        onDelete: @escaping (ChatChannel) -> Void,
+        onMoreTapped: @escaping (ChatChannel) -> Void
+    ) -> ChatChannelSwipeableListItem<ChannelDestination> {
+        ChatChannelSwipeableListItem(
+            currentChannelId: currentChannelId,
+            channel: channel,
+            channelName: channelName,
+            avatar: avatar,
+            onlineIndicatorShown: onlineIndicatorShown,
+            disabled: disabled,
+            selectedChannel: selectedChannel,
+            channelDestination: channelDestination,
+            onItemTap: onItemTap,
+            onDelete: onDelete,
+            onMoreTapped: onMoreTapped
+        )
+    }
+    
     // MARK: messages
     
     public func makeChannelDestination() -> (ChatChannel) -> ChatChannelView<Self> {

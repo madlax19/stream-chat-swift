@@ -28,6 +28,21 @@ public protocol ViewFactory: AnyObject {
     /// Creates the loading view.
     func makeLoadingView() -> LoadingContent
     
+    associatedtype ChannelListItemType: View
+    func makeChannelListItem(
+        currentChannelId: Binding<String?>,
+        channel: ChatChannel,
+        channelName: String,
+        avatar: UIImage,
+        onlineIndicatorShown: Bool,
+        disabled: Bool,
+        selectedChannel: Binding<ChatChannel?>,
+        channelDestination: @escaping (ChatChannel) -> ChannelDestination,
+        onItemTap: @escaping (ChatChannel) -> Void,
+        onDelete: @escaping (ChatChannel) -> Void,
+        onMoreTapped: @escaping (ChatChannel) -> Void
+    ) -> ChannelListItemType
+    
     associatedtype MoreActionsView: View
     /// Creates the more channel actions view.
     /// - Parameters:
