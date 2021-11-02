@@ -32,6 +32,7 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     private lazy var messagesDateFormatter = utils.dateFormatter
     
     @Atomic private var loadingPreviousMessages: Bool = false
+    @Atomic private var lastMessageRead: String?
     
     private var channelController: ChatChannelController
     
@@ -119,8 +120,12 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     }
     
     func handleMessageAppear(index: Int) {
+        let message = messages[index]
         checkForNewMessages(index: index)
-        save(lastDate: messages[index].createdAt)
+        save(lastDate: message.createdAt)
+        if index == 0 {
+            maybeSendReadEvent(for: message)
+        }
     }
     
     public func channelController(
@@ -195,6 +200,13 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
             }
         }
         .store(in: &cancellables)
+    }
+    
+    private func maybeSendReadEvent(for message: ChatMessage) {
+        if message.id != lastMessageRead {
+            lastMessageRead = message.id
+            channelController.markRead()
+        }
     }
 }
 
