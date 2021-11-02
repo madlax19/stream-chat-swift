@@ -14,6 +14,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     @Binding var scrolledId: String?
     @Binding var showScrollToLatestButton: Bool
     @Binding var currentDateString: String?
+    var isGroup: Bool
     
     var onMessageAppear: (Int) -> Void
     var onScrollToBottom: () -> Void
@@ -47,6 +48,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                             MessageContainerView(
                                 factory: factory,
                                 message: message,
+                                isInGroup: isGroup,
                                 width: width,
                                 showsAllInfo: showsAllData(for: message),
                                 onLongPress: { _ in

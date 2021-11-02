@@ -9,16 +9,12 @@ import StreamChat
 import SwiftUI
 
 struct MessageContainerView<Factory: ViewFactory>: View {
-    @Injected(\.utils) var utils
     @Injected(\.fonts) var fonts
     @Injected(\.colors) var colors
     
-    private var dateFormatter: DateFormatter {
-        utils.dateFormatter
-    }
-    
     var factory: Factory
     let message: ChatMessage
+    let isInGroup: Bool
     var width: CGFloat?
     var showsAllInfo: Bool
     var onLongPress: (ChatMessage) -> Void
@@ -52,9 +48,11 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                     //                }
                     
                     if showsAllInfo && !message.isDeleted {
-                        Text(dateFormatter.string(from: message.createdAt))
-                            .font(fonts.footnote)
-                            .foregroundColor(Color(colors.textLowEmphasis))
+                        if isInGroup && !message.isSentByCurrentUser {
+                            MessageAuthorAndDateView(message: message)
+                        } else {
+                            MessageDateView(message: message)
+                        }
                     }
                 }
                 
@@ -81,6 +79,41 @@ struct MessageContainerView<Factory: ViewFactory>: View {
     
     private var spacerWidth: CGFloat {
         (width ?? 0) / 4
+    }
+}
+
+struct MessageAuthorAndDateView: View {
+    @Injected(\.fonts) var fonts
+    @Injected(\.colors) var colors
+    
+    var message: ChatMessage
+    
+    var body: some View {
+        HStack {
+            Text(message.author.name ?? "")
+                .font(fonts.footnoteBold)
+                .foregroundColor(Color(colors.textLowEmphasis))
+            MessageDateView(message: message)
+            Spacer()
+        }
+    }
+}
+
+struct MessageDateView: View {
+    @Injected(\.utils) var utils
+    @Injected(\.fonts) var fonts
+    @Injected(\.colors) var colors
+    
+    private var dateFormatter: DateFormatter {
+        utils.dateFormatter
+    }
+    
+    var message: ChatMessage
+    
+    var body: some View {
+        Text(dateFormatter.string(from: message.createdAt))
+            .font(fonts.footnote)
+            .foregroundColor(Color(colors.textLowEmphasis))
     }
 }
 
