@@ -94,6 +94,19 @@ public protocol ViewFactory: AnyObject {
         availableWidth: CGFloat
     ) -> ImageAttachmentViewType
     
+    associatedtype GiphyAttachmentViewType: View
+    /// Creates the giphy attachment view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - isFirst: whether it is first in the group (latest creation date).
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the giphy attachment slot.
+    func makeGiphyAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> GiphyAttachmentViewType
+    
     associatedtype LinkAttachmentViewType: View
     /// Creates the link attachment view.
     /// - Parameters:
@@ -159,4 +172,16 @@ public protocol ViewFactory: AnyObject {
         isFirst: Bool,
         availableWidth: CGFloat
     ) -> CustomAttachmentViewType
+    
+    associatedtype GiphyBadgeViewType: View
+    /// Creates giphy badge view.
+    /// If support for more than one custom view is needed, just do if-else check inside the view.
+    /// - Parameters:
+    ///   - message: the message that will be displayed.
+    ///   - availableWidth: the available width for the view.
+    ///  - Returns: view displayed in the giphy badge slot.
+    func makeGiphyBadgeViewType(
+        for message: ChatMessage,
+        availableWidth: CGFloat
+    ) -> GiphyBadgeViewType
 }

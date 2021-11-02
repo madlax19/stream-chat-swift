@@ -49,11 +49,18 @@ struct MessageView<Factory: ViewFactory>: View {
                 availableWidth: contentWidth
             )
         } else if messageTypeResolver.hasGiphyAttachment(message: message) {
-            factory.makeImageAttachmentView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
+            ZStack {
+                factory.makeGiphyAttachmentView(
+                    for: message,
+                    isFirst: isFirst,
+                    availableWidth: contentWidth
+                )
+                factory.makeGiphyBadgeViewType(
+                    for: message,
+                    availableWidth: contentWidth
+                )
+            }
+            
         } else if messageTypeResolver.hasVideoAttachment(message: message) {
             factory.makeVideoAttachmentView(
                 for: message,

@@ -69,6 +69,10 @@ class CustomFactory: ViewFactory {
     
     public static let shared = CustomFactory()
     
+    func makeGiphyBadgeViewType(for message: ChatMessage, availableWidth: CGFloat) -> some View {
+        EmptyView()
+    }
+    
     func makeLoadingView() -> some View {
         VStack {
             Text("This is custom loading view")

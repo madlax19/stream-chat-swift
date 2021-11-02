@@ -40,6 +40,8 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                 viewModel.subscribeToChannelChanges()
             }
             
+            Divider()
+            
             MessageComposerView(
                 text: $viewModel.text,
                 sendMessageTapped: viewModel.sendMessage

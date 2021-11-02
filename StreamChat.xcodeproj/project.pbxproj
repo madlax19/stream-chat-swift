@@ -574,6 +574,7 @@
 		845CEE55270F1BDF002C7EBD /* SimpleChannelImageAttachmentsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CEE54270F1BDF002C7EBD /* SimpleChannelImageAttachmentsListController.swift */; };
 		845CEE57270F1D9C002C7EBD /* ImageAttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CEE56270F1D9C002C7EBD /* ImageAttachmentCell.swift */; };
 		845CEE5A270F2A06002C7EBD /* ChatReactionsBubbleView_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CEE59270F2A06002C7EBD /* ChatReactionsBubbleView_Tests.swift */; };
+		8465ECCC27314236005B2889 /* GiphyBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465ECCB27314236005B2889 /* GiphyBadgeView.swift */; };
 		846C633C26FC834800F7518B /* MessageDeleted+MissingUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 846C633B26FC834800F7518B /* MessageDeleted+MissingUser.json */; };
 		8475EAD0273043FB00999481 /* CustomAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475EACF273043FA00999481 /* CustomAttachment.swift */; };
 		847D60292679EDD300FB701D /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D60282679EDD300FB701D /* GalleryCollectionViewCell.swift */; };
@@ -2125,6 +2126,7 @@
 		845CEE54270F1BDF002C7EBD /* SimpleChannelImageAttachmentsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChannelImageAttachmentsListController.swift; sourceTree = "<group>"; };
 		845CEE56270F1D9C002C7EBD /* ImageAttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAttachmentCell.swift; sourceTree = "<group>"; };
 		845CEE59270F2A06002C7EBD /* ChatReactionsBubbleView_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReactionsBubbleView_Tests.swift; sourceTree = "<group>"; };
+		8465ECCB27314236005B2889 /* GiphyBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyBadgeView.swift; sourceTree = "<group>"; };
 		846C633B26FC834800F7518B /* MessageDeleted+MissingUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "MessageDeleted+MissingUser.json"; sourceTree = "<group>"; };
 		8475EACF273043FA00999481 /* CustomAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAttachment.swift; sourceTree = "<group>"; };
 		847D60282679EDD300FB701D /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -4569,6 +4571,7 @@
 				844BBDB9272FDDBF006B4773 /* DeletedMessageView.swift */,
 				844BBDBB272FECBB006B4773 /* SystemMessageView.swift */,
 				844BBDBD273038A7006B4773 /* MessageTypeResolver.swift */,
+				8465ECCB27314236005B2889 /* GiphyBadgeView.swift */,
 			);
 			path = ChatChannel;
 			sourceTree = "<group>";
@@ -7505,6 +7508,7 @@
 				84EAC84027197A610042AA98 /* DependencyInjection.swift in Sources */,
 				8425E3BE27289F2D00EE7D68 /* ChatChannelHelpers.swift in Sources */,
 				84EAC85327198A400042AA98 /* ChatChannelNamer.swift in Sources */,
+				8465ECCC27314236005B2889 /* GiphyBadgeView.swift in Sources */,
 				84EAC8712719D2DE0042AA98 /* ChatChannelDeepLink.swift in Sources */,
 				84EAC87E271D6ACE0042AA98 /* ImageMerger.swift in Sources */,
 				84A660C7271EB8D800501FE6 /* Utils.swift in Sources */,

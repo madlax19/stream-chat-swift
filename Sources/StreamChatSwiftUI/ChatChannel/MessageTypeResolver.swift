@@ -55,7 +55,6 @@ extension MessageTypeResolving {
     
     public func hasImageAttachment(message: ChatMessage) -> Bool {
         !message.imageAttachments.isEmpty
-            || hasGiphyAttachment(message: message)
     }
     
     public func hasGiphyAttachment(message: ChatMessage) -> Bool {

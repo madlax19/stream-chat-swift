@@ -94,11 +94,24 @@ extension ViewFactory {
         isFirst: Bool,
         availableWidth: CGFloat
     ) -> ImageAttachmentContainer {
-        var sources = [URL]()
-        sources += message.imageAttachments.map { attachment in
+        let sources = message.imageAttachments.map { attachment in
             attachment.imagePreviewURL
         }
-        sources += message.giphyAttachments.map { attachment in
+
+        return ImageAttachmentContainer(
+            message: message,
+            sources: sources,
+            width: availableWidth,
+            isFirst: isFirst
+        )
+    }
+    
+    public func makeGiphyAttachmentView(
+        for message: ChatMessage,
+        isFirst: Bool,
+        availableWidth: CGFloat
+    ) -> ImageAttachmentContainer {
+        let sources = message.giphyAttachments.map { attachment in
             attachment.previewURL
         }
         
@@ -162,6 +175,13 @@ extension ViewFactory {
         availableWidth: CGFloat
     ) -> EmptyView {
         EmptyView()
+    }
+    
+    public func makeGiphyBadgeViewType(
+        for message: ChatMessage,
+        availableWidth: CGFloat
+    ) -> GiphyBadgeView {
+        GiphyBadgeView()
     }
 }
 
