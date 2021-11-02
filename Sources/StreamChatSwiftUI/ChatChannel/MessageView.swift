@@ -67,6 +67,8 @@ struct MessageView<Factory: ViewFactory>: View {
                 isFirst: isFirst,
                 availableWidth: contentWidth
             )
+        } else if message.shouldRenderAsJumbomoji {
+            EmojiTextView(message: message)
         } else {
             factory.makeMessageTextView(
                 for: message,
@@ -90,5 +92,16 @@ public struct MessageTextView: View {
             .messageBubble(for: message, isFirst: isFirst)
             .foregroundColor(Color(colors.text))
             .font(fonts.body)
+    }
+}
+
+public struct EmojiTextView: View {
+    var message: ChatMessage
+    
+    @Injected(\.fonts) var fonts
+    
+    public var body: some View {
+        Text(message.text)
+            .font(fonts.emoji)
     }
 }
