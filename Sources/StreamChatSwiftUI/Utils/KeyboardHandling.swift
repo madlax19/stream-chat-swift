@@ -9,6 +9,7 @@ import UIKit
 /// Publisher to read keyboard changes.
 protocol KeyboardReadable {
     var keyboardPublisher: AnyPublisher<Bool, Never> { get }
+    var keyboardHeight: AnyPublisher<CGFloat, Never> { get }
 }
 
 /// Default implementation.
@@ -24,6 +25,23 @@ extension KeyboardReadable {
                 .map { _ in false }
         )
         .eraseToAnyPublisher()
+    }
+    
+    var keyboardHeight: AnyPublisher<CGFloat, Never> {
+        NotificationCenter
+            .default
+            .publisher(for: UIResponder.keyboardWillShowNotification)
+            .map { notification in
+                if let keyboardFrame: NSValue = notification
+                    .userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                    let keyboardRectangle = keyboardFrame.cgRectValue
+                    let keyboardHeight = keyboardRectangle.height
+                    return keyboardHeight
+                } else {
+                    return 0
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }
 
@@ -41,14 +59,14 @@ struct HideKeyboardOnTapGesture: ViewModifier {
                 }
             } : nil)
     }
-    
-    /// Resigns first responder and hides the keyboard.
-    func resignFirstResponder() {
-        UIApplication.shared.sendAction(
-            #selector(UIResponder.resignFirstResponder),
-            to: nil,
-            from: nil,
-            for: nil
-        )
-    }
+}
+
+/// Resigns first responder and hides the keyboard.
+func resignFirstResponder() {
+    UIApplication.shared.sendAction(
+        #selector(UIResponder.resignFirstResponder),
+        to: nil,
+        from: nil,
+        for: nil
+    )
 }
