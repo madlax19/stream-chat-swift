@@ -564,6 +564,12 @@
 		844BBDBA272FDDBF006B4773 /* DeletedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BBDB9272FDDBF006B4773 /* DeletedMessageView.swift */; };
 		844BBDBC272FECBB006B4773 /* SystemMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BBDBB272FECBB006B4773 /* SystemMessageView.swift */; };
 		844BBDBE273038A7006B4773 /* MessageTypeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BBDBD273038A7006B4773 /* MessageTypeResolver.swift */; };
+		845263602733CE66000E9FC6 /* AttachmentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452635F2733CE66000E9FC6 /* AttachmentPickerView.swift */; };
+		84526363273403CD000E9FC6 /* MessageComposerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84526362273403CD000E9FC6 /* MessageComposerViewModel.swift */; };
+		8452636527340719000E9FC6 /* FileAttachmentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452636427340719000E9FC6 /* FileAttachmentPickerView.swift */; };
+		8452636727340731000E9FC6 /* PhotoAttachmentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452636627340731000E9FC6 /* PhotoAttachmentPickerView.swift */; };
+		8452636927340785000E9FC6 /* CameraAttachmentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452636827340785000E9FC6 /* CameraAttachmentPickerView.swift */; };
+		8452636D2734396D000E9FC6 /* AddedImageAttachmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452636C2734396D000E9FC6 /* AddedImageAttachmentsView.swift */; };
 		845284202723F60C009857B8 /* MoreChannelActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452841F2723F60C009857B8 /* MoreChannelActionsView.swift */; };
 		845284222723F661009857B8 /* MoreChannelActionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845284212723F661009857B8 /* MoreChannelActionsViewModel.swift */; };
 		84528424272683C6009857B8 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84528423272683C6009857B8 /* ViewExtensions.swift */; };
@@ -2116,6 +2122,12 @@
 		844BBDB9272FDDBF006B4773 /* DeletedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedMessageView.swift; sourceTree = "<group>"; };
 		844BBDBB272FECBB006B4773 /* SystemMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMessageView.swift; sourceTree = "<group>"; };
 		844BBDBD273038A7006B4773 /* MessageTypeResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTypeResolver.swift; sourceTree = "<group>"; };
+		8452635F2733CE66000E9FC6 /* AttachmentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentPickerView.swift; sourceTree = "<group>"; };
+		84526362273403CD000E9FC6 /* MessageComposerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposerViewModel.swift; sourceTree = "<group>"; };
+		8452636427340719000E9FC6 /* FileAttachmentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAttachmentPickerView.swift; sourceTree = "<group>"; };
+		8452636627340731000E9FC6 /* PhotoAttachmentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAttachmentPickerView.swift; sourceTree = "<group>"; };
+		8452636827340785000E9FC6 /* CameraAttachmentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAttachmentPickerView.swift; sourceTree = "<group>"; };
+		8452636C2734396D000E9FC6 /* AddedImageAttachmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedImageAttachmentsView.swift; sourceTree = "<group>"; };
 		8452841F2723F60C009857B8 /* MoreChannelActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreChannelActionsView.swift; sourceTree = "<group>"; };
 		845284212723F661009857B8 /* MoreChannelActionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreChannelActionsViewModel.swift; sourceTree = "<group>"; };
 		84528423272683C6009857B8 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -4435,6 +4447,20 @@
 			path = AttachmentActionButton;
 			sourceTree = "<group>";
 		};
+		84526361273403AC000E9FC6 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				8425E3D52729828F00EE7D68 /* MessageComposerView.swift */,
+				84526362273403CD000E9FC6 /* MessageComposerViewModel.swift */,
+				8452635F2733CE66000E9FC6 /* AttachmentPickerView.swift */,
+				8452636427340719000E9FC6 /* FileAttachmentPickerView.swift */,
+				8452636627340731000E9FC6 /* PhotoAttachmentPickerView.swift */,
+				8452636827340785000E9FC6 /* CameraAttachmentPickerView.swift */,
+				8452636C2734396D000E9FC6 /* AddedImageAttachmentsView.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
 		847DD2D9267233CF0084E14B /* GradientView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4550,11 +4576,11 @@
 		84EAC8722719D4560042AA98 /* ChatChannel */ = {
 			isa = PBXGroup;
 			children = (
+				84526361273403AC000E9FC6 /* Composer */,
 				84EAC8732719D47C0042AA98 /* ChatChannelView.swift */,
 				8425E3B927289A5900EE7D68 /* MessageListView.swift */,
 				8425E3BF27289FEC00EE7D68 /* MessageContainerView.swift */,
 				84232EEF272A914D00EBED48 /* MessageBubble.swift */,
-				8425E3D52729828F00EE7D68 /* MessageComposerView.swift */,
 				8425E3C72728A13800EE7D68 /* MessageAvatarView.swift */,
 				8425E3C12728A01C00EE7D68 /* MessageView.swift */,
 				8425E3C32728A05A00EE7D68 /* ImageAttachmentView.swift */,
@@ -7485,10 +7511,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EAC83C27197A380042AA98 /* Cache.swift in Sources */,
+				84526363273403CD000E9FC6 /* MessageComposerViewModel.swift in Sources */,
 				8425E3BA27289A5900EE7D68 /* MessageListView.swift in Sources */,
 				84EAC884271D8C790042AA98 /* ImageCDN.swift in Sources */,
 				8425E3CC2728ADAB00EE7D68 /* ChatChannelExtensions.swift in Sources */,
 				8425E3C42728A05A00EE7D68 /* ImageAttachmentView.swift in Sources */,
+				8452636D2734396D000E9FC6 /* AddedImageAttachmentsView.swift in Sources */,
 				84EAC8572719910D0042AA98 /* UIColor+Extensions.swift in Sources */,
 				84FB37FD2722C1F900C25DA3 /* NewChatViewModel.swift in Sources */,
 				84EAC86F2719D02A0042AA98 /* LazyView.swift in Sources */,
@@ -7501,6 +7529,7 @@
 				84528424272683C6009857B8 /* ViewExtensions.swift in Sources */,
 				8425E3C62728A0A000EE7D68 /* VideoAttachmentView.swift in Sources */,
 				8425E3D4272962E400EE7D68 /* Modifiers.swift in Sources */,
+				8452636727340731000E9FC6 /* PhotoAttachmentPickerView.swift in Sources */,
 				84EAC87A271D55DC0042AA98 /* ChatChannelListItem.swift in Sources */,
 				84EAC85227198A370042AA98 /* Images.swift in Sources */,
 				84EAC830271979400042AA98 /* StreamChat.swift in Sources */,
@@ -7515,6 +7544,7 @@
 				844B0E1F272C3DE200B71E78 /* LinkTextView.swift in Sources */,
 				84EAC880271D8BE40042AA98 /* ImageLoading.swift in Sources */,
 				8425E3D62729828F00EE7D68 /* MessageComposerView.swift in Sources */,
+				845263602733CE66000E9FC6 /* AttachmentPickerView.swift in Sources */,
 				844BBDBA272FDDBF006B4773 /* DeletedMessageView.swift in Sources */,
 				84EAC85D27199F9C0042AA98 /* NoChannelsView.swift in Sources */,
 				844B0E1D272BEA0E00B71E78 /* LinkAttachmentView.swift in Sources */,
@@ -7533,6 +7563,7 @@
 				84EAC84227197A7F0042AA98 /* InjectedValuesExtensions.swift in Sources */,
 				84EAC83D27197A380042AA98 /* VideoPreviewLoader.swift in Sources */,
 				8425E3BC27289D7600EE7D68 /* KeyboardHandling.swift in Sources */,
+				8452636527340719000E9FC6 /* FileAttachmentPickerView.swift in Sources */,
 				84EAC832271979880042AA98 /* Appearance.swift in Sources */,
 				84EAC829271975350042AA98 /* ChatChannelListView.swift in Sources */,
 				84EAC87C271D5E660042AA98 /* ChatChannelNavigatableListItem.swift in Sources */,
@@ -7549,6 +7580,7 @@
 				84EAC85F2719A57E0042AA98 /* Fonts.swift in Sources */,
 				84232EF0272A914D00EBED48 /* MessageBubble.swift in Sources */,
 				8425E3C82728A13800EE7D68 /* MessageAvatarView.swift in Sources */,
+				8452636927340785000E9FC6 /* CameraAttachmentPickerView.swift in Sources */,
 				8425E3C027289FEC00EE7D68 /* MessageContainerView.swift in Sources */,
 				84EAC86D2719CC3F0042AA98 /* ChatChannelList.swift in Sources */,
 				844B0E1B272BD89700B71E78 /* FileAttachmentPreview.swift in Sources */,
@@ -8968,7 +9000,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.getstream.iOS.DemoAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "com.stream.Stream-SwiftUI Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.getstream.iOS.DemoAppSwiftUI";
 				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

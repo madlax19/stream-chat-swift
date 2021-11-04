@@ -210,6 +210,8 @@ public class Images {
             userAvatarPlaceholder5
         ]
     }
+    
+    public var imagePlaceholder: UIImage = UIImage(systemName: "photo")!
 
     // MARK: - FileAttachmentIcons
 

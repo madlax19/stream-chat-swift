@@ -6,7 +6,7 @@ import Foundation
 import StreamChat
 
 /// Factory used to create view models.
-class ViewModelsFactory {
+public class ViewModelsFactory {
     private init() {}
     
     /// Creates the `ChannelListViewModel`.
@@ -15,7 +15,7 @@ class ViewModelsFactory {
     ///    - channelListController: possibility to inject custom channel list controller.
     ///    - selectedChannelId: pre-selected channel id (used for deeplinking).
     /// - Returns: `ChatChannelListViewModel`.
-    static func makeChannelListViewModel(
+    public static func makeChannelListViewModel(
         channelListController: ChatChannelListController? = nil,
         selectedChannelId: String? = nil
     ) -> ChatChannelListViewModel {
@@ -27,7 +27,7 @@ class ViewModelsFactory {
     
     /// Creates the `ChatChannelViewModel`.
     /// - Parameter channelController: the channel controller.
-    static func makeChannelViewModel(
+    public static func makeChannelViewModel(
         with channelController: ChatChannelController
     ) -> ChatChannelViewModel {
         let viewModel = ChatChannelViewModel(channelController: channelController)
@@ -35,7 +35,7 @@ class ViewModelsFactory {
     }
     
     /// Creates the `NewChatViewModel`.
-    static func makeNewChatViewModel() -> NewChatViewModel {
+    public static func makeNewChatViewModel() -> NewChatViewModel {
         let viewModel = NewChatViewModel()
         return viewModel
     }
@@ -46,7 +46,7 @@ class ViewModelsFactory {
     ///   - channel: the provided channel.
     ///   - actions: list of the channel actions.
     /// - Returns: `MoreChannelActionsViewModel`.
-    static func makeMoreChannelActionsViewModel(
+    public static func makeMoreChannelActionsViewModel(
         channel: ChatChannel,
         actions: [ChannelAction]
     ) -> MoreChannelActionsViewModel {
@@ -55,5 +55,9 @@ class ViewModelsFactory {
             channelActions: actions
         )
         return viewModel
+    }
+    
+    public static func makeMessageComposerViewModel() -> MessageComposerViewModel {
+        MessageComposerViewModel()
     }
 }
