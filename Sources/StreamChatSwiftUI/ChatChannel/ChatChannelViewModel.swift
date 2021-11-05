@@ -34,16 +34,9 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     @Atomic private var loadingPreviousMessages: Bool = false
     @Atomic private var lastMessageRead: String?
     
-    private var channelController: ChatChannelController
+    var channelController: ChatChannelController
     
     @Published var scrolledId: String?
-    @Published var text = "" {
-        didSet {
-            if text != "" {
-                channelController.sendKeystrokeEvent()
-            }
-        }
-    }
 
     @Published var showScrollToLatestButton = false
     @Published var currentDateString: String?
@@ -97,21 +90,6 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
             subscribeToTypingChanges()
         }
     }
-       
-    // TODO: temp implementation.
-    func sendMessage() {
-        channelController.createNewMessage(text: text) { [weak self] in
-            switch $0 {
-            case let .success(response):
-                print(response)
-                self?.scrollToLastMessage()
-            case let .failure(error):
-                print(error)
-            }
-        }
-        
-        text = ""
-    }
     
     func scrollToLastMessage() {
         if scrolledId != messages.first?.id {
@@ -132,8 +110,10 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         _ channelController: ChatChannelController,
         didUpdateMessages changes: [ListChange<ChatMessage>]
     ) {
+        let lastSentByUser = lastMessageSentByUser(changes: changes)
         messages = channelController.messages
-        if !showScrollToLatestButton {
+        
+        if !showScrollToLatestButton || lastSentByUser {
             scrollToLastMessage()
         }
     }
@@ -206,6 +186,17 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         if message.id != lastMessageRead {
             lastMessageRead = message.id
             channelController.markRead()
+        }
+    }
+    
+    private func lastMessageSentByUser(changes: [ListChange<ChatMessage>]) -> Bool {
+        let lastChanged = changes.last
+        
+        switch lastChanged {
+        case .insert(let item, index: _):
+            return item.isSentByCurrentUser
+        default:
+            return false
         }
     }
 }

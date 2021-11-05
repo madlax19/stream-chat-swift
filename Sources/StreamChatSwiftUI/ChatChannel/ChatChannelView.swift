@@ -44,8 +44,7 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             Divider()
             
             MessageComposerView(
-                text: $viewModel.text,
-                sendMessageTapped: viewModel.sendMessage
+                channelController: viewModel.channelController
             )
         }
         .modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))

@@ -3,12 +3,70 @@
 //
 
 import Photos
+import StreamChat
 import SwiftUI
 
 public class MessageComposerViewModel: ObservableObject {
     @Published private(set) var pickerState: AttachmentPickerState = .photos
     @Published private(set) var imageAssets: PHFetchResult<PHAsset>?
-    @Published private(set) var addedImages = [AddedImage]()
+    @Published private(set) var addedImages = [AddedImage]() {
+        didSet {
+            pickerTypeState = addedImages.count > 0 ? .collapsed : .expanded(.media)
+        }
+    }
+
+    @Published var text = "" {
+        didSet {
+            if text != "" {
+                // TODO: check for the three rows
+                pickerTypeState = .collapsed
+                channelController.sendKeystrokeEvent()
+            }
+        }
+    }
+
+    @Published var pickerTypeState: PickerTypeState = .expanded(.none) {
+        didSet {
+            switch pickerTypeState {
+            case let .expanded(attachmentPickerType):
+                overlayShown = attachmentPickerType != .none
+            case .collapsed:
+                log.debug("Collapsed state shown, no changes to overlay.")
+            }
+        }
+    }
+
+    @Published private(set) var overlayShown = false {
+        didSet {
+            if overlayShown == true {
+                resignFirstResponder()
+            }
+        }
+    }
+    
+    private let channelController: ChatChannelController
+    
+    public init(channelController: ChatChannelController) {
+        self.channelController = channelController
+    }
+    
+    // TODO: temp implementation.
+    public func sendMessage() {
+        channelController.createNewMessage(text: text) {
+            switch $0 {
+            case let .success(response):
+                print(response)
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+        text = ""
+    }
+    
+    public var sendButtonEnabled: Bool {
+        !addedImages.isEmpty || !text.isEmpty
+    }
     
     public func change(pickerState: AttachmentPickerState) {
         if pickerState != self.pickerState {

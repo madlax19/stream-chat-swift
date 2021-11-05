@@ -14,7 +14,10 @@ public struct AttachmentPickerView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            AttachmentSourcePickerView(onTap: viewModel.change(pickerState:))
+            AttachmentSourcePickerView(
+                selected: viewModel.pickerState,
+                onTap: viewModel.change(pickerState:)
+            )
             
             if viewModel.pickerState == .photos {
                 if let assets = viewModel.imageAssets {
@@ -54,6 +57,7 @@ public struct AttachmentPickerView: View {
 struct AttachmentSourcePickerView: View {
     @Injected(\.colors) var colors
     
+    var selected: AttachmentPickerState
     var onTap: (AttachmentPickerState) -> Void
     
     var body: some View {
@@ -61,18 +65,21 @@ struct AttachmentSourcePickerView: View {
             AttachmentPickerButton(
                 iconName: "photo",
                 pickerType: .photos,
+                isSelected: selected == .photos,
                 onTap: onTap
             )
             
             AttachmentPickerButton(
                 iconName: "folder",
                 pickerType: .files,
+                isSelected: selected == .files,
                 onTap: onTap
             )
             
             AttachmentPickerButton(
                 iconName: "camera",
                 pickerType: .camera,
+                isSelected: selected == .camera,
                 onTap: onTap
             )
             
@@ -89,6 +96,7 @@ struct AttachmentPickerButton: View {
     
     var iconName: String
     var pickerType: AttachmentPickerState
+    var isSelected: Bool
     var onTap: (AttachmentPickerState) -> Void
     
     var body: some View {
@@ -96,7 +104,10 @@ struct AttachmentPickerButton: View {
             onTap(pickerType)
         } label: {
             Image(systemName: iconName)
-                .foregroundColor(Color(colors.textLowEmphasis))
+                .foregroundColor(
+                    isSelected ? Color(colors.highlightedAccentBackground)
+                        : Color(colors.textLowEmphasis)
+                )
         }
     }
 }

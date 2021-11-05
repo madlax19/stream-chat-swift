@@ -57,7 +57,9 @@ public class ViewModelsFactory {
         return viewModel
     }
     
-    public static func makeMessageComposerViewModel() -> MessageComposerViewModel {
-        MessageComposerViewModel()
+    public static func makeMessageComposerViewModel(
+        with channelController: ChatChannelController
+    ) -> MessageComposerViewModel {
+        MessageComposerViewModel(channelController: channelController)
     }
 }

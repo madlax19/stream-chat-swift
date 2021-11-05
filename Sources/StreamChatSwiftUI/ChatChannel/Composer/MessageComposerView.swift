@@ -2,6 +2,7 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import StreamChat
 import SwiftUI
 
 public struct MessageComposerView: View, KeyboardReadable {
@@ -10,29 +11,19 @@ public struct MessageComposerView: View, KeyboardReadable {
     // Initial popup size, before the keyboard is shown.
     @State private var popupSize: CGFloat = 350
     
-    @Binding var text: String
-    var sendMessageTapped: () -> Void
-    
-    @State var overlayShown = false {
-        didSet {
-            if overlayShown == true {
-                resignFirstResponder()
-            }
-        }
+    public init(channelController: ChatChannelController) {
+        _viewModel = StateObject(
+            wrappedValue: ViewModelsFactory.makeMessageComposerViewModel(with: channelController)
+        )
     }
     
-    @StateObject var viewModel: MessageComposerViewModel = ViewModelsFactory.makeMessageComposerViewModel()
+    @StateObject var viewModel: MessageComposerViewModel
     
     public var body: some View {
         VStack {
             HStack(alignment: .bottom) {
-                Button {
-                    withAnimation {
-                        overlayShown.toggle()
-                    }
-                } label: {
-                    Text("show")
-                }
+                AttachmentPickerTypeView(pickerTypeState: $viewModel.pickerTypeState)
+                    .padding(.bottom, 8)
 
                 VStack {
                     if !viewModel.addedImages.isEmpty {
@@ -43,7 +34,7 @@ public struct MessageComposerView: View, KeyboardReadable {
                         .transition(.scale)
                         .animation(.default)
                     }
-                    TextField("Send a message", text: $text)
+                    TextField("Send a message", text: $viewModel.text)
                 }
                 .padding(.vertical, 8)
                 .padding(.leading, 8)
@@ -51,26 +42,27 @@ public struct MessageComposerView: View, KeyboardReadable {
                 .cornerRadius(20)
                 
                 Spacer()
-                Button {
-                    sendMessageTapped()
-                } label: {
-                    Text("Send")
-                }
+                
+                SendMessageButton(
+                    enabled: viewModel.sendButtonEnabled,
+                    onTap: viewModel.sendMessage
+                )
+                .padding(.bottom, 8)
             }
             .padding()
             
             AttachmentPickerView(
                 viewModel: viewModel,
-                isDisplayed: overlayShown,
-                height: overlayShown ? popupSize : 0
+                isDisplayed: viewModel.overlayShown,
+                height: viewModel.overlayShown ? popupSize : 0
             )
-            .offset(y: overlayShown ? 0 : popupSize)
+            .offset(y: viewModel.overlayShown ? 0 : popupSize)
             .animation(.default)
         }
         .onReceive(keyboardPublisher) { visible in
             if visible {
                 withAnimation(.easeInOut(duration: 0.02)) {
-                    overlayShown = false
+                    viewModel.pickerTypeState = .expanded(.none)
                 }
             }
         }
