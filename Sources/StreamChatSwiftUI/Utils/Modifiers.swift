@@ -42,9 +42,26 @@ struct StandardPaddingModifier: ViewModifier {
     }
 }
 
+struct RoundedBorderModifier: ViewModifier {
+    @Injected(\.colors) var colors
+    var cornerRadius: CGFloat = 18
+    
+    func body(content: Content) -> some View {
+        content.overlay(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color(colors.innerBorder), lineWidth: 1)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+    }
+}
+
 extension View {
     /// View extension that applies default padding to elements.
     func standardPadding() -> some View {
         modifier(StandardPaddingModifier())
+    }
+    
+    func roundWithBorder(cornerRadius: CGFloat = 18) -> some View {
+        modifier(RoundedBorderModifier(cornerRadius: cornerRadius))
     }
 }

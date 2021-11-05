@@ -41,22 +41,11 @@ public struct FileAttachmentView: View {
             Button {
                 fullScreenShown = true
             } label: {
-                HStack {
-                    Image(uiImage: previewImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 34, height: 40)
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(attachment.title ?? "")
-                            .font(fonts.bodyBold)
-                            .lineLimit(1)
-                            .foregroundColor(Color(colors.text))
-                        Text(attachment.file.sizeString)
-                            .font(fonts.footnote)
-                            .lineLimit(1)
-                            .foregroundColor(Color(colors.textLowEmphasis))
-                    }
-                }
+                FileAttachmentDisplayView(
+                    url: attachment.assetURL,
+                    title: attachment.title ?? "",
+                    sizeString: attachment.file.sizeString
+                )
             }
             
             Spacer()
@@ -64,18 +53,44 @@ public struct FileAttachmentView: View {
         .padding(.all, 8)
         .background(Color(colors.background))
         .frame(width: width)
-        .overlay(
-            RoundedRectangle(cornerRadius: 18)
-                .stroke(Color(colors.innerBorder), lineWidth: 1)
-        )
-        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .roundWithBorder()
         .sheet(isPresented: $fullScreenShown) {
             FileAttachmentPreview(url: attachment.assetURL)
         }
     }
+}
+
+struct FileAttachmentDisplayView: View {
+    @Injected(\.images) var images
+    @Injected(\.fonts) var fonts
+    @Injected(\.colors) var colors
+    
+    var url: URL
+    var title: String
+    var sizeString: String
+    
+    var body: some View {
+        HStack {
+            Image(uiImage: previewImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 34, height: 40)
+            VStack(alignment: .leading, spacing: 8) {
+                Text(title)
+                    .font(fonts.bodyBold)
+                    .lineLimit(1)
+                    .foregroundColor(Color(colors.text))
+                Text(sizeString)
+                    .font(fonts.footnote)
+                    .lineLimit(1)
+                    .foregroundColor(Color(colors.textLowEmphasis))
+            }
+            Spacer()
+        }
+    }
     
     private var previewImage: UIImage {
-        let iconName = attachment.assetURL.pathExtension
+        let iconName = url.pathExtension
         return images.documentPreviews[iconName] ?? images.fileFallback
     }
 }

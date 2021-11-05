@@ -11,7 +11,7 @@ public class MessageComposerViewModel: ObservableObject {
     @Published private(set) var imageAssets: PHFetchResult<PHAsset>?
     @Published private(set) var addedImages = [AddedImage]() {
         didSet {
-            pickerTypeState = addedImages.count > 0 ? .collapsed : .expanded(.media)
+            checkPickerSelectionState()
         }
     }
 
@@ -22,6 +22,12 @@ public class MessageComposerViewModel: ObservableObject {
                 pickerTypeState = .collapsed
                 channelController.sendKeystrokeEvent()
             }
+        }
+    }
+    
+    @Published var addedFileURLs = [URL]() {
+        didSet {
+            checkPickerSelectionState()
         }
     }
 
@@ -43,6 +49,8 @@ public class MessageComposerViewModel: ObservableObject {
             }
         }
     }
+    
+    @Published var filePickerShown = false
     
     private let channelController: ChatChannelController
     
@@ -92,6 +100,26 @@ public class MessageComposerViewModel: ObservableObject {
         addedImages = images
     }
     
+    func removeAttachment(with id: String) {
+        if let url = URL(string: id) {
+            var urls = [URL]()
+            for added in addedFileURLs {
+                if url != added {
+                    urls.append(added)
+                }
+            }
+            addedFileURLs = urls
+        } else {
+            var images = [AddedImage]()
+            for image in addedImages {
+                if image.id != id {
+                    images.append(image)
+                }
+            }
+            addedImages = images
+        }
+    }
+    
     func isImageSelected(with id: String) -> Bool {
         for image in addedImages {
             if image.id == id {
@@ -119,6 +147,12 @@ public class MessageComposerViewModel: ObservableObject {
                 print("Not handled status")
             }
         }
+    }
+    
+    // MARK: - private
+    
+    private func checkPickerSelectionState() {
+        pickerTypeState = (!addedImages.isEmpty || !addedFileURLs.isEmpty) ? .collapsed : .expanded(.media)
     }
 }
 

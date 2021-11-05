@@ -29,11 +29,24 @@ public struct MessageComposerView: View, KeyboardReadable {
                     if !viewModel.addedImages.isEmpty {
                         AddedImageAttachmentsView(
                             images: viewModel.addedImages,
-                            onImageTap: viewModel.imageTapped(_:)
+                            onDiscardAttachment: viewModel.removeAttachment(with:)
                         )
                         .transition(.scale)
                         .animation(.default)
                     }
+                    
+                    if !viewModel.addedFileURLs.isEmpty {
+                        if !viewModel.addedImages.isEmpty {
+                            Divider()
+                        }
+                        
+                        AddedFileAttachmentsView(
+                            addedFileURLs: viewModel.addedFileURLs,
+                            onDiscardAttachment: viewModel.removeAttachment(with:)
+                        )
+                        .padding(.trailing, 8)
+                    }
+                    
                     TextField("Send a message", text: $viewModel.text)
                 }
                 .padding(.vertical, 8)

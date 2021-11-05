@@ -6,7 +6,7 @@ import SwiftUI
 
 public struct AddedImageAttachmentsView: View {
     var images: [AddedImage]
-    var onImageTap: (AddedImage) -> Void
+    var onDiscardAttachment: (String) -> Void
     
     public var body: some View {
         ScrollView(.horizontal) {
@@ -18,23 +18,10 @@ public struct AddedImageAttachmentsView: View {
                         .frame(width: 100)
                         .cornerRadius(12)
                         .overlay(
-                            TopRightView {
-                                Button(action: {
-                                    withAnimation {
-                                        onImageTap(attachment)
-                                    }
-                                }, label: {
-                                    ZStack {
-                                        Circle()
-                                            .fill(Color.white)
-                                            .frame(width: 16, height: 16)
-                                        
-                                        Image(systemName: "xmark.circle.fill")
-                                            .foregroundColor(Color.black.opacity(0.8))
-                                    }
-                                    .padding(.all, 4)
-                                })
-                            }
+                            DiscardAttachmentButton(
+                                attachmentIdentifier: attachment.id,
+                                onDiscard: onDiscardAttachment
+                            )
                         )
                 }
             }

@@ -6,6 +6,7 @@ import SwiftUI
 
 public struct AttachmentPickerView: View {
     @Injected(\.colors) var colors
+    @Injected(\.fonts) var fonts
     
     @StateObject var viewModel: MessageComposerViewModel
     
@@ -21,25 +22,34 @@ public struct AttachmentPickerView: View {
             
             if viewModel.pickerState == .photos {
                 if let assets = viewModel.imageAssets {
-                    VStack(spacing: 0) {
-                        Color(colors.background)
-                            .frame(height: 20)
-                        
+                    AttachmentTypeContainer {
                         PhotoAttachmentPickerView(
                             assets: assets,
                             onImageTap: viewModel.imageTapped(_:),
                             imageSelected: viewModel.isImageSelected(with:)
                         )
-                        .background(Color(colors.background))
                     }
-                    .background(Color(colors.background1))
-                    .cornerRadius(16)
-
                 } else {
                     Text("permissions screen")
                     Spacer()
                 }
                 
+            } else if viewModel.pickerState == .files {
+                AttachmentTypeContainer {
+                    ZStack {
+                        Button {
+                            viewModel.filePickerShown = true
+                        } label: {
+                            Text("Add more files")
+                                .font(fonts.bodyBold)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundColor(Color(colors.highlightedAccentBackground))
+                    .sheet(isPresented: $viewModel.filePickerShown) {
+                        FilePickerView(fileURLs: $viewModel.addedFileURLs)
+                    }
+                }
             } else {
                 Spacer()
             }
@@ -51,6 +61,24 @@ public struct AttachmentPickerView: View {
                 viewModel.askForPhotosPermission()
             }
         }
+    }
+}
+
+struct AttachmentTypeContainer<Content: View>: View {
+    @Injected(\.colors) var colors
+    
+    var content: () -> Content
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Color(colors.background)
+                .frame(height: 20)
+            
+            content()
+                .background(Color(colors.background))
+        }
+        .background(Color(colors.background1))
+        .cornerRadius(16)
     }
 }
 
