@@ -21,10 +21,11 @@ public struct AttachmentPickerView: View {
             )
             
             if viewModel.pickerState == .photos {
-                if let assets = viewModel.imageAssets {
+                if let assets = viewModel.imageAssets,
+                   let collection = PHFetchResultCollection(fetchResult: assets) {
                     AttachmentTypeContainer {
                         PhotoAttachmentPickerView(
-                            assets: assets,
+                            assets: collection,
                             onImageTap: viewModel.imageTapped(_:),
                             imageSelected: viewModel.isImageSelected(with:)
                         )

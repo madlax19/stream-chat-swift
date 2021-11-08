@@ -161,6 +161,7 @@ public class MessageComposerViewModel: ObservableObject {
             case .authorized, .limited:
                 print("Good to proceed")
                 let fetchOptions = PHFetchOptions()
+                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 DispatchQueue.main.async { [unowned self] in
                     self.imageAssets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                 }

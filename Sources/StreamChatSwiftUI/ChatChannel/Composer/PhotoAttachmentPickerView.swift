@@ -10,32 +10,47 @@ public struct PhotoAttachmentPickerView: View {
     
     @StateObject var assetLoader = PhotoAssetLoader()
     
-    var assets: PHFetchResult<PHAsset>
+    var assets: PHFetchResultCollection
     var onImageTap: (AddedImage) -> Void
     var imageSelected: (String) -> Bool
     
-    let columns = [GridItem(.adaptive(minimum: 100), spacing: 2)]
+    let columns = [GridItem(.adaptive(minimum: 120), spacing: 2)]
     
     public var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 2) {
-                ForEach(0..<assets.count) { i in
+                ForEach(assets) { asset in
                     PhotoAttachmentCell(
                         assetLoader: assetLoader,
-                        asset: assets[i],
+                        asset: asset,
                         onImageTap: onImageTap,
                         imageSelected: imageSelected
                     )
-                    .id(identifier(for: assets[i]))
                 }
             }
             .padding(.horizontal, 2)
             .animation(nil)
         }
     }
-    
-    private func identifier(for asset: PHAsset) -> String {
-        "\(asset.localIdentifier)-\(imageSelected(asset.localIdentifier))"
+}
+
+extension PHAsset: Identifiable {
+    public var id: String {
+        localIdentifier
+    }
+}
+
+struct PHFetchResultCollection: RandomAccessCollection, Equatable {
+    typealias Element = PHAsset
+    typealias Index = Int
+
+    let fetchResult: PHFetchResult<PHAsset>
+
+    var endIndex: Int { fetchResult.count }
+    var startIndex: Int { 0 }
+
+    subscript(position: Int) -> PHAsset {
+        fetchResult.object(at: position)
     }
 }
 
@@ -51,34 +66,39 @@ public struct PhotoAttachmentCell: View {
     
     public var body: some View {
         ZStack {
-            Color(colors.background1)
-                .aspectRatio(1, contentMode: .fill)
-            
             if let image = assetLoader.loadedImages[asset.localIdentifier] {
-                Image(uiImage: image)
-                    .resizable()
+                Color(colors.background1)
                     .aspectRatio(1, contentMode: .fill)
-                    .onTapGesture {
-                        withAnimation {
-                            onImageTap(
-                                AddedImage(
-                                    image: image,
-                                    id: asset.localIdentifier
-                                )
-                            )
-                        }
-                    }
                     .overlay(
-                        imageSelected(asset.localIdentifier) ?
-                            BottomRightView {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .renderingMode(.template)
-                                    .foregroundColor(Color(colors.staticColorText))
-                                    .padding(.all, 4)
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .onTapGesture {
+                                withAnimation {
+                                    onImageTap(
+                                        AddedImage(
+                                            image: image,
+                                            id: asset.localIdentifier
+                                        )
+                                    )
+                                }
                             }
-                            : nil
+                            .overlay(
+                                imageSelected(asset.localIdentifier) ?
+                                    BottomRightView {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .renderingMode(.template)
+                                            .foregroundColor(Color(colors.staticColorText))
+                                            .padding(.all, 4)
+                                    }
+                                    : nil
+                            )
                     )
+                    .clipped()
             } else {
+                Color(colors.background1)
+                    .aspectRatio(1, contentMode: .fill)
+                
                 Image(uiImage: images.imagePlaceholder)
                     .renderingMode(.template)
                     .resizable()
@@ -87,6 +107,7 @@ public struct PhotoAttachmentCell: View {
                     .foregroundColor(Color(colors.background2))
             }
         }
+        .aspectRatio(1, contentMode: .fill)
         .onAppear {
             assetLoader.loadImage(from: asset)
         }
@@ -103,12 +124,12 @@ public class PhotoAssetLoader: NSObject, ObservableObject {
         
         let options = PHImageRequestOptions()
         options.version = .current
-        options.deliveryMode = .highQualityFormat
+        options.deliveryMode = .opportunistic
         
         PHImageManager.default().requestImage(
             for: asset,
-            targetSize: PHImageManagerMaximumSize,
-            contentMode: .aspectFill,
+            targetSize: CGSize(width: 250, height: 250),
+            contentMode: .aspectFit,
             options: options
         ) { [weak self] image, _ in
             guard let self = self, let image = image else { return }
