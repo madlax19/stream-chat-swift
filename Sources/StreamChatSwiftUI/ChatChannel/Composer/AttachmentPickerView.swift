@@ -52,6 +52,11 @@ public struct AttachmentPickerView: View {
                 }
             } else {
                 Spacer()
+                    .sheet(isPresented: $viewModel.cameraPickerShown) {
+                        ImagePickerView(sourceType: .camera) { addedImage in
+                            viewModel.cameraImageAdded(addedImage)
+                        }
+                    }
             }
         }
         .frame(height: height)

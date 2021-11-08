@@ -7,7 +7,14 @@ import StreamChat
 import SwiftUI
 
 public class MessageComposerViewModel: ObservableObject {
-    @Published private(set) var pickerState: AttachmentPickerState = .photos
+    @Published private(set) var pickerState: AttachmentPickerState = .photos {
+        didSet {
+            if pickerState == .camera {
+                cameraPickerShown = true
+            }
+        }
+    }
+
     @Published private(set) var imageAssets: PHFetchResult<PHAsset>?
     @Published private(set) var addedImages = [AddedImage]() {
         didSet {
@@ -51,6 +58,7 @@ public class MessageComposerViewModel: ObservableObject {
     }
     
     @Published var filePickerShown = false
+    @Published var cameraPickerShown = false
     
     private let channelController: ChatChannelController
     
@@ -113,7 +121,7 @@ public class MessageComposerViewModel: ObservableObject {
     }
     
     func removeAttachment(with id: String) {
-        if let url = URL(string: id) {
+        if isURL(string: id), let url = URL(string: id) {
             var urls = [URL]()
             for added in addedFileURLs {
                 if url != added {
@@ -130,6 +138,11 @@ public class MessageComposerViewModel: ObservableObject {
             }
             addedImages = images
         }
+    }
+    
+    func cameraImageAdded(_ image: AddedImage) {
+        addedImages.append(image)
+        pickerState = .photos
     }
     
     func isImageSelected(with id: String) -> Bool {
@@ -165,6 +178,25 @@ public class MessageComposerViewModel: ObservableObject {
     
     private func checkPickerSelectionState() {
         pickerTypeState = (!addedImages.isEmpty || !addedFileURLs.isEmpty) ? .collapsed : .expanded(.media)
+    }
+    
+    private func isURL(string: String) -> Bool {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        
+        guard (detector != nil && !string.isEmpty) else {
+            return false
+        }
+        
+        if detector!.numberOfMatches(
+            in: string,
+            options: NSRegularExpression.MatchingOptions(rawValue: 0),
+            range: NSMakeRange(0, string.count)
+        ) > 0 {
+            return true
+        }
+        
+        return false
     }
 }
 
