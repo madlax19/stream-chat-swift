@@ -68,7 +68,15 @@ public class MessageComposerViewModel: ObservableObject {
     
     // TODO: temp implementation.
     public func sendMessage() {
-        channelController.createNewMessage(text: text) {
+        var attachments = addedImages.map { added in
+            try! AnyAttachmentPayload(localFileURL: added.url, attachmentType: .image)
+        }
+        
+        attachments += addedFileURLs.map { url in
+            try! AnyAttachmentPayload(localFileURL: url, attachmentType: .file)
+        }
+        
+        channelController.createNewMessage(text: text, attachments: attachments) {
             switch $0 {
             case let .success(response):
                 print(response)
@@ -78,6 +86,9 @@ public class MessageComposerViewModel: ObservableObject {
         }
         
         text = ""
+        addedImages = []
+        addedFileURLs = []
+        pickerTypeState = .expanded(.none)
     }
     
     public var sendButtonEnabled: Bool {
@@ -210,4 +221,5 @@ public enum AttachmentPickerState {
 struct AddedImage: Identifiable {
     let image: UIImage
     let id: String
+    let url: URL
 }

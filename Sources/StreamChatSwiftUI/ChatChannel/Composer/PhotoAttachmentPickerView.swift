@@ -60,6 +60,8 @@ public struct PhotoAttachmentCell: View {
     
     @StateObject var assetLoader: PhotoAssetLoader
     
+    @State var assetURL: URL?
+    
     var asset: PHAsset
     var onImageTap: (AddedImage) -> Void
     var imageSelected: (String) -> Bool
@@ -75,12 +77,15 @@ public struct PhotoAttachmentCell: View {
                             .scaledToFill()
                             .onTapGesture {
                                 withAnimation {
-                                    onImageTap(
-                                        AddedImage(
-                                            image: image,
-                                            id: asset.localIdentifier
+                                    if let assetURL = assetURL {
+                                        onImageTap(
+                                            AddedImage(
+                                                image: image,
+                                                id: asset.localIdentifier,
+                                                url: assetURL
+                                            )
                                         )
-                                    )
+                                    }
                                 }
                             }
                             .overlay(
@@ -110,6 +115,9 @@ public struct PhotoAttachmentCell: View {
         .aspectRatio(1, contentMode: .fill)
         .onAppear {
             assetLoader.loadImage(from: asset)
+            asset.requestContentEditingInput(with: nil) { input, _ in
+                self.assetURL = input?.fullSizeImageURL
+            }
         }
     }
 }

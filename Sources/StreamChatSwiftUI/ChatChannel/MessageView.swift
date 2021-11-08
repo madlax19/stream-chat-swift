@@ -18,63 +18,76 @@ struct MessageView<Factory: ViewFactory>: View {
     var isFirst: Bool
     
     var body: some View {
-        if messageTypeResolver.hasCustomAttachment(message: message) {
-            factory.makeCustomAttachmentViewType(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if messageTypeResolver.isDeleted(message: message) {
-            factory.makeDeletedMessageView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if messageTypeResolver.hasLinkAttachment(message: message) {
-            factory.makeLinkAttachmentView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if messageTypeResolver.hasFileAttachment(message: message) {
-            factory.makeFileAttachmentView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if messageTypeResolver.hasImageAttachment(message: message) {
-            factory.makeImageAttachmentView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if messageTypeResolver.hasGiphyAttachment(message: message) {
-            ZStack {
-                factory.makeGiphyAttachmentView(
+        VStack {
+            if messageTypeResolver.hasCustomAttachment(message: message) {
+                factory.makeCustomAttachmentViewType(
                     for: message,
                     isFirst: isFirst,
                     availableWidth: contentWidth
                 )
-                factory.makeGiphyBadgeViewType(
+            } else if messageTypeResolver.isDeleted(message: message) {
+                factory.makeDeletedMessageView(
                     for: message,
+                    isFirst: isFirst,
                     availableWidth: contentWidth
                 )
+            } else if !message.attachmentCounts.isEmpty {
+                if messageTypeResolver.hasLinkAttachment(message: message) {
+                    factory.makeLinkAttachmentView(
+                        for: message,
+                        isFirst: isFirst,
+                        availableWidth: contentWidth
+                    )
+                }
+                
+                if messageTypeResolver.hasFileAttachment(message: message) {
+                    factory.makeFileAttachmentView(
+                        for: message,
+                        isFirst: isFirst,
+                        availableWidth: contentWidth
+                    )
+                }
+                
+                if messageTypeResolver.hasImageAttachment(message: message) {
+                    factory.makeImageAttachmentView(
+                        for: message,
+                        isFirst: isFirst,
+                        availableWidth: contentWidth
+                    )
+                }
+                
+                if messageTypeResolver.hasGiphyAttachment(message: message) {
+                    ZStack {
+                        factory.makeGiphyAttachmentView(
+                            for: message,
+                            isFirst: isFirst,
+                            availableWidth: contentWidth
+                        )
+                        factory.makeGiphyBadgeViewType(
+                            for: message,
+                            availableWidth: contentWidth
+                        )
+                    }
+                }
+                
+                if messageTypeResolver.hasVideoAttachment(message: message) {
+                    factory.makeVideoAttachmentView(
+                        for: message,
+                        isFirst: isFirst,
+                        availableWidth: contentWidth
+                    )
+                }
+            } else {
+                if message.shouldRenderAsJumbomoji {
+                    EmojiTextView(message: message)
+                } else {
+                    factory.makeMessageTextView(
+                        for: message,
+                        isFirst: isFirst,
+                        availableWidth: contentWidth
+                    )
+                }
             }
-            
-        } else if messageTypeResolver.hasVideoAttachment(message: message) {
-            factory.makeVideoAttachmentView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
-        } else if message.shouldRenderAsJumbomoji {
-            EmojiTextView(message: message)
-        } else {
-            factory.makeMessageTextView(
-                for: message,
-                isFirst: isFirst,
-                availableWidth: contentWidth
-            )
         }
     }
 }

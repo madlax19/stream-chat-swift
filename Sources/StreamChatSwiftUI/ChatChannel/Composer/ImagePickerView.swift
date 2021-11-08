@@ -41,8 +41,12 @@ final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, U
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {
-        if let uiImage = info[.originalImage] as? UIImage {
-            let addedImage = AddedImage(image: uiImage, id: UUID().uuidString)
+        if let uiImage = info[.originalImage] as? UIImage, let imageURL = info[.imageURL] as? URL {
+            let addedImage = AddedImage(
+                image: uiImage,
+                id: UUID().uuidString,
+                url: imageURL
+            )
             parent.onImagePicked(addedImage)
         }
         
