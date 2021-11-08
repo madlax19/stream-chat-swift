@@ -82,6 +82,18 @@ public class MessageComposerViewModel: ObservableObject {
         }
     }
     
+    public var inputComposerShouldScroll: Bool {
+        if addedFileURLs.count > 2 {
+            return true
+        }
+        
+        if addedFileURLs.count == 2 && !addedImages.isEmpty {
+            return true
+        }
+        
+        return false
+    }
+    
     func imageTapped(_ addedImage: AddedImage) {
         var images = [AddedImage]()
         var imageRemoved = false

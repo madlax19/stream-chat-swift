@@ -10,13 +10,9 @@ public struct AddedFileAttachmentsView: View {
     var addedFileURLs: [URL]
     var onDiscardAttachment: (String) -> Void
     
-    /*
-     TODO:
-     count (2) != its initial count (1). `ForEach(_:content:)` should only be used for *constant* data. Instead conform data to `Identifiable` or use `ForEach(_:id:content:)` and provide an explicit `id`!
-     */
     public var body: some View {
         VStack {
-            ForEach(0..<addedFileURLs.count) { i in
+            ForEach(0..<addedFileURLs.count, id: \.self) { i in
                 let url = addedFileURLs[i]
                 FileAttachmentDisplayView(
                     url: url,

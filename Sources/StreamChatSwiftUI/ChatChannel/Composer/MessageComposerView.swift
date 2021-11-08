@@ -25,34 +25,14 @@ public struct MessageComposerView: View, KeyboardReadable {
                 AttachmentPickerTypeView(pickerTypeState: $viewModel.pickerTypeState)
                     .padding(.bottom, 8)
 
-                VStack {
-                    if !viewModel.addedImages.isEmpty {
-                        AddedImageAttachmentsView(
-                            images: viewModel.addedImages,
-                            onDiscardAttachment: viewModel.removeAttachment(with:)
-                        )
-                        .transition(.scale)
-                        .animation(.default)
+                if viewModel.inputComposerShouldScroll {
+                    ScrollView {
+                        ComposerInputView(viewModel: viewModel)
                     }
-                    
-                    if !viewModel.addedFileURLs.isEmpty {
-                        if !viewModel.addedImages.isEmpty {
-                            Divider()
-                        }
-                        
-                        AddedFileAttachmentsView(
-                            addedFileURLs: viewModel.addedFileURLs,
-                            onDiscardAttachment: viewModel.removeAttachment(with:)
-                        )
-                        .padding(.trailing, 8)
-                    }
-                    
-                    TextField("Send a message", text: $viewModel.text)
+                    .frame(height: 240)
+                } else {
+                    ComposerInputView(viewModel: viewModel)
                 }
-                .padding(.vertical, 8)
-                .padding(.leading, 8)
-                .background(Color(colors.background1))
-                .cornerRadius(20)
                 
                 Spacer()
                 
@@ -84,5 +64,42 @@ public struct MessageComposerView: View, KeyboardReadable {
                 self.popupSize = height - bottomSafeArea
             }
         }
+    }
+}
+
+struct ComposerInputView: View {
+    @Injected(\.colors) var colors
+    
+    @StateObject var viewModel: MessageComposerViewModel
+    
+    var body: some View {
+        VStack {
+            if !viewModel.addedImages.isEmpty {
+                AddedImageAttachmentsView(
+                    images: viewModel.addedImages,
+                    onDiscardAttachment: viewModel.removeAttachment(with:)
+                )
+                .transition(.scale)
+                .animation(.default)
+            }
+            
+            if !viewModel.addedFileURLs.isEmpty {
+                if !viewModel.addedImages.isEmpty {
+                    Divider()
+                }
+                
+                AddedFileAttachmentsView(
+                    addedFileURLs: viewModel.addedFileURLs,
+                    onDiscardAttachment: viewModel.removeAttachment(with:)
+                )
+                .padding(.trailing, 8)
+            }
+            
+            TextField("Send a message", text: $viewModel.text)
+        }
+        .padding(.vertical, 8)
+        .padding(.leading, 8)
+        .background(Color(colors.background1))
+        .cornerRadius(20)
     }
 }
