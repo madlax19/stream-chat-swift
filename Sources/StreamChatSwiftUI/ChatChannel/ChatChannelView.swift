@@ -44,7 +44,8 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             Divider()
             
             MessageComposerView(
-                channelController: viewModel.channelController
+                channelController: viewModel.channelController,
+                onMessageSent: viewModel.scrollToLastMessage
             )
         }
         .modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))

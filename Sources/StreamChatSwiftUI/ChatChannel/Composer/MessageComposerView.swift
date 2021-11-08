@@ -11,13 +11,19 @@ public struct MessageComposerView: View, KeyboardReadable {
     // Initial popup size, before the keyboard is shown.
     @State private var popupSize: CGFloat = 350
     
-    public init(channelController: ChatChannelController) {
+    public init(
+        channelController: ChatChannelController,
+        onMessageSent: @escaping () -> Void
+    ) {
         _viewModel = StateObject(
             wrappedValue: ViewModelsFactory.makeMessageComposerViewModel(with: channelController)
         )
+        self.onMessageSent = onMessageSent
     }
     
     @StateObject var viewModel: MessageComposerViewModel
+    
+    var onMessageSent: () -> Void
     
     public var body: some View {
         VStack {
@@ -38,7 +44,11 @@ public struct MessageComposerView: View, KeyboardReadable {
                 
                 SendMessageButton(
                     enabled: viewModel.sendButtonEnabled,
-                    onTap: viewModel.sendMessage
+                    onTap: {
+                        viewModel.sendMessage {
+                            onMessageSent()
+                        }
+                    }
                 )
                 .padding(.bottom, 8)
             }

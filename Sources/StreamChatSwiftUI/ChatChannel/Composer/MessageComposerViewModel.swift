@@ -67,7 +67,7 @@ public class MessageComposerViewModel: ObservableObject {
     }
     
     // TODO: temp implementation.
-    public func sendMessage() {
+    public func sendMessage(completion: @escaping () -> Void) {
         var attachments = addedImages.map { added in
             try! AnyAttachmentPayload(localFileURL: added.url, attachmentType: .image)
         }
@@ -78,8 +78,8 @@ public class MessageComposerViewModel: ObservableObject {
         
         channelController.createNewMessage(text: text, attachments: attachments) {
             switch $0 {
-            case let .success(response):
-                print(response)
+            case .success:
+                completion()
             case let .failure(error):
                 print(error)
             }

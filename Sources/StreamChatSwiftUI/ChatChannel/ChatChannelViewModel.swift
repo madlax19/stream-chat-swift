@@ -110,10 +110,9 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         _ channelController: ChatChannelController,
         didUpdateMessages changes: [ListChange<ChatMessage>]
     ) {
-        let lastSentByUser = lastMessageSentByUser(changes: changes)
         messages = channelController.messages
         
-        if !showScrollToLatestButton || lastSentByUser {
+        if !showScrollToLatestButton {
             scrollToLastMessage()
         }
     }
@@ -186,17 +185,6 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         if message.id != lastMessageRead {
             lastMessageRead = message.id
             channelController.markRead()
-        }
-    }
-    
-    private func lastMessageSentByUser(changes: [ListChange<ChatMessage>]) -> Bool {
-        let lastChanged = changes.last
-        
-        switch lastChanged {
-        case .insert(let item, index: _):
-            return item.isSentByCurrentUser
-        default:
-            return false
         }
     }
 }
