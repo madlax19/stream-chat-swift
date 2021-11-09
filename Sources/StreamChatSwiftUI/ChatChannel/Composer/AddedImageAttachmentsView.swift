@@ -17,8 +17,9 @@ public struct AddedImageAttachmentsView: View {
                 ForEach(images) { attachment in
                     Image(uiImage: attachment.image)
                         .resizable()
-                        .aspectRatio(1, contentMode: .fill)
-                        .frame(width: 100)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipped()
                         .cornerRadius(12)
                         .overlay(
                             ZStack {
