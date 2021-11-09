@@ -13,11 +13,27 @@ public struct FileAttachmentsContainer: View {
     public var body: some View {
         VStack(spacing: 4) {
             ForEach(message.fileAttachments, id: \.self) { attachment in
-                FileAttachmentView(
-                    attachment: attachment,
-                    width: width,
-                    isFirst: isFirst
-                )
+                if message.text.isEmpty {
+                    FileAttachmentView(
+                        attachment: attachment,
+                        width: width,
+                        isFirst: isFirst
+                    )
+                } else {
+                    VStack(spacing: 0) {
+                        FileAttachmentView(
+                            attachment: attachment,
+                            width: width,
+                            isFirst: isFirst
+                        )
+
+                        HStack {
+                            Text(message.text)
+                                .standardPadding()
+                            Spacer()
+                        }
+                    }
+                }
             }
         }
         .padding(.all, 4)
@@ -54,6 +70,7 @@ public struct FileAttachmentView: View {
         .background(Color(colors.background))
         .frame(width: width)
         .roundWithBorder()
+        .withUploadingStateIndicator(for: attachment.uploadingState, url: attachment.assetURL)
         .sheet(isPresented: $fullScreenShown) {
             FileAttachmentPreview(url: attachment.assetURL)
         }

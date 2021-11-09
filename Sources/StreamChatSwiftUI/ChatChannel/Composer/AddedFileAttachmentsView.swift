@@ -2,6 +2,7 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import StreamChat
 import SwiftUI
 
 public struct AddedFileAttachmentsView: View {
@@ -17,9 +18,10 @@ public struct AddedFileAttachmentsView: View {
                 FileAttachmentDisplayView(
                     url: url,
                     title: url.lastPathComponent,
-                    sizeString: ""
+                    sizeString: sizeString(for: url)
                 )
                 .padding(.all, 8)
+                .padding(.trailing, 8)
                 .background(Color(colors.background))
                 .roundWithBorder()
                 .id(url)
@@ -31,5 +33,13 @@ public struct AddedFileAttachmentsView: View {
                 )
             }
         }
+    }
+    
+    private func sizeString(for url: URL) -> String {
+        if let file = try? AttachmentFile(url: url) {
+            return file.sizeString
+        }
+        
+        return ""
     }
 }
