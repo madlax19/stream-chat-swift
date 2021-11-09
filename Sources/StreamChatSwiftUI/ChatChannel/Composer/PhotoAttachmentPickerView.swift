@@ -57,6 +57,7 @@ struct PHFetchResultCollection: RandomAccessCollection, Equatable {
 public struct PhotoAttachmentCell: View {
     @Injected(\.colors) var colors
     @Injected(\.images) var images
+    @Injected(\.fonts) var fonts
     
     @StateObject var assetLoader: PhotoAssetLoader
     
@@ -69,37 +70,26 @@ public struct PhotoAttachmentCell: View {
     public var body: some View {
         ZStack {
             if let image = assetLoader.loadedImages[asset.localIdentifier] {
-                Color(colors.background1)
-                    .aspectRatio(1, contentMode: .fill)
-                    .overlay(
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFill()
-                            .onTapGesture {
-                                withAnimation {
-                                    if let assetURL = assetURL {
-                                        onImageTap(
-                                            AddedImage(
-                                                image: image,
-                                                id: asset.localIdentifier,
-                                                url: assetURL
-                                            )
+                GeometryReader { reader in
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: reader.size.width, height: reader.size.height)
+                        .clipped()
+                        .onTapGesture {
+                            withAnimation {
+                                if let assetURL = assetURL {
+                                    onImageTap(
+                                        AddedImage(
+                                            image: image,
+                                            id: asset.localIdentifier,
+                                            url: assetURL
                                         )
-                                    }
+                                    )
                                 }
                             }
-                            .overlay(
-                                imageSelected(asset.localIdentifier) ?
-                                    BottomRightView {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .renderingMode(.template)
-                                            .foregroundColor(Color(colors.staticColorText))
-                                            .padding(.all, 4)
-                                    }
-                                    : nil
-                            )
-                    )
-                    .clipped()
+                        }
+                }
             } else {
                 Color(colors.background1)
                     .aspectRatio(1, contentMode: .fill)
@@ -113,6 +103,33 @@ public struct PhotoAttachmentCell: View {
             }
         }
         .aspectRatio(1, contentMode: .fill)
+        .overlay(
+            ZStack {
+                if imageSelected(asset.localIdentifier) {
+                    TopRightView {
+                        Image(systemName: "checkmark.circle.fill")
+                            .renderingMode(.template)
+                            .applyDefaultIconOverlayStyle()
+                    }
+                }
+                
+                if asset.mediaType == .video {
+                    BottomLeftView {
+                        Image(systemName: "video")
+                            .renderingMode(.template)
+                            .font(.system(size: 17, weight: .bold))
+                            .applyDefaultIconOverlayStyle()
+                    }
+                    
+                    BottomRightView {
+                        Text(asset.durationString)
+                            .foregroundColor(Color(colors.staticColorText))
+                            .font(fonts.footnoteBold)
+                            .padding(.all, 4)
+                    }
+                }
+            }
+        )
         .onAppear {
             assetLoader.loadImage(from: asset)
             asset.requestContentEditingInput(with: nil) { input, _ in
@@ -147,5 +164,22 @@ public class PhotoAssetLoader: NSObject, ObservableObject {
     
     func didReceiveMemoryWarning() {
         loadedImages = [String: UIImage]()
+    }
+}
+
+extension PHAsset {
+    var durationString: String {
+        let minutes = Int(duration / 60)
+        let seconds = Int(duration.truncatingRemainder(dividingBy: 60))
+        var minutesString = "\(minutes)"
+        var secondsString = "\(seconds)"
+        if minutes < 10 {
+            minutesString = "0" + minutesString
+        }
+        if seconds < 10 {
+            secondsString = "0" + secondsString
+        }
+        
+        return "\(minutesString):\(secondsString)"
     }
 }

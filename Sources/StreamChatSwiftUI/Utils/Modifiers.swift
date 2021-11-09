@@ -55,6 +55,16 @@ struct RoundedBorderModifier: ViewModifier {
     }
 }
 
+struct IconOverImageModifier: ViewModifier {
+    @Injected(\.colors) var colors
+    
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(Color(colors.staticColorText))
+            .padding(.all, 4)
+    }
+}
+
 extension View {
     /// View extension that applies default padding to elements.
     func standardPadding() -> some View {
@@ -63,5 +73,9 @@ extension View {
     
     func roundWithBorder(cornerRadius: CGFloat = 18) -> some View {
         modifier(RoundedBorderModifier(cornerRadius: cornerRadius))
+    }
+    
+    func applyDefaultIconOverlayStyle() -> some View {
+        modifier(IconOverImageModifier())
     }
 }

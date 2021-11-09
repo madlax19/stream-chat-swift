@@ -181,7 +181,7 @@ public class MessageComposerViewModel: ObservableObject {
                 let fetchOptions = PHFetchOptions()
                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 DispatchQueue.main.async { [unowned self] in
-                    self.imageAssets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                    self.imageAssets = PHAsset.fetchAssets(with: fetchOptions)
                 }
             case .denied, .restricted:
                 print("Not allowed")
