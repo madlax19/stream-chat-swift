@@ -9,25 +9,25 @@ import SwiftUI
 
 public struct ImageAttachmentContainer: View {
     let message: ChatMessage
-    let sources: [URL]
     let width: CGFloat
     let isFirst: Bool
-        
+    let isGiphy: Bool
+                
     public var body: some View {
         if message.text.isEmpty {
             ImageAttachmentView(
                 message: message,
-                sources: sources,
-                width: width
+                width: width,
+                isGiphy: isGiphy
             )
             .messageBubble(for: message, isFirst: isFirst)
         } else {
             VStack(spacing: 0) {
-                if !sources.isEmpty {
+                if hasAttachments {
                     ImageAttachmentView(
                         message: message,
-                        sources: sources,
-                        width: width
+                        width: width,
+                        isGiphy: isGiphy
                     )
                 }
 
@@ -40,6 +40,10 @@ public struct ImageAttachmentContainer: View {
             .messageBubble(for: message, isFirst: isFirst)
         }
     }
+    
+    private var hasAttachments: Bool {
+        isGiphy ? !message.giphyAttachments.isEmpty : !message.imageAttachments.isEmpty
+    }
 }
 
 struct ImageAttachmentView: View {
@@ -47,11 +51,31 @@ struct ImageAttachmentView: View {
     @Injected(\.fonts) var fonts
     
     let message: ChatMessage
-    let sources: [URL]
     let width: CGFloat
+    let isGiphy: Bool
     
     private let spacing: CGFloat = 2
     private let maxDisplayedImages = 4
+    
+    private var sources: [URL] {
+        if isGiphy {
+            return message.giphyAttachments.map { attachment in
+                if let state = attachment.uploadingState {
+                    return state.localFileURL
+                } else {
+                    return attachment.previewURL
+                }
+            }
+        } else {
+            return message.imageAttachments.map { attachment in
+                if let state = attachment.uploadingState {
+                    return state.localFileURL
+                } else {
+                    return attachment.imagePreviewURL
+                }
+            }
+        }
+    }
     
     var body: some View {
         Group {
@@ -60,17 +84,20 @@ struct ImageAttachmentView: View {
                     source: sources[0],
                     width: width
                 )
+                .withUploadingStateIndicator(for: uploadState(for: 0), url: sources[0])
             } else if sources.count == 2 {
                 HStack(spacing: spacing) {
                     MultiImageView(
                         source: sources[0],
                         width: width / 2
                     )
+                    .withUploadingStateIndicator(for: uploadState(for: 0), url: sources[0])
                     
                     MultiImageView(
                         source: sources[1],
                         width: width / 2
                     )
+                    .withUploadingStateIndicator(for: uploadState(for: 1), url: sources[1])
                 }
                 .aspectRatio(1, contentMode: .fill)
             } else if sources.count == 3 {
@@ -79,16 +106,20 @@ struct ImageAttachmentView: View {
                         source: sources[0],
                         width: width / 2
                     )
+                    .withUploadingStateIndicator(for: uploadState(for: 0), url: sources[0])
                     
                     VStack(spacing: spacing) {
                         MultiImageView(
                             source: sources[1],
                             width: width / 2
                         )
+                        .withUploadingStateIndicator(for: uploadState(for: 1), url: sources[1])
+                        
                         MultiImageView(
                             source: sources[2],
                             width: width / 2
                         )
+                        .withUploadingStateIndicator(for: uploadState(for: 2), url: sources[2])
                     }
                 }
                 .aspectRatio(1, contentMode: .fill)
@@ -99,10 +130,13 @@ struct ImageAttachmentView: View {
                             source: sources[0],
                             width: width / 2
                         )
+                        .withUploadingStateIndicator(for: uploadState(for: 0), url: sources[0])
+                        
                         MultiImageView(
                             source: sources[1],
                             width: width / 2
                         )
+                        .withUploadingStateIndicator(for: uploadState(for: 1), url: sources[1])
                     }
                     
                     VStack(spacing: spacing) {
@@ -110,12 +144,14 @@ struct ImageAttachmentView: View {
                             source: sources[2],
                             width: width / 2
                         )
+                        .withUploadingStateIndicator(for: uploadState(for: 2), url: sources[2])
                         
                         ZStack {
                             MultiImageView(
                                 source: sources[3],
                                 width: width / 2
                             )
+                            .withUploadingStateIndicator(for: uploadState(for: 3), url: sources[3])
                             
                             if notDisplayedImages > 0 {
                                 Color.black.opacity(0.4)
@@ -135,6 +171,14 @@ struct ImageAttachmentView: View {
     
     private var notDisplayedImages: Int {
         sources.count > maxDisplayedImages ? sources.count - maxDisplayedImages : 0
+    }
+    
+    private func uploadState(for index: Int) -> AttachmentUploadingState? {
+        if isGiphy {
+            return message.giphyAttachments[index].uploadingState
+        } else {
+            return message.imageAttachments[index].uploadingState
+        }
     }
 }
 

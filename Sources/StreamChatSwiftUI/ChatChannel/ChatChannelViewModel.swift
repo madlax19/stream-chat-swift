@@ -189,4 +189,20 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     }
 }
 
-extension ChatMessage: Identifiable {}
+extension ChatMessage: Identifiable {
+    var messageId: String {
+        var states = imageAttachments.compactMap { $0.uploadingState?.state }
+        states += giphyAttachments.compactMap { $0.uploadingState?.state }
+        states += videoAttachments.compactMap { $0.uploadingState?.state }
+        states += fileAttachments.compactMap { $0.uploadingState?.state }
+        
+        if states.isEmpty {
+            return id
+        }
+        
+        let strings = states.map { "\($0)" }
+        let combined = strings.joined(separator: "-")
+        let id = "\(id)-\(combined)"
+        return id
+    }
+}

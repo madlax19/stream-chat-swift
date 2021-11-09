@@ -122,15 +122,11 @@ extension ViewFactory {
         isFirst: Bool,
         availableWidth: CGFloat
     ) -> ImageAttachmentContainer {
-        let sources = message.imageAttachments.map { attachment in
-            attachment.imagePreviewURL
-        }
-
-        return ImageAttachmentContainer(
+        ImageAttachmentContainer(
             message: message,
-            sources: sources,
             width: availableWidth,
-            isFirst: isFirst
+            isFirst: isFirst,
+            isGiphy: false
         )
     }
     
@@ -139,15 +135,11 @@ extension ViewFactory {
         isFirst: Bool,
         availableWidth: CGFloat
     ) -> ImageAttachmentContainer {
-        let sources = message.giphyAttachments.map { attachment in
-            attachment.previewURL
-        }
-        
-        return ImageAttachmentContainer(
+        ImageAttachmentContainer(
             message: message,
-            sources: sources,
             width: availableWidth,
-            isFirst: isFirst
+            isFirst: isFirst,
+            isGiphy: true
         )
     }
     

@@ -73,7 +73,8 @@ public class MessageComposerViewModel: ObservableObject {
         }
         
         attachments += addedFileURLs.map { url in
-            try! AnyAttachmentPayload(localFileURL: url, attachmentType: .file)
+            _ = url.startAccessingSecurityScopedResource()
+            return try! AnyAttachmentPayload(localFileURL: url, attachmentType: .file)
         }
         
         channelController.createNewMessage(text: text, attachments: attachments) {
