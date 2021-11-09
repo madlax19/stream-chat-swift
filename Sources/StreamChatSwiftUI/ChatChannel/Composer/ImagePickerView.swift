@@ -41,7 +41,8 @@ final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, U
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {
-        if let uiImage = info[.originalImage] as? UIImage, let imageURL = info[.imageURL] as? URL {
+        if let uiImage = info[.originalImage] as? UIImage,
+           let imageURL = try? uiImage.temporaryLocalFileUrl() {
             let addedImage = AddedImage(
                 image: uiImage,
                 id: UUID().uuidString,
