@@ -619,6 +619,7 @@
 		84AA4E3626F264610056A684 /* EventDTOConverterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4E3526F264610056A684 /* EventDTOConverterMiddleware.swift */; };
 		84ABB015269F0A84003A4585 /* EventsController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABB014269F0A84003A4585 /* EventsController+Combine.swift */; };
 		84CC56EC267B3F6B00DF2784 /* AnyAttachmentPayload_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC56EA267B3D5900DF2784 /* AnyAttachmentPayload_Tests.swift */; };
+		84D5F3E5273ABAF800291AB0 /* ComposerHelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F3E4273ABAF800291AB0 /* ComposerHelperViews.swift */; };
 		84DA54DF2680C66A003A26CD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA54DE2680C66A003A26CD /* PlayerView.swift */; };
 		84DCB84F269F46BE006CDF32 /* EventsController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCB84E269F46BE006CDF32 /* EventsController_Tests.swift */; };
 		84DCB851269F4D31006CDF32 /* EventsController+Combine_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCB850269F4D31006CDF32 /* EventsController+Combine_Tests.swift */; };
@@ -2178,6 +2179,7 @@
 		84AA4E3526F264610056A684 /* EventDTOConverterMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDTOConverterMiddleware.swift; sourceTree = "<group>"; };
 		84ABB014269F0A84003A4585 /* EventsController+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventsController+Combine.swift"; sourceTree = "<group>"; };
 		84CC56EA267B3D5900DF2784 /* AnyAttachmentPayload_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAttachmentPayload_Tests.swift; sourceTree = "<group>"; };
+		84D5F3E4273ABAF800291AB0 /* ComposerHelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerHelperViews.swift; sourceTree = "<group>"; };
 		84DA54DE2680C66A003A26CD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		84DCB84E269F46BE006CDF32 /* EventsController_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController_Tests.swift; sourceTree = "<group>"; };
 		84DCB850269F4D31006CDF32 /* EventsController+Combine_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsController+Combine_Tests.swift"; sourceTree = "<group>"; };
@@ -4472,6 +4474,7 @@
 				843B7CAF273576410062CC45 /* DiscardAttachmentButton.swift */,
 				84F21F2627391827002A0526 /* ImagePickerView.swift */,
 				84F21F292739CFCA002A0526 /* AttachmentUploadingStateView.swift */,
+				84D5F3E4273ABAF800291AB0 /* ComposerHelperViews.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -7533,6 +7536,7 @@
 				8425E3C42728A05A00EE7D68 /* ImageAttachmentView.swift in Sources */,
 				8452636D2734396D000E9FC6 /* AddedImageAttachmentsView.swift in Sources */,
 				84EAC8572719910D0042AA98 /* UIColor+Extensions.swift in Sources */,
+				84D5F3E5273ABAF800291AB0 /* ComposerHelperViews.swift in Sources */,
 				84FB37FD2722C1F900C25DA3 /* NewChatViewModel.swift in Sources */,
 				84EAC86F2719D02A0042AA98 /* LazyView.swift in Sources */,
 				84EAC88C271DA8B30042AA98 /* String+Extensions.swift in Sources */,

@@ -84,7 +84,8 @@ public struct PhotoAttachmentCell: View {
                                             image: image,
                                             id: asset.localIdentifier,
                                             url: assetURL,
-                                            type: asset.mediaType == .video ? .video : .image
+                                            type: asset.mediaType == .video ? .video : .image,
+                                            extraData: asset.mediaType == .video ? ["duration": asset.durationString] : [:]
                                         )
                                     )
                                 }
@@ -115,19 +116,11 @@ public struct PhotoAttachmentCell: View {
                 }
                 
                 if asset.mediaType == .video {
-                    BottomLeftView {
-                        Image(systemName: "video")
-                            .renderingMode(.template)
-                            .font(.system(size: 17, weight: .bold))
-                            .applyDefaultIconOverlayStyle()
-                    }
+                    VideoIndicatorView()
                     
-                    BottomRightView {
-                        Text(asset.durationString)
-                            .foregroundColor(Color(colors.staticColorText))
-                            .font(fonts.footnoteBold)
-                            .padding(.all, 4)
-                    }
+                    VideoDurationIndicatorView(
+                        duration: asset.durationString
+                    )
                 }
             }
         )

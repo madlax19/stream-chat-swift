@@ -233,6 +233,7 @@ struct AddedAsset: Identifiable {
     let id: String
     let url: URL
     let type: AssetType
+    var extraData: [String: Any] = [:]
 }
 
 enum AssetType {

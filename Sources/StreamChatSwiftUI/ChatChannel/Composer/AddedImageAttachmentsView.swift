@@ -5,6 +5,9 @@
 import SwiftUI
 
 public struct AddedImageAttachmentsView: View {
+    @Injected(\.fonts) var fonts
+    @Injected(\.colors) var colors
+    
     var images: [AddedAsset]
     var onDiscardAttachment: (String) -> Void
     
@@ -18,10 +21,20 @@ public struct AddedImageAttachmentsView: View {
                         .frame(width: 100)
                         .cornerRadius(12)
                         .overlay(
-                            DiscardAttachmentButton(
-                                attachmentIdentifier: attachment.id,
-                                onDiscard: onDiscardAttachment
-                            )
+                            ZStack {
+                                DiscardAttachmentButton(
+                                    attachmentIdentifier: attachment.id,
+                                    onDiscard: onDiscardAttachment
+                                )
+                                
+                                if attachment.type == .video {
+                                    VideoIndicatorView()
+                                    
+                                    if let duration = attachment.extraData["duration"] as? String {
+                                        VideoDurationIndicatorView(duration: duration)
+                                    }
+                                }
+                            }
                         )
                 }
             }
