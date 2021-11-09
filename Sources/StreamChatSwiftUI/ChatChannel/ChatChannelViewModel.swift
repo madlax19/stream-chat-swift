@@ -92,8 +92,8 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     }
     
     func scrollToLastMessage() {
-        if scrolledId != messages.first?.id {
-            scrolledId = messages.first?.id
+        if scrolledId != messages.first?.messageId {
+            scrolledId = messages.first?.messageId
         }
     }
     
@@ -191,18 +191,40 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
 
 extension ChatMessage: Identifiable {
     var messageId: String {
+        let statesId = uploadingStatesId
+        
+        if statesId.isEmpty {
+            if !reactionScores.isEmpty {
+                return id + reactionScoresId
+            } else {
+                return id
+            }
+        }
+        
+        return id + statesId + reactionScoresId
+    }
+    
+    var uploadingStatesId: String {
         var states = imageAttachments.compactMap { $0.uploadingState?.state }
         states += giphyAttachments.compactMap { $0.uploadingState?.state }
         states += videoAttachments.compactMap { $0.uploadingState?.state }
         states += fileAttachments.compactMap { $0.uploadingState?.state }
         
         if states.isEmpty {
-            return id
+            return ""
         }
         
         let strings = states.map { "\($0)" }
         let combined = strings.joined(separator: "-")
-        let id = "\(id)-\(combined)"
-        return id
+        let statesId = "\(id)-\(combined)"
+        return statesId
+    }
+    
+    var reactionScoresId: String {
+        var output = ""
+        for (key, score) in reactionScores {
+            output += "\(key.rawValue)\(score)"
+        }
+        return output
     }
 }

@@ -42,6 +42,10 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                         contentWidth: contentWidth,
                         isFirst: showsAllInfo
                     )
+                    .overlay(
+                        reactionsShown ? ReactionsContainer(message: message) : nil
+                    )
+                    
                     // TODO: interferes with scrolling.
                     //                .onLongPressGesture {
                     //                    onLongPress(message)
@@ -56,16 +60,12 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                     }
                 }
                 
-                //            .overlay(
-                //                !message.reactionScores.isEmpty ?
-                //                    ReactionsContainer(message: message) : nil
-                //            )
-                
                 if !message.isSentByCurrentUser {
                     MessageSpacer(spacerWidth: spacerWidth)
                 }
             }
         }
+        .padding(.top, reactionsShown ? 24 : 0)
     }
     
     private var contentWidth: CGFloat {
@@ -79,6 +79,10 @@ struct MessageContainerView<Factory: ViewFactory>: View {
     
     private var spacerWidth: CGFloat {
         (width ?? 0) / 4
+    }
+    
+    private var reactionsShown: Bool {
+        !message.reactionScores.isEmpty
     }
 }
 
