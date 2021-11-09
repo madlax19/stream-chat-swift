@@ -10,7 +10,13 @@ public class MessageComposerViewModel: ObservableObject {
     @Published private(set) var pickerState: AttachmentPickerState = .photos {
         didSet {
             if pickerState == .camera {
-                cameraPickerShown = true
+                withAnimation {
+                    cameraPickerShown = true
+                }
+            } else if pickerState == .files {
+                withAnimation {
+                    filePickerShown = true
+                }
             }
         }
     }

@@ -36,7 +36,9 @@ public struct AddedFileAttachmentsView: View {
     }
     
     private func sizeString(for url: URL) -> String {
+        _ = url.startAccessingSecurityScopedResource()
         if let file = try? AttachmentFile(url: url) {
+            url.stopAccessingSecurityScopedResource()
             return file.sizeString
         }
         
