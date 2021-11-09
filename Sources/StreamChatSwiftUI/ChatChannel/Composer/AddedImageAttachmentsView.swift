@@ -5,7 +5,7 @@
 import SwiftUI
 
 public struct AddedImageAttachmentsView: View {
-    var images: [AddedImage]
+    var images: [AddedAsset]
     var onDiscardAttachment: (String) -> Void
     
     public var body: some View {

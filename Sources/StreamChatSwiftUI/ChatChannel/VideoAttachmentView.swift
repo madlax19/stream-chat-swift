@@ -14,6 +14,10 @@ public struct VideoAttachmentsContainer: View {
         VStack {
             ForEach(message.videoAttachments, id: \.self) { attachment in
                 VideoAttachmentView(videoURL: attachment.videoURL, width: width)
+                    .withUploadingStateIndicator(
+                        for: attachment.uploadingState,
+                        url: attachment.videoURL
+                    )
             }
         }
     }
@@ -37,7 +41,8 @@ public struct VideoAttachmentView: View {
             if let previewImage = previewImage {
                 Image(uiImage: previewImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
+                    .clipped()
                 
                 Button {
                     // TODO: implement video tap
@@ -55,8 +60,7 @@ public struct VideoAttachmentView: View {
                 }
             }
         }
-        .frame(width: width)
-        .aspectRatio(4 / 3, contentMode: .fit)
+        .frame(width: width, height: 3 * width / 4)
         .cornerRadius(24)
         .onAppear {
             videoPreviewLoader.loadPreviewForVideo(at: videoURL) { result in

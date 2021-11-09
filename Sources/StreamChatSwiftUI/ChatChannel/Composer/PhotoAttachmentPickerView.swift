@@ -11,7 +11,7 @@ public struct PhotoAttachmentPickerView: View {
     @StateObject var assetLoader = PhotoAssetLoader()
     
     var assets: PHFetchResultCollection
-    var onImageTap: (AddedImage) -> Void
+    var onImageTap: (AddedAsset) -> Void
     var imageSelected: (String) -> Bool
     
     let columns = [GridItem(.adaptive(minimum: 120), spacing: 2)]
@@ -64,7 +64,7 @@ public struct PhotoAttachmentCell: View {
     @State var assetURL: URL?
     
     var asset: PHAsset
-    var onImageTap: (AddedImage) -> Void
+    var onImageTap: (AddedAsset) -> Void
     var imageSelected: (String) -> Bool
     
     public var body: some View {
@@ -80,10 +80,11 @@ public struct PhotoAttachmentCell: View {
                             withAnimation {
                                 if let assetURL = assetURL {
                                     onImageTap(
-                                        AddedImage(
+                                        AddedAsset(
                                             image: image,
                                             id: asset.localIdentifier,
-                                            url: assetURL
+                                            url: assetURL,
+                                            type: asset.mediaType == .video ? .video : .image
                                         )
                                     )
                                 }
@@ -133,7 +134,11 @@ public struct PhotoAttachmentCell: View {
         .onAppear {
             assetLoader.loadImage(from: asset)
             asset.requestContentEditingInput(with: nil) { input, _ in
-                self.assetURL = input?.fullSizeImageURL
+                if asset.mediaType == .image {
+                    self.assetURL = input?.fullSizeImageURL
+                } else if let url = (input?.audiovisualAsset as? AVURLAsset)?.url {
+                    self.assetURL = url
+                }
             }
         }
     }

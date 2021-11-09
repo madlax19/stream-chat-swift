@@ -84,9 +84,9 @@ struct ComposerInputView: View {
     
     var body: some View {
         VStack {
-            if !viewModel.addedImages.isEmpty {
+            if !viewModel.addedAssets.isEmpty {
                 AddedImageAttachmentsView(
-                    images: viewModel.addedImages,
+                    images: viewModel.addedAssets,
                     onDiscardAttachment: viewModel.removeAttachment(with:)
                 )
                 .transition(.scale)
@@ -94,7 +94,7 @@ struct ComposerInputView: View {
             }
             
             if !viewModel.addedFileURLs.isEmpty {
-                if !viewModel.addedImages.isEmpty {
+                if !viewModel.addedAssets.isEmpty {
                     Divider()
                 }
                 

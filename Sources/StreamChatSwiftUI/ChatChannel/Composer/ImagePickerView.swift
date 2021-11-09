@@ -2,13 +2,15 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import AVFoundation
+import StreamChat
 import SwiftUI
 
 /// Image picker for loading images.
 struct ImagePickerView: UIViewControllerRepresentable {
     let sourceType: UIImagePickerController.SourceType
     
-    var onImagePicked: (AddedImage) -> Void
+    var onAssetPicked: (AddedAsset) -> Void
     @Environment(\.presentationMode) var presentationMode
 
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -17,6 +19,8 @@ struct ImagePickerView: UIViewControllerRepresentable {
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             pickerController.sourceType = sourceType
         }
+        pickerController.mediaTypes = ["public.image", "public.movie"]
+        
         return pickerController
     }
 
@@ -43,12 +47,33 @@ final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, U
     ) {
         if let uiImage = info[.originalImage] as? UIImage,
            let imageURL = try? uiImage.temporaryLocalFileUrl() {
-            let addedImage = AddedImage(
+            let addedImage = AddedAsset(
                 image: uiImage,
                 id: UUID().uuidString,
-                url: imageURL
+                url: imageURL,
+                type: .image
             )
-            parent.onImagePicked(addedImage)
+            parent.onAssetPicked(addedImage)
+        } else if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+            do {
+                let asset = AVURLAsset(url: videoURL, options: nil)
+                let imageGenerator = AVAssetImageGenerator(asset: asset)
+                imageGenerator.appliesPreferredTrackTransform = true
+                let cgImage = try imageGenerator.copyCGImage(
+                    at: CMTimeMake(value: 0, timescale: 1),
+                    actualTime: nil
+                )
+                let thumbnail = UIImage(cgImage: cgImage)
+                let addedVideo = AddedAsset(
+                    image: thumbnail,
+                    id: UUID().uuidString,
+                    url: videoURL,
+                    type: .video
+                )
+                parent.onAssetPicked(addedVideo)
+            } catch {
+                log.debug("Error generating thumbnail: \(error.localizedDescription)")
+            }
         }
         
         dismiss()

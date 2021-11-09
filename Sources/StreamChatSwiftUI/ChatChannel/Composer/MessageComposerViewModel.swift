@@ -22,7 +22,7 @@ public class MessageComposerViewModel: ObservableObject {
     }
 
     @Published private(set) var imageAssets: PHFetchResult<PHAsset>?
-    @Published private(set) var addedImages = [AddedImage]() {
+    @Published private(set) var addedAssets = [AddedAsset]() {
         didSet {
             checkPickerSelectionState()
         }
@@ -74,8 +74,11 @@ public class MessageComposerViewModel: ObservableObject {
     
     // TODO: temp implementation.
     public func sendMessage(completion: @escaping () -> Void) {
-        var attachments = addedImages.map { added in
-            try! AnyAttachmentPayload(localFileURL: added.url, attachmentType: .image)
+        var attachments = addedAssets.map { added in
+            try! AnyAttachmentPayload(
+                localFileURL: added.url,
+                attachmentType: added.type == .video ? .video : .image
+            )
         }
         
         attachments += addedFileURLs.map { url in
@@ -93,13 +96,13 @@ public class MessageComposerViewModel: ObservableObject {
         }
         
         text = ""
-        addedImages = []
+        addedAssets = []
         addedFileURLs = []
         pickerTypeState = .expanded(.none)
     }
     
     public var sendButtonEnabled: Bool {
-        !addedImages.isEmpty || !text.isEmpty || !addedFileURLs.isEmpty
+        !addedAssets.isEmpty || !text.isEmpty || !addedFileURLs.isEmpty
     }
     
     public func change(pickerState: AttachmentPickerState) {
@@ -113,18 +116,18 @@ public class MessageComposerViewModel: ObservableObject {
             return true
         }
         
-        if addedFileURLs.count == 2 && !addedImages.isEmpty {
+        if addedFileURLs.count == 2 && !addedAssets.isEmpty {
             return true
         }
         
         return false
     }
     
-    func imageTapped(_ addedImage: AddedImage) {
-        var images = [AddedImage]()
+    func imageTapped(_ addedAsset: AddedAsset) {
+        var images = [AddedAsset]()
         var imageRemoved = false
-        for image in addedImages {
-            if image.id != addedImage.id {
+        for image in addedAssets {
+            if image.id != addedAsset.id {
                 images.append(image)
             } else {
                 imageRemoved = true
@@ -132,10 +135,10 @@ public class MessageComposerViewModel: ObservableObject {
         }
         
         if !imageRemoved {
-            images.append(addedImage)
+            images.append(addedAsset)
         }
         
-        addedImages = images
+        addedAssets = images
     }
     
     func removeAttachment(with id: String) {
@@ -148,23 +151,23 @@ public class MessageComposerViewModel: ObservableObject {
             }
             addedFileURLs = urls
         } else {
-            var images = [AddedImage]()
-            for image in addedImages {
+            var images = [AddedAsset]()
+            for image in addedAssets {
                 if image.id != id {
                     images.append(image)
                 }
             }
-            addedImages = images
+            addedAssets = images
         }
     }
     
-    func cameraImageAdded(_ image: AddedImage) {
-        addedImages.append(image)
+    func cameraImageAdded(_ image: AddedAsset) {
+        addedAssets.append(image)
         pickerState = .photos
     }
     
     func isImageSelected(with id: String) -> Bool {
-        for image in addedImages {
+        for image in addedAssets {
             if image.id == id {
                 return true
             }
@@ -196,7 +199,7 @@ public class MessageComposerViewModel: ObservableObject {
     // MARK: - private
     
     private func checkPickerSelectionState() {
-        pickerTypeState = (!addedImages.isEmpty || !addedFileURLs.isEmpty) ? .collapsed : .expanded(.media)
+        pickerTypeState = (!addedAssets.isEmpty || !addedFileURLs.isEmpty) ? .collapsed : .expanded(.media)
     }
     
     private func isURL(string: String) -> Bool {
@@ -225,8 +228,14 @@ public enum AttachmentPickerState {
     case camera
 }
 
-struct AddedImage: Identifiable {
+struct AddedAsset: Identifiable {
     let image: UIImage
     let id: String
     let url: URL
+    let type: AssetType
+}
+
+enum AssetType {
+    case image
+    case video
 }
