@@ -93,7 +93,7 @@ public class MessageComposerViewModel: ObservableObject {
     }
     
     public var sendButtonEnabled: Bool {
-        !addedImages.isEmpty || !text.isEmpty
+        !addedImages.isEmpty || !text.isEmpty || !addedFileURLs.isEmpty
     }
     
     public func change(pickerState: AttachmentPickerState) {
