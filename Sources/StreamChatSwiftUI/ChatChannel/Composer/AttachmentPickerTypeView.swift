@@ -40,12 +40,12 @@ public struct AttachmentPickerTypeView: View {
     }
 }
 
-enum PickerTypeState {
+public enum PickerTypeState {
     case expanded(AttachmentPickerType)
     case collapsed
 }
 
-enum AttachmentPickerType {
+public enum AttachmentPickerType {
     case none
     case media
     case giphy

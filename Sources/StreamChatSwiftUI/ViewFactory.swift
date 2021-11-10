@@ -199,4 +199,51 @@ public protocol ViewFactory: AnyObject {
         for message: ChatMessage,
         availableWidth: CGFloat
     ) -> GiphyBadgeViewType
+    
+    associatedtype MessageComposerViewType: View
+    /// Creates the message composer view.
+    /// - Parameters:
+    ///  - channelController: The `ChatChannelController` for the channel.
+    ///  - onMessageSent: Called when a message is sent.
+    /// - Returns: view displayed in the message composer slot.
+    func makeMessageComposerViewType(
+        with channelController: ChatChannelController,
+        onMessageSent: @escaping () -> Void
+    ) -> MessageComposerViewType
+    
+    associatedtype LeadingComposerViewType: View
+    /// Creates the leading part of the composer view.
+    /// - Parameter state: Indicator what's the current picker state (can be ignored for different types of views).
+    /// - Returns: view displayed in the leading part of the message composer view.
+    func makeLeadingComposerView(
+        state: Binding<PickerTypeState>
+    ) -> LeadingComposerViewType
+    
+    /// Creates the composer input view.
+    /// - Parameters:
+    ///  - text: the text displayed in the input view.
+    ///  - addedAssets: list of the added assets (in case they need to be displayed in the input view).
+    ///  - addedFileURLs: list of the added file URLs (in case they need to be displayed in the input view).
+    ///  - shouldScroll: whether the input field is scrollable.
+    ///  - removeAttachmentWithId: called when the attachment is removed from the input view.
+    /// - Returns: view displayed in the middle area of the message composer view.
+    associatedtype ComposerInputViewType: View
+    func makeComposerInputView(
+        text: Binding<String>,
+        addedAssets: [AddedAsset],
+        addedFileURLs: [URL],
+        shouldScroll: Bool,
+        removeAttachmentWithId: @escaping (String) -> Void
+    ) -> ComposerInputViewType
+    
+    associatedtype TrailingComposerViewType: View
+    /// Creates the trailing composer view.
+    /// - Parameters:
+    ///  - enabled: whether the view is enabled (e.g. button).
+    ///  - onTap: called when the view is tapped.
+    /// - Returns: view displayed in the trailing area of the message composer view.
+    func makeTrailingComposerView(
+        enabled: Bool,
+        onTap: @escaping () -> Void
+    ) -> TrailingComposerViewType
 }

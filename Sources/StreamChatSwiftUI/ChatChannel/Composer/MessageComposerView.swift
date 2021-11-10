@@ -5,16 +5,20 @@
 import StreamChat
 import SwiftUI
 
-public struct MessageComposerView: View, KeyboardReadable {
+public struct MessageComposerView<Factory: ViewFactory>: View, KeyboardReadable {
     @Injected(\.colors) var colors
     
     // Initial popup size, before the keyboard is shown.
     @State private var popupSize: CGFloat = 350
     
+    private var factory: Factory
+    
     public init(
+        viewFactory: Factory,
         channelController: ChatChannelController,
         onMessageSent: @escaping () -> Void
     ) {
+        factory = viewFactory
         _viewModel = StateObject(
             wrappedValue: ViewModelsFactory.makeMessageComposerViewModel(with: channelController)
         )
@@ -28,29 +32,21 @@ public struct MessageComposerView: View, KeyboardReadable {
     public var body: some View {
         VStack {
             HStack(alignment: .bottom) {
-                AttachmentPickerTypeView(pickerTypeState: $viewModel.pickerTypeState)
-                    .padding(.bottom, 8)
+                factory.makeLeadingComposerView(state: $viewModel.pickerTypeState)
 
-                if viewModel.inputComposerShouldScroll {
-                    ScrollView {
-                        ComposerInputView(viewModel: viewModel)
-                    }
-                    .frame(height: 240)
-                } else {
-                    ComposerInputView(viewModel: viewModel)
-                }
-                
-                Spacer()
-                
-                SendMessageButton(
-                    enabled: viewModel.sendButtonEnabled,
-                    onTap: {
-                        viewModel.sendMessage {
-                            onMessageSent()
-                        }
-                    }
+                factory.makeComposerInputView(
+                    text: $viewModel.text,
+                    addedAssets: viewModel.addedAssets,
+                    addedFileURLs: viewModel.addedFileURLs,
+                    shouldScroll: viewModel.inputComposerShouldScroll,
+                    removeAttachmentWithId: viewModel.removeAttachment(with:)
                 )
-                .padding(.bottom, 8)
+                                
+                factory.makeTrailingComposerView(enabled: viewModel.sendButtonEnabled) {
+                    viewModel.sendMessage {
+                        onMessageSent()
+                    }
+                }
             }
             .padding(.all, 8)
             
@@ -80,10 +76,14 @@ public struct MessageComposerView: View, KeyboardReadable {
     }
 }
 
-struct ComposerInputView: View {
+public struct ComposerInputView: View {
     @Injected(\.colors) var colors
     
-    @StateObject var viewModel: MessageComposerViewModel
+    @Binding var text: String
+    var addedAssets: [AddedAsset]
+    var addedFileURLs: [URL]
+    
+    var removeAttachmentWithId: (String) -> Void
     
     @State var textHeight: CGFloat = 34
     
@@ -102,31 +102,31 @@ struct ComposerInputView: View {
         return textHeight
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
-            if !viewModel.addedAssets.isEmpty {
+            if !addedAssets.isEmpty {
                 AddedImageAttachmentsView(
-                    images: viewModel.addedAssets,
-                    onDiscardAttachment: viewModel.removeAttachment(with:)
+                    images: addedAssets,
+                    onDiscardAttachment: removeAttachmentWithId
                 )
                 .transition(.scale)
                 .animation(.default)
             }
             
-            if !viewModel.addedFileURLs.isEmpty {
-                if !viewModel.addedAssets.isEmpty {
+            if !addedFileURLs.isEmpty {
+                if !addedAssets.isEmpty {
                     Divider()
                 }
                 
                 AddedFileAttachmentsView(
-                    addedFileURLs: viewModel.addedFileURLs,
-                    onDiscardAttachment: viewModel.removeAttachment(with:)
+                    addedFileURLs: addedFileURLs,
+                    onDiscardAttachment: removeAttachmentWithId
                 )
                 .padding(.trailing, 8)
             }
             
             ComposerTextInputView(
-                text: $viewModel.text,
+                text: $text,
                 height: $textHeight,
                 placeholder: "Send a message"
             )
@@ -145,7 +145,6 @@ struct ComposerInputView: View {
     }
     
     private var shouldAddVerticalPadding: Bool {
-        !viewModel.addedFileURLs.isEmpty ||
-            !viewModel.addedAssets.isEmpty
+        !addedFileURLs.isEmpty || !addedAssets.isEmpty
     }
 }

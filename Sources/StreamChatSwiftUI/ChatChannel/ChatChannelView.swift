@@ -43,8 +43,8 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
             
             Divider()
             
-            MessageComposerView(
-                channelController: viewModel.channelController,
+            factory.makeMessageComposerViewType(
+                with: viewModel.channelController,
                 onMessageSent: viewModel.scrollToLastMessage
             )
         }

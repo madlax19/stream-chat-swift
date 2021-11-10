@@ -203,6 +203,63 @@ extension ViewFactory {
     ) -> GiphyBadgeView {
         GiphyBadgeView()
     }
+    
+    public func makeMessageComposerViewType(
+        with channelController: ChatChannelController,
+        onMessageSent: @escaping () -> Void
+    ) -> MessageComposerView<Self> {
+        MessageComposerView(
+            viewFactory: self,
+            channelController: channelController,
+            onMessageSent: onMessageSent
+        )
+    }
+    
+    public func makeLeadingComposerView(
+        state: Binding<PickerTypeState>
+    ) -> some View {
+        AttachmentPickerTypeView(pickerTypeState: state)
+            .padding(.bottom, 8)
+    }
+    
+    @ViewBuilder
+    public func makeComposerInputView(
+        text: Binding<String>,
+        addedAssets: [AddedAsset],
+        addedFileURLs: [URL],
+        shouldScroll: Bool,
+        removeAttachmentWithId: @escaping (String) -> Void
+    ) -> some View {
+        if shouldScroll {
+            ScrollView {
+                ComposerInputView(
+                    text: text,
+                    addedAssets: addedAssets,
+                    addedFileURLs: addedFileURLs,
+                    removeAttachmentWithId: removeAttachmentWithId
+                )
+            }
+            .frame(height: 240)
+        } else {
+            ComposerInputView(
+                text: text,
+                addedAssets: addedAssets,
+                addedFileURLs: addedFileURLs,
+                removeAttachmentWithId: removeAttachmentWithId
+            )
+        }
+    }
+    
+    public func makeTrailingComposerView(
+        enabled: Bool,
+        onTap: @escaping () -> Void
+    ) -> some View {
+        SendMessageButton(
+            enabled: enabled,
+            onTap: onTap
+        )
+        .padding(.bottom, 8)
+    }
 }
 
 /// Default class conforming to `ViewFactory`, used throughout the SDK.

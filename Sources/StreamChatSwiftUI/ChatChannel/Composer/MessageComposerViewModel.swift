@@ -236,15 +236,15 @@ public enum AttachmentPickerState {
     case camera
 }
 
-struct AddedAsset: Identifiable {
-    let image: UIImage
-    let id: String
-    let url: URL
-    let type: AssetType
-    var extraData: [String: Any] = [:]
+public struct AddedAsset: Identifiable {
+    public let image: UIImage
+    public let id: String
+    public let url: URL
+    public let type: AssetType
+    public var extraData: [String: Any] = [:]
 }
 
-enum AssetType {
+public enum AssetType {
     case image
     case video
 }
