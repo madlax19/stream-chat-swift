@@ -88,11 +88,7 @@ public struct ChatChannelListView<Factory: ViewFactory>: View {
                         secondaryButton: .cancel()
                     )
                 default:
-                    return Alert(
-                        title: Text(L10n.Alert.Error.title),
-                        message: Text(L10n.Alert.Error.message),
-                        dismissButton: .cancel(Text(L10n.Alert.Actions.ok))
-                    )
+                    return Alert.defaultErrorAlert
                 }
             }
             .modifier(viewFactory.makeChannelListHeaderViewModifier(title: title))

@@ -74,6 +74,9 @@ public struct MessageComposerView: View, KeyboardReadable {
                 self.popupSize = height - bottomSafeArea
             }
         }
+        .alert(isPresented: $viewModel.errorShown) {
+            Alert.defaultErrorAlert
+        }
     }
 }
 

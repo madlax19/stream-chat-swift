@@ -65,6 +65,7 @@ public class MessageComposerViewModel: ObservableObject {
     
     @Published var filePickerShown = false
     @Published var cameraPickerShown = false
+    @Published var errorShown = false
     
     private let channelController: ChatChannelController
     
@@ -72,32 +73,38 @@ public class MessageComposerViewModel: ObservableObject {
         self.channelController = channelController
     }
     
-    // TODO: temp implementation.
     public func sendMessage(completion: @escaping () -> Void) {
-        var attachments = addedAssets.map { added in
-            try! AnyAttachmentPayload(
-                localFileURL: added.url,
-                attachmentType: added.type == .video ? .video : .image
-            )
-        }
-        
-        attachments += addedFileURLs.map { url in
-            _ = url.startAccessingSecurityScopedResource()
-            return try! AnyAttachmentPayload(localFileURL: url, attachmentType: .file)
-        }
-        
-        channelController.createNewMessage(text: text, attachments: attachments) {
-            switch $0 {
-            case .success:
-                completion()
-            case let .failure(error):
-                print(error)
+        do {
+            var attachments = try addedAssets.map { added in
+                try AnyAttachmentPayload(
+                    localFileURL: added.url,
+                    attachmentType: added.type == .video ? .video : .image
+                )
             }
+            
+            attachments += try addedFileURLs.map { url in
+                _ = url.startAccessingSecurityScopedResource()
+                return try AnyAttachmentPayload(localFileURL: url, attachmentType: .file)
+            }
+            
+            channelController.createNewMessage(
+                text: text,
+                attachments: attachments
+            ) { [weak self] in
+                switch $0 {
+                case .success:
+                    completion()
+                case .failure:
+                    self?.errorShown = true
+                }
+            }
+            
+            text = ""
+            addedAssets = []
+            addedFileURLs = []
+        } catch {
+            errorShown = true
         }
-        
-        text = ""
-        addedAssets = []
-        addedFileURLs = []
     }
     
     public var sendButtonEnabled: Bool {
