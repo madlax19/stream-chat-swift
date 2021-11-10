@@ -40,16 +40,16 @@ extension PHAsset: Identifiable {
     }
 }
 
-struct PHFetchResultCollection: RandomAccessCollection, Equatable {
-    typealias Element = PHAsset
-    typealias Index = Int
+public struct PHFetchResultCollection: RandomAccessCollection, Equatable {
+    public typealias Element = PHAsset
+    public typealias Index = Int
 
-    let fetchResult: PHFetchResult<PHAsset>
+    public let fetchResult: PHFetchResult<PHAsset>
 
-    var endIndex: Int { fetchResult.count }
-    var startIndex: Int { 0 }
+    public var endIndex: Int { fetchResult.count }
+    public var startIndex: Int { 0 }
 
-    subscript(position: Int) -> PHAsset {
+    public subscript(position: Int) -> PHAsset {
         fetchResult.object(at: position)
     }
 }

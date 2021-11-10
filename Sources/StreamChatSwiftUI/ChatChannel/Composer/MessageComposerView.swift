@@ -51,7 +51,7 @@ public struct MessageComposerView<Factory: ViewFactory>: View, KeyboardReadable 
             .padding(.all, 8)
             
             factory.makeAttachmentPickerView(
-                attachmentPickerState: viewModel.pickerState,
+                attachmentPickerState: $viewModel.pickerState,
                 filePickerShown: $viewModel.filePickerShown,
                 cameraPickerShown: $viewModel.cameraPickerShown,
                 addedFileURLs: $viewModel.addedFileURLs,

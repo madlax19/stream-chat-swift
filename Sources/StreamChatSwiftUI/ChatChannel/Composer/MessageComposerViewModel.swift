@@ -7,7 +7,7 @@ import StreamChat
 import SwiftUI
 
 public class MessageComposerViewModel: ObservableObject {
-    @Published private(set) var pickerState: AttachmentPickerState = .photos {
+    @Published var pickerState: AttachmentPickerState = .photos {
         didSet {
             if pickerState == .camera {
                 withAnimation {

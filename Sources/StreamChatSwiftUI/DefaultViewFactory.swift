@@ -263,7 +263,7 @@ extension ViewFactory {
     }
     
     public func makeAttachmentPickerView(
-        attachmentPickerState: AttachmentPickerState,
+        attachmentPickerState: Binding<AttachmentPickerState>,
         filePickerShown: Binding<Bool>,
         cameraPickerShown: Binding<Bool>,
         addedFileURLs: Binding<[URL]>,
@@ -294,6 +294,56 @@ extension ViewFactory {
         )
         .offset(y: isDisplayed ? 0 : popupHeight)
         .animation(.spring())
+    }
+    
+    public func makeAttachmentSourcePickerView(
+        selected: AttachmentPickerState,
+        onPickerStateChange: @escaping (AttachmentPickerState) -> Void
+    ) -> some View {
+        AttachmentSourcePickerView(
+            selected: selected,
+            onTap: onPickerStateChange
+        )
+    }
+    
+    public func makePhotoAttachmentPickerView(
+        assets: PHFetchResultCollection,
+        onAssetTap: @escaping (AddedAsset) -> Void,
+        isAssetSelected: @escaping (String) -> Bool
+    ) -> some View {
+        AttachmentTypeContainer {
+            PhotoAttachmentPickerView(
+                assets: assets,
+                onImageTap: onAssetTap,
+                imageSelected: isAssetSelected
+            )
+        }
+    }
+    
+    public func makeFilePickerView(
+        filePickerShown: Binding<Bool>,
+        addedFileURLs: Binding<[URL]>
+    ) -> some View {
+        FilePickerDisplayView(
+            filePickerShown: filePickerShown,
+            addedFileURLs: addedFileURLs
+        )
+    }
+    
+    public func makeCameraPickerView(
+        selected: Binding<AttachmentPickerState>,
+        cameraPickerShown: Binding<Bool>,
+        cameraImageAdded: @escaping (AddedAsset) -> Void
+    ) -> some View {
+        CameraPickerDisplayView(
+            selectedPickerState: selected,
+            cameraPickerShown: cameraPickerShown,
+            cameraImageAdded: cameraImageAdded
+        )
+    }
+    
+    public func makeAssetsAccessPermissionView() -> some View {
+        AssetsAccessPermissionView()
     }
 }
 

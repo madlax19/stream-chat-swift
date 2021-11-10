@@ -10,7 +10,7 @@ public struct AttachmentPickerView<Factory: ViewFactory>: View {
     @Injected(\.fonts) var fonts
         
     var viewFactory: Factory
-    var selectedPickerState: AttachmentPickerState
+    @Binding var selectedPickerState: AttachmentPickerState
     @Binding var filePickerShown: Bool
     @Binding var cameraPickerShown: Bool
     @Binding var addedFileURLs: [URL]
@@ -26,49 +26,34 @@ public struct AttachmentPickerView<Factory: ViewFactory>: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            AttachmentSourcePickerView(
+            viewFactory.makeAttachmentSourcePickerView(
                 selected: selectedPickerState,
-                onTap: onPickerStateChange
+                onPickerStateChange: onPickerStateChange
             )
             
             if selectedPickerState == .photos {
                 if let assets = photoLibraryAssets,
                    let collection = PHFetchResultCollection(fetchResult: assets) {
-                    AttachmentTypeContainer {
-                        PhotoAttachmentPickerView(
-                            assets: collection,
-                            onImageTap: onAssetTap,
-                            imageSelected: isAssetSelected
-                        )
-                    }
+                    viewFactory.makePhotoAttachmentPickerView(
+                        assets: collection,
+                        onAssetTap: onAssetTap,
+                        isAssetSelected: isAssetSelected
+                    )
                 } else {
-                    Text("permissions screen")
-                    Spacer()
+                    viewFactory.makeAssetsAccessPermissionView()
                 }
                 
             } else if selectedPickerState == .files {
-                AttachmentTypeContainer {
-                    ZStack {
-                        Button {
-                            filePickerShown = true
-                        } label: {
-                            Text("Add more files")
-                                .font(fonts.bodyBold)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .foregroundColor(Color(colors.highlightedAccentBackground))
-                    .sheet(isPresented: $filePickerShown) {
-                        FilePickerView(fileURLs: $addedFileURLs)
-                    }
-                }
+                viewFactory.makeFilePickerView(
+                    filePickerShown: $filePickerShown,
+                    addedFileURLs: $addedFileURLs
+                )
             } else {
-                Spacer()
-                    .sheet(isPresented: $cameraPickerShown) {
-                        ImagePickerView(sourceType: .camera) { addedImage in
-                            cameraImageAdded(addedImage)
-                        }
-                    }
+                viewFactory.makeCameraPickerView(
+                    selected: $selectedPickerState,
+                    cameraPickerShown: $cameraPickerShown,
+                    cameraImageAdded: cameraImageAdded
+                )
             }
         }
         .frame(height: height)
@@ -78,24 +63,6 @@ public struct AttachmentPickerView<Factory: ViewFactory>: View {
                 askForAssetsAccessPermissions()
             }
         }
-    }
-}
-
-struct AttachmentTypeContainer<Content: View>: View {
-    @Injected(\.colors) var colors
-    
-    var content: () -> Content
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            Color(colors.background)
-                .frame(height: 20)
-            
-            content()
-                .background(Color(colors.background))
-        }
-        .background(Color(colors.background1))
-        .cornerRadius(16)
     }
 }
 

@@ -266,7 +266,7 @@ public protocol ViewFactory: AnyObject {
     ///  - popupHeight: the  height of the popup when displayed.
     /// - Returns: view displayed in the attachment picker slot.
     func makeAttachmentPickerView(
-        attachmentPickerState: AttachmentPickerState,
+        attachmentPickerState: Binding<AttachmentPickerState>,
         filePickerShown: Binding<Bool>,
         cameraPickerShown: Binding<Bool>,
         addedFileURLs: Binding<[URL]>,
@@ -280,4 +280,56 @@ public protocol ViewFactory: AnyObject {
         height: CGFloat,
         popupHeight: CGFloat
     ) -> AttachmentPickerViewType
+    
+    associatedtype AttachmentSourcePickerViewType: View
+    /// Creates the attachment source picker view.
+    /// - Parameters:
+    ///  - selected: the selected attachment picker state.
+    ///  - onPickerStateChange: called when the picker state is changed.
+    /// - Returns: view displayed in the attachment source picker slot.
+    func makeAttachmentSourcePickerView(
+        selected: AttachmentPickerState,
+        onPickerStateChange: @escaping (AttachmentPickerState) -> Void
+    ) -> AttachmentSourcePickerViewType
+    
+    associatedtype PhotoAttachmentPickerViewType: View
+    /// Creates the photo attachment picker view.
+    /// - Parameters:
+    ///  - assets: collection of assets from the user's photo library.
+    ///  - onAssetTap: called when an asset is tapped.
+    ///  - isAssetSelected: checks whether an asset is selected.
+    /// - Returns: view displayed in the photo attachment picker slot.
+    func makePhotoAttachmentPickerView(
+        assets: PHFetchResultCollection,
+        onAssetTap: @escaping (AddedAsset) -> Void,
+        isAssetSelected: @escaping (String) -> Bool
+    ) -> PhotoAttachmentPickerViewType
+    
+    associatedtype FilePickerViewType: View
+    /// Creates the file picker view.
+    /// - Parameters:
+    ///  - filePickerShown: binding controlling the display of the file picker.
+    ///  - addedFileURLs: binding of the list of added file urls.
+    /// - Returns: view displayed in the file picker slot.
+    func makeFilePickerView(
+        filePickerShown: Binding<Bool>,
+        addedFileURLs: Binding<[URL]>
+    ) -> FilePickerViewType
+    
+    associatedtype CameraPickerViewType: View
+    /// Creates the camera picker view.
+    /// - Parameters:
+    ///  - selected: Binding of the selected attachment picker state.
+    ///  - cameraPickerShown: binding controlling the display of the camera picker.
+    ///  - cameraImageAdded: called when an image is added from the camera.
+    /// - Returns: view displayed in the camera picker slot.
+    func makeCameraPickerView(
+        selected: Binding<AttachmentPickerState>,
+        cameraPickerShown: Binding<Bool>,
+        cameraImageAdded: @escaping (AddedAsset) -> Void
+    ) -> CameraPickerViewType
+    
+    associatedtype AssetsAccessPermissionViewType: View
+    /// Creates the assets access permission view.
+    func makeAssetsAccessPermissionView() -> AssetsAccessPermissionViewType
 }
