@@ -28,7 +28,7 @@ public struct AttachmentPickerTypeView: View {
             case .collapsed:
                 Button {
                     withAnimation {
-                        pickerTypeState = .expanded(.media)
+                        pickerTypeState = .expanded(.none)
                     }
                 } label: {
                     Image(uiImage: images.shrinkInputArrow)

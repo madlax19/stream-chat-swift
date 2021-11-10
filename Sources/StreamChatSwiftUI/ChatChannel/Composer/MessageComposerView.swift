@@ -22,7 +22,7 @@ public struct MessageComposerView: View, KeyboardReadable {
     }
     
     @StateObject var viewModel: MessageComposerViewModel
-    
+        
     var onMessageSent: () -> Void
     
     public var body: some View {
@@ -52,7 +52,7 @@ public struct MessageComposerView: View, KeyboardReadable {
                 )
                 .padding(.bottom, 8)
             }
-            .padding()
+            .padding(.all, 8)
             
             AttachmentPickerView(
                 viewModel: viewModel,
@@ -82,6 +82,23 @@ struct ComposerInputView: View {
     
     @StateObject var viewModel: MessageComposerViewModel
     
+    @State var textHeight: CGFloat = 34
+    
+    var textFieldHeight: CGFloat {
+        let minHeight: CGFloat = 34
+        let maxHeight: CGFloat = 70
+            
+        if textHeight < minHeight {
+            return minHeight
+        }
+            
+        if textHeight > maxHeight {
+            return maxHeight
+        }
+            
+        return textHeight
+    }
+    
     var body: some View {
         VStack {
             if !viewModel.addedAssets.isEmpty {
@@ -105,11 +122,27 @@ struct ComposerInputView: View {
                 .padding(.trailing, 8)
             }
             
-            TextField("Send a message", text: $viewModel.text)
+            ComposerTextInputView(
+                text: $viewModel.text,
+                height: $textHeight,
+                placeholder: "Send a message"
+            )
+            .frame(height: textFieldHeight)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, shouldAddVerticalPadding ? 8 : 0)
         .padding(.leading, 8)
-        .background(Color(colors.background1))
-        .cornerRadius(20)
+        .background(Color(colors.background))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color(colors.innerBorder))
+        )
+        .clipShape(
+            RoundedRectangle(cornerRadius: 20)
+        )
+    }
+    
+    private var shouldAddVerticalPadding: Bool {
+        !viewModel.addedFileURLs.isEmpty ||
+            !viewModel.addedAssets.isEmpty
     }
 }

@@ -98,7 +98,6 @@ public class MessageComposerViewModel: ObservableObject {
         text = ""
         addedAssets = []
         addedFileURLs = []
-        pickerTypeState = .expanded(.none)
     }
     
     public var sendButtonEnabled: Bool {
@@ -199,7 +198,9 @@ public class MessageComposerViewModel: ObservableObject {
     // MARK: - private
     
     private func checkPickerSelectionState() {
-        pickerTypeState = (!addedAssets.isEmpty || !addedFileURLs.isEmpty) ? .collapsed : .expanded(.media)
+        if (!addedAssets.isEmpty || !addedFileURLs.isEmpty) {
+            pickerTypeState = .collapsed
+        }
     }
     
     private func isURL(string: String) -> Bool {
