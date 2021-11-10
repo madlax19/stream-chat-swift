@@ -60,7 +60,7 @@ public struct MessageComposerView: View, KeyboardReadable {
                 height: viewModel.overlayShown ? popupSize : 0
             )
             .offset(y: viewModel.overlayShown ? 0 : popupSize)
-            .animation(.default)
+            .animation(.spring())
         }
         .onReceive(keyboardPublisher) { visible in
             if visible {
