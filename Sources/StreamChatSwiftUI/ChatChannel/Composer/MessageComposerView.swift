@@ -50,13 +50,21 @@ public struct MessageComposerView<Factory: ViewFactory>: View, KeyboardReadable 
             }
             .padding(.all, 8)
             
-            AttachmentPickerView(
-                viewModel: viewModel,
+            factory.makeAttachmentPickerView(
+                attachmentPickerState: viewModel.pickerState,
+                filePickerShown: $viewModel.filePickerShown,
+                cameraPickerShown: $viewModel.cameraPickerShown,
+                addedFileURLs: $viewModel.addedFileURLs,
+                onPickerStateChange: viewModel.change(pickerState:),
+                photoLibraryAssets: viewModel.imageAssets,
+                onAssetTap: viewModel.imageTapped(_:),
+                isAssetSelected: viewModel.isImageSelected(with:),
+                cameraImageAdded: viewModel.cameraImageAdded(_:),
+                askForAssetsAccessPermissions: viewModel.askForPhotosPermission,
                 isDisplayed: viewModel.overlayShown,
-                height: viewModel.overlayShown ? popupSize : 0
+                height: viewModel.overlayShown ? popupSize : 0,
+                popupHeight: popupSize
             )
-            .offset(y: viewModel.overlayShown ? 0 : popupSize)
-            .animation(.spring())
         }
         .onReceive(keyboardPublisher) { visible in
             if visible {

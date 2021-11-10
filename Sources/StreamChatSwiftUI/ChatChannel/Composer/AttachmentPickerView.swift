@@ -2,13 +2,24 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import Photos
 import SwiftUI
 
-public struct AttachmentPickerView: View {
+public struct AttachmentPickerView<Factory: ViewFactory>: View {
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts
-    
-    @StateObject var viewModel: MessageComposerViewModel
+        
+    var viewFactory: Factory
+    var selectedPickerState: AttachmentPickerState
+    @Binding var filePickerShown: Bool
+    @Binding var cameraPickerShown: Bool
+    @Binding var addedFileURLs: [URL]
+    var onPickerStateChange: (AttachmentPickerState) -> Void
+    var photoLibraryAssets: PHFetchResult<PHAsset>?
+    var onAssetTap: (AddedAsset) -> Void
+    var isAssetSelected: (String) -> Bool
+    var cameraImageAdded: (AddedAsset) -> Void
+    var askForAssetsAccessPermissions: () -> Void
     
     var isDisplayed: Bool
     var height: CGFloat
@@ -16,18 +27,18 @@ public struct AttachmentPickerView: View {
     public var body: some View {
         VStack(spacing: 0) {
             AttachmentSourcePickerView(
-                selected: viewModel.pickerState,
-                onTap: viewModel.change(pickerState:)
+                selected: selectedPickerState,
+                onTap: onPickerStateChange
             )
             
-            if viewModel.pickerState == .photos {
-                if let assets = viewModel.imageAssets,
+            if selectedPickerState == .photos {
+                if let assets = photoLibraryAssets,
                    let collection = PHFetchResultCollection(fetchResult: assets) {
                     AttachmentTypeContainer {
                         PhotoAttachmentPickerView(
                             assets: collection,
-                            onImageTap: viewModel.imageTapped(_:),
-                            imageSelected: viewModel.isImageSelected(with:)
+                            onImageTap: onAssetTap,
+                            imageSelected: isAssetSelected
                         )
                     }
                 } else {
@@ -35,11 +46,11 @@ public struct AttachmentPickerView: View {
                     Spacer()
                 }
                 
-            } else if viewModel.pickerState == .files {
+            } else if selectedPickerState == .files {
                 AttachmentTypeContainer {
                     ZStack {
                         Button {
-                            viewModel.filePickerShown = true
+                            filePickerShown = true
                         } label: {
                             Text("Add more files")
                                 .font(fonts.bodyBold)
@@ -47,15 +58,15 @@ public struct AttachmentPickerView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color(colors.highlightedAccentBackground))
-                    .sheet(isPresented: $viewModel.filePickerShown) {
-                        FilePickerView(fileURLs: $viewModel.addedFileURLs)
+                    .sheet(isPresented: $filePickerShown) {
+                        FilePickerView(fileURLs: $addedFileURLs)
                     }
                 }
             } else {
                 Spacer()
-                    .sheet(isPresented: $viewModel.cameraPickerShown) {
+                    .sheet(isPresented: $cameraPickerShown) {
                         ImagePickerView(sourceType: .camera) { addedImage in
-                            viewModel.cameraImageAdded(addedImage)
+                            cameraImageAdded(addedImage)
                         }
                     }
             }
@@ -64,7 +75,7 @@ public struct AttachmentPickerView: View {
         .background(Color(colors.background1))
         .onChange(of: isDisplayed) { newValue in
             if newValue {
-                viewModel.askForPhotosPermission()
+                askForAssetsAccessPermissions()
             }
         }
     }

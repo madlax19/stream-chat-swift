@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import Photos
 import StreamChat
 import SwiftUI
 
@@ -246,4 +247,37 @@ public protocol ViewFactory: AnyObject {
         enabled: Bool,
         onTap: @escaping () -> Void
     ) -> TrailingComposerViewType
+    
+    associatedtype AttachmentPickerViewType: View
+    /// Creates the attachment picker view.
+    /// - Parameters:
+    ///  - attachmentPickerState: currently selected attachment picker.
+    ///  - filePickerShown: binding controlling the display of the file picker.
+    ///  - cameraPickerShown: binding controlling the display of the camera picker.
+    ///  - addedFileURLs: list of the added file urls.
+    ///  - onPickerStateChange: called when the picker state is changed.
+    ///  - photoLibraryAssets: list of assets fetched from the photo library.
+    ///  - onAssetTap: called when an asset is tapped on.
+    ///  - isAssetSelected: checks whether an asset is selected.
+    ///  - cameraImageAdded: called when an asset from the camera is added.
+    ///  - askForAssetsAccessPermissions: provides access to photos library (and others if needed).
+    ///  - isDisplayed: thether the attachment picker view is displayed.
+    ///  - height: the current  height of the picker.
+    ///  - popupHeight: the  height of the popup when displayed.
+    /// - Returns: view displayed in the attachment picker slot.
+    func makeAttachmentPickerView(
+        attachmentPickerState: AttachmentPickerState,
+        filePickerShown: Binding<Bool>,
+        cameraPickerShown: Binding<Bool>,
+        addedFileURLs: Binding<[URL]>,
+        onPickerStateChange: @escaping (AttachmentPickerState) -> Void,
+        photoLibraryAssets: PHFetchResult<PHAsset>?,
+        onAssetTap: @escaping (AddedAsset) -> Void,
+        isAssetSelected: @escaping (String) -> Bool,
+        cameraImageAdded: @escaping (AddedAsset) -> Void,
+        askForAssetsAccessPermissions: @escaping () -> Void,
+        isDisplayed: Bool,
+        height: CGFloat,
+        popupHeight: CGFloat
+    ) -> AttachmentPickerViewType
 }

@@ -2,6 +2,7 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
+import Photos
 import StreamChat
 import SwiftUI
 
@@ -259,6 +260,40 @@ extension ViewFactory {
             onTap: onTap
         )
         .padding(.bottom, 8)
+    }
+    
+    public func makeAttachmentPickerView(
+        attachmentPickerState: AttachmentPickerState,
+        filePickerShown: Binding<Bool>,
+        cameraPickerShown: Binding<Bool>,
+        addedFileURLs: Binding<[URL]>,
+        onPickerStateChange: @escaping (AttachmentPickerState) -> Void,
+        photoLibraryAssets: PHFetchResult<PHAsset>?,
+        onAssetTap: @escaping (AddedAsset) -> Void,
+        isAssetSelected: @escaping (String) -> Bool,
+        cameraImageAdded: @escaping (AddedAsset) -> Void,
+        askForAssetsAccessPermissions: @escaping () -> Void,
+        isDisplayed: Bool,
+        height: CGFloat,
+        popupHeight: CGFloat
+    ) -> some View {
+        AttachmentPickerView(
+            viewFactory: self,
+            selectedPickerState: attachmentPickerState,
+            filePickerShown: filePickerShown,
+            cameraPickerShown: cameraPickerShown,
+            addedFileURLs: addedFileURLs,
+            onPickerStateChange: onPickerStateChange,
+            photoLibraryAssets: photoLibraryAssets,
+            onAssetTap: onAssetTap,
+            isAssetSelected: isAssetSelected,
+            cameraImageAdded: cameraImageAdded,
+            askForAssetsAccessPermissions: askForAssetsAccessPermissions,
+            isDisplayed: isDisplayed,
+            height: height
+        )
+        .offset(y: isDisplayed ? 0 : popupHeight)
+        .animation(.spring())
     }
 }
 
