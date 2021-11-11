@@ -22,11 +22,11 @@ let package = Package(
     ],
     dependencies: [
         // StreamChat
-        .package(url: "https://github.com/daltoniam/Starscream.git", from: "4.0.0"),
+        .package(name: "Starscream", url: "https://github.com/daltoniam/Starscream.git", exact: "3.1.1"),
         
         // StreamChatUI
-        .package(url: "https://github.com/kean/Nuke.git", from: "10.0.0"),
-        .package(url: "https://github.com/kirualex/SwiftyGif.git", from: "5.3.0")
+        .package(name: "Nuke", url: "https://github.com/kean/Nuke.git", exact: "10.5.1"),
+        .package(name: "SwiftyGif", url: "https://github.com/kirualex/SwiftyGif.git", exact: "5.4.0")
     ],
     targets: [
         .target(
