@@ -4,12 +4,23 @@
 
 import SwiftUI
 
+/// View for an added image displayed in the composer input.
 public struct AddedImageAttachmentsView: View {
     @Injected(\.fonts) var fonts
     @Injected(\.colors) var colors
     
-    var images: [AddedAsset]
-    var onDiscardAttachment: (String) -> Void
+    public var images: [AddedAsset]
+    public var onDiscardAttachment: (String) -> Void
+    
+    private var imageSize: CGFloat = 100
+    
+    public init(
+        images: [AddedAsset],
+        onDiscardAttachment: @escaping (String) -> Void
+    ) {
+        self.images = images
+        self.onDiscardAttachment = onDiscardAttachment
+    }
     
     public var body: some View {
         ScrollView(.horizontal) {
@@ -18,7 +29,7 @@ public struct AddedImageAttachmentsView: View {
                     Image(uiImage: attachment.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
+                        .frame(width: imageSize, height: imageSize)
                         .clipped()
                         .cornerRadius(12)
                         .overlay(
@@ -40,6 +51,6 @@ public struct AddedImageAttachmentsView: View {
                 }
             }
         }
-        .frame(height: 100)
+        .frame(height: imageSize)
     }
 }

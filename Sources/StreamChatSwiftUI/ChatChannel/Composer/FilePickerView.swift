@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+/// SwiftUI wrapper for picking files from the device.
 public struct FilePickerView: UIViewControllerRepresentable {
     @Binding var fileURLs: [URL]
     

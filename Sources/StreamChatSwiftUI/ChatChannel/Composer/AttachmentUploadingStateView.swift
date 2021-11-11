@@ -5,6 +5,7 @@
 import StreamChat
 import SwiftUI
 
+/// View used for displaying progress while an asset is being uploaded.
 struct AttachmentUploadingStateView: View {
     @Injected(\.images) var images
     @Injected(\.colors) var colors
@@ -59,6 +60,7 @@ struct AttachmentUploadingStateView: View {
     }
 }
 
+/// View modifier enabling uploading state display.
 struct AttachmentUploadingStateViewModifier: ViewModifier {
     var uploadState: AttachmentUploadingState?
     var url: URL
@@ -72,6 +74,10 @@ struct AttachmentUploadingStateViewModifier: ViewModifier {
 }
 
 extension View {
+    /// Attaches a uploading state indicator.
+    /// - Parameters:
+    ///  - uploadState: the upload state of the asset.
+    ///  - url: the url of the asset.
     func withUploadingStateIndicator(for uploadState: AttachmentUploadingState?, url: URL) -> some View {
         modifier(AttachmentUploadingStateViewModifier(uploadState: uploadState, url: url))
     }

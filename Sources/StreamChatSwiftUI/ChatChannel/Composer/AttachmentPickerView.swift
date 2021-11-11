@@ -5,6 +5,7 @@
 import Photos
 import SwiftUI
 
+/// View for the attachment picker.
 public struct AttachmentPickerView<Factory: ViewFactory>: View {
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts
@@ -66,6 +67,7 @@ public struct AttachmentPickerView<Factory: ViewFactory>: View {
     }
 }
 
+/// View for picking the source of the attachment (photo, files or camera).
 struct AttachmentSourcePickerView: View {
     @Injected(\.colors) var colors
     
@@ -103,6 +105,7 @@ struct AttachmentSourcePickerView: View {
     }
 }
 
+/// Button used for picking of attachment types.
 struct AttachmentPickerButton: View {
     @Injected(\.colors) var colors
     

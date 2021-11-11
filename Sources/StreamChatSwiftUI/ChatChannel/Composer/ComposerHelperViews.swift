@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+/// View used to indicate that an asset is a video.
 struct VideoIndicatorView: View {
     var body: some View {
         BottomLeftView {
@@ -15,6 +16,7 @@ struct VideoIndicatorView: View {
     }
 }
 
+/// View displaying the duration of the video.
 struct VideoDurationIndicatorView: View {
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts
@@ -31,6 +33,7 @@ struct VideoDurationIndicatorView: View {
     }
 }
 
+/// Container that displays attachment types.
 struct AttachmentTypeContainer<Content: View>: View {
     @Injected(\.colors) var colors
     
@@ -49,6 +52,7 @@ struct AttachmentTypeContainer<Content: View>: View {
     }
 }
 
+/// View shown after the native file picker is closed.
 struct FilePickerDisplayView: View {
     @Injected(\.fonts) var fonts
     @Injected(\.colors) var colors
@@ -75,6 +79,7 @@ struct FilePickerDisplayView: View {
     }
 }
 
+/// View displayed when the camera picker is shown.
 struct CameraPickerDisplayView: View {
     @Binding var selectedPickerState: AttachmentPickerState
     @Binding var cameraPickerShown: Bool
@@ -93,6 +98,7 @@ struct CameraPickerDisplayView: View {
     }
 }
 
+/// View displayed when there's no access permission to the photo library.
 struct AssetsAccessPermissionView: View {
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts

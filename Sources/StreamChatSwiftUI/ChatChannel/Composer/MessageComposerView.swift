@@ -5,6 +5,7 @@
 import StreamChat
 import SwiftUI
 
+/// Main view for the message composer.
 public struct MessageComposerView<Factory: ViewFactory>: View, KeyboardReadable {
     @Injected(\.colors) var colors
     
@@ -84,6 +85,7 @@ public struct MessageComposerView<Factory: ViewFactory>: View, KeyboardReadable 
     }
 }
 
+/// View for the composer's input (text and media).
 public struct ComposerInputView: View {
     @Injected(\.colors) var colors
     
@@ -136,7 +138,7 @@ public struct ComposerInputView: View {
             ComposerTextInputView(
                 text: $text,
                 height: $textHeight,
-                placeholder: "Send a message"
+                placeholder: L10n.Composer.Placeholder.message
             )
             .frame(height: textFieldHeight)
         }

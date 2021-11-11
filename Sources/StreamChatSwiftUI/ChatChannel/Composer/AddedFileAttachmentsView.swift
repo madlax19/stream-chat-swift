@@ -5,6 +5,7 @@
 import StreamChat
 import SwiftUI
 
+/// View for an added file displayed in the composer input.
 public struct AddedFileAttachmentsView: View {
     @Injected(\.colors) var colors
     

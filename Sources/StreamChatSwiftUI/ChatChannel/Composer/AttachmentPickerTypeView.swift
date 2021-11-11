@@ -4,6 +4,25 @@
 
 import SwiftUI
 
+/// Enum for the picker type state.
+public enum PickerTypeState {
+    /// Picker is expanded, with a selected `AttachmentPickerType`.
+    case expanded(AttachmentPickerType)
+    /// Picker is collapsed.
+    case collapsed
+}
+
+/// Attachment picker type.
+public enum AttachmentPickerType {
+    /// None is selected.
+    case none
+    /// Media (images, files, videos) is selected.
+    case media
+    /// Giphy commands are selected.
+    case giphy
+}
+
+/// View for picking the attachment type (media or giphy commands).
 public struct AttachmentPickerTypeView: View {
     @Injected(\.images) var images
     @Injected(\.colors) var colors
@@ -40,17 +59,7 @@ public struct AttachmentPickerTypeView: View {
     }
 }
 
-public enum PickerTypeState {
-    case expanded(AttachmentPickerType)
-    case collapsed
-}
-
-public enum AttachmentPickerType {
-    case none
-    case media
-    case giphy
-}
-
+/// View for the picker type button.
 struct PickerTypeButton: View {
     @Injected(\.images) var images
     @Injected(\.colors) var colors

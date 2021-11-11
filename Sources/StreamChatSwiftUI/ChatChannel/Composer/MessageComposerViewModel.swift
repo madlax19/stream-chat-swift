@@ -6,6 +6,7 @@ import Photos
 import StreamChat
 import SwiftUI
 
+/// View model for the `MessageComposerView`.
 public class MessageComposerViewModel: ObservableObject {
     @Published var pickerState: AttachmentPickerState = .photos {
         didSet {
@@ -31,7 +32,6 @@ public class MessageComposerViewModel: ObservableObject {
     @Published var text = "" {
         didSet {
             if text != "" {
-                // TODO: check for the three rows
                 pickerTypeState = .collapsed
                 channelController.sendKeystrokeEvent()
             }
@@ -186,18 +186,18 @@ public class MessageComposerViewModel: ObservableObject {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized, .limited:
-                print("Good to proceed")
+                log.debug("Access to photos granted.")
                 let fetchOptions = PHFetchOptions()
                 fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
                 DispatchQueue.main.async { [unowned self] in
                     self.imageAssets = PHAsset.fetchAssets(with: fetchOptions)
                 }
             case .denied, .restricted:
-                print("Not allowed")
+                log.debug("Access to photos is denied, showing the no permissions screen.")
             case .notDetermined:
-                print("Not determined yet")
+                log.debug("Access to photos is still not determined.")
             @unknown default:
-                print("Not handled status")
+                log.debug("Unknown authorization status.")
             }
         }
     }
@@ -230,12 +230,14 @@ public class MessageComposerViewModel: ObservableObject {
     }
 }
 
+/// Enum describing the attachment picker's state.
 public enum AttachmentPickerState {
     case files
     case photos
     case camera
 }
 
+/// Struct representing an asset added to the composer.
 public struct AddedAsset: Identifiable {
     public let image: UIImage
     public let id: String
@@ -244,6 +246,7 @@ public struct AddedAsset: Identifiable {
     public var extraData: [String: Any] = [:]
 }
 
+/// Type of asset added to the composer.
 public enum AssetType {
     case image
     case video

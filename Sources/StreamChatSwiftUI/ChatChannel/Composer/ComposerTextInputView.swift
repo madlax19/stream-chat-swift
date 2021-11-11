@@ -5,6 +5,7 @@
 import SwiftUI
 import UIKit
 
+/// SwiftUI wrapper for a text field with multiple rows.
 struct ComposerTextInputView: UIViewRepresentable {
     @Binding var text: String
     @Binding var height: CGFloat
