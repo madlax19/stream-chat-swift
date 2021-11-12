@@ -42,4 +42,11 @@ extension View {
             self
         }
     }
+    
+    /// Method for making a haptic feedback.
+    /// - Parameter style: feedback style
+    func triggerHapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+    }
 }

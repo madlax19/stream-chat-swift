@@ -20,6 +20,7 @@ struct MessageContainerView<Factory: ViewFactory>: View {
     var onLongPress: (MessageDisplayInfo) -> Void
     
     @State private var frame: CGRect = .zero
+    @State private var computeFrame = false
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -47,19 +48,33 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                     .overlay(
                         reactionsShown ? ReactionsContainer(message: message) : nil
                     )
-//                        .simultaneousGesture(
-//                            LongPressGesture(minimumDuration: 1.0)
-//                                .onChanged { value in
-//                                    onLongPress(
-//                                        MessageDisplayInfo(
-//                                            message: message,
-//                                            frame: frame,
-//                                            contentWidth: contentWidth,
-//                                            isFirst: showsAllInfo
-//                                        )
-//                                    )
-//                                }
-//                        )
+                    .background(
+                        GeometryReader { proxy in
+                            Rectangle().fill(Color.clear)
+                                .onChange(of: computeFrame, perform: { _ in
+                                    DispatchQueue.main.async {
+                                        frame = proxy.frame(in: .global)
+                                    }
+                                })
+                        }
+                    )
+                    .onTapGesture {}
+                    .onLongPressGesture(perform: {
+                        computeFrame = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            computeFrame = false
+                            triggerHapticFeedback(style: .medium)
+                            onLongPress(
+                                MessageDisplayInfo(
+                                    message: message,
+                                    frame: frame,
+                                    contentWidth: contentWidth,
+                                    isFirst: showsAllInfo
+                                )
+                            )
+                        }
+
+                    })
                     
                     if showsAllInfo && !message.isDeleted {
                         if isInGroup && !message.isSentByCurrentUser {

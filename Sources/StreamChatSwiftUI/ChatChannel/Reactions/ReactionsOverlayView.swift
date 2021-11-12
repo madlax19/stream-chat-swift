@@ -29,10 +29,14 @@ struct ReactionsOverlayView<Factory: ViewFactory>: View {
                     contentWidth: messageDisplayInfo.contentWidth,
                     isFirst: messageDisplayInfo.isFirst
                 )
-//                .offset(
-//                    x: messageDisplayInfo.frame.origin.x,
-//                    y: messageDisplayInfo.frame.origin.y
-//                )
+                .offset(
+                    x: messageDisplayInfo.frame.origin.x,
+                    y: messageDisplayInfo.frame.origin.y
+                )
+                .frame(
+                    width: messageDisplayInfo.frame.width,
+                    height: messageDisplayInfo.frame.height
+                )
             }
         }
         .edgesIgnoringSafeArea(.all)

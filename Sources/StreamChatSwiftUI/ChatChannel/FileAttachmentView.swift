@@ -54,14 +54,13 @@ public struct FileAttachmentView: View {
     
     public var body: some View {
         HStack {
-            Button {
+            FileAttachmentDisplayView(
+                url: attachment.assetURL,
+                title: attachment.title ?? "",
+                sizeString: attachment.file.sizeString
+            )
+            .onTapGesture {
                 fullScreenShown = true
-            } label: {
-                FileAttachmentDisplayView(
-                    url: attachment.assetURL,
-                    title: attachment.title ?? "",
-                    sizeString: attachment.file.sizeString
-                )
             }
             
             Spacer()
