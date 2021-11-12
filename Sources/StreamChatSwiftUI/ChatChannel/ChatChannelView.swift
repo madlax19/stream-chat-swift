@@ -29,11 +29,11 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
         VStack(spacing: 0) {
             MessageListView(
                 factory: factory,
-                messages: $viewModel.messages,
-                messagesGroupingInfo: $viewModel.messagesGroupingInfo,
+                messages: viewModel.messages,
+                messagesGroupingInfo: viewModel.messagesGroupingInfo,
                 scrolledId: $viewModel.scrolledId,
                 showScrollToLatestButton: $viewModel.showScrollToLatestButton,
-                currentDateString: $viewModel.currentDateString,
+                currentDateString: viewModel.currentDateString,
                 isGroup: !viewModel.channel.isDirectMessageChannel,
                 unreadCount: viewModel.channel.unreadCount.messages,
                 onMessageAppear: viewModel.handleMessageAppear(index:),

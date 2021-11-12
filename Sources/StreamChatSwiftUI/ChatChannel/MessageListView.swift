@@ -9,11 +9,11 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     @Injected(\.utils) var utils
     
     var factory: Factory
-    @Binding var messages: LazyCachedMapCollection<ChatMessage>
-    @Binding var messagesGroupingInfo: [String: [String]]
+    var messages: LazyCachedMapCollection<ChatMessage>
+    var messagesGroupingInfo: [String: [String]]
     @Binding var scrolledId: String?
     @Binding var showScrollToLatestButton: Bool
-    @Binding var currentDateString: String?
+    var currentDateString: String?
     var isGroup: Bool
     var unreadCount: Int
     
