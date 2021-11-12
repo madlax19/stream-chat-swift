@@ -19,6 +19,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     
     var onMessageAppear: (Int) -> Void
     var onScrollToBottom: () -> Void
+    var onLongPress: (MessageDisplayInfo) -> Void
     
     @State private var width: CGFloat?
     @State private var height: CGFloat?
@@ -52,9 +53,7 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                                 isInGroup: isGroup,
                                 width: width,
                                 showsAllInfo: showsAllData(for: message),
-                                onLongPress: { _ in
-                                    // viewModel.addReaction(to: viewModel.messages[index])
-                                }
+                                onLongPress: onLongPress
                             )
                             .padding(.horizontal, 8)
                             .padding(.bottom, showsAllData(for: message) ? 8 : 2)

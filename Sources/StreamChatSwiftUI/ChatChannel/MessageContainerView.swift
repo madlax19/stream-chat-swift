@@ -17,7 +17,9 @@ struct MessageContainerView<Factory: ViewFactory>: View {
     let isInGroup: Bool
     var width: CGFloat?
     var showsAllInfo: Bool
-    var onLongPress: (ChatMessage) -> Void
+    var onLongPress: (MessageDisplayInfo) -> Void
+    
+    @State private var frame: CGRect = .zero
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -45,11 +47,19 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                     .overlay(
                         reactionsShown ? ReactionsContainer(message: message) : nil
                     )
-                    
-                    // TODO: interferes with scrolling.
-                    //                .onLongPressGesture {
-                    //                    onLongPress(message)
-                    //                }
+//                        .simultaneousGesture(
+//                            LongPressGesture(minimumDuration: 1.0)
+//                                .onChanged { value in
+//                                    onLongPress(
+//                                        MessageDisplayInfo(
+//                                            message: message,
+//                                            frame: frame,
+//                                            contentWidth: contentWidth,
+//                                            isFirst: showsAllInfo
+//                                        )
+//                                    )
+//                                }
+//                        )
                     
                     if showsAllInfo && !message.isDeleted {
                         if isInGroup && !message.isSentByCurrentUser {
@@ -129,4 +139,11 @@ struct MessageSpacer: View {
             .frame(minWidth: spacerWidth)
             .layoutPriority(-1)
     }
+}
+
+struct MessageDisplayInfo {
+    let message: ChatMessage
+    let frame: CGRect
+    let contentWidth: CGFloat
+    let isFirst: Bool
 }

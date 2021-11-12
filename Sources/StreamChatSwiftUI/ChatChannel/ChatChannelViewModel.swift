@@ -68,6 +68,15 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     }
 
     @Published var messagesGroupingInfo = [String: [String]]()
+    @Published var currentSnapshot: UIImage? {
+        didSet {
+            withAnimation {
+                reactionsShown = currentSnapshot != nil
+            }
+        }
+    }
+
+    @Published var reactionsShown = false
     
     var channel: ChatChannel {
         channelController.channel!
@@ -124,6 +133,28 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         messages = channelController.messages
     }
     
+    func showReactionOverlay() {
+        let view: UIView = topVC()!.view
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        currentSnapshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    func topVC() -> UIViewController? {
+        let keyWindow = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        
+        if var topController = keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            return topController
+        }
+        
+        return nil
+    }
+
     // TODO: temp implementation
     func addReaction(to message: ChatMessage) {
         guard let cId = message.cid else { return }

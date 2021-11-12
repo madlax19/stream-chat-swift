@@ -677,6 +677,7 @@
 		84F21F2A2739CFCA002A0526 /* AttachmentUploadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F21F292739CFCA002A0526 /* AttachmentUploadingStateView.swift */; };
 		84F61270268B415C00DDF6EE /* ChatClientConfig_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6126F268B415C00DDF6EE /* ChatClientConfig_Tests.swift */; };
 		84FA3B3E273CFED900AD3AAF /* PhotoAssetsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA3B3D273CFED900AD3AAF /* PhotoAssetsUtils.swift */; };
+		84FA3B40273D57C200AD3AAF /* ReactionsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA3B3F273D57C200AD3AAF /* ReactionsOverlayView.swift */; };
 		84FB37FB2722C1DB00C25DA3 /* NewChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB37FA2722C1DB00C25DA3 /* NewChatView.swift */; };
 		84FB37FD2722C1F900C25DA3 /* NewChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB37FC2722C1F900C25DA3 /* NewChatViewModel.swift */; };
 		84FB37FF2722C4D800C25DA3 /* CustomChannelHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB37FE2722C4D800C25DA3 /* CustomChannelHeader.swift */; };
@@ -2248,6 +2249,7 @@
 		84F21F292739CFCA002A0526 /* AttachmentUploadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentUploadingStateView.swift; sourceTree = "<group>"; };
 		84F6126F268B415C00DDF6EE /* ChatClientConfig_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClientConfig_Tests.swift; sourceTree = "<group>"; };
 		84FA3B3D273CFED900AD3AAF /* PhotoAssetsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAssetsUtils.swift; sourceTree = "<group>"; };
+		84FA3B3F273D57C200AD3AAF /* ReactionsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionsOverlayView.swift; sourceTree = "<group>"; };
 		84FB37FA2722C1DB00C25DA3 /* NewChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatView.swift; sourceTree = "<group>"; };
 		84FB37FC2722C1F900C25DA3 /* NewChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatViewModel.swift; sourceTree = "<group>"; };
 		84FB37FE2722C4D800C25DA3 /* CustomChannelHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChannelHeader.swift; sourceTree = "<group>"; };
@@ -4534,6 +4536,7 @@
 			children = (
 				84D5F3E7273ABF0C00291AB0 /* ReactionsView.swift */,
 				84D5F3E9273ACC6700291AB0 /* ReactionsBubbleView.swift */,
+				84FA3B3F273D57C200AD3AAF /* ReactionsOverlayView.swift */,
 			);
 			path = Reactions;
 			sourceTree = "<group>";
@@ -7663,6 +7666,7 @@
 				843B7CAE273575490062CC45 /* AddedFileAttachmentsView.swift in Sources */,
 				84EAC82B271975710042AA98 /* ChatChannelListViewModel.swift in Sources */,
 				84EAC882271D8C210042AA98 /* NukeImageLoader.swift in Sources */,
+				84FA3B40273D57C200AD3AAF /* ReactionsOverlayView.swift in Sources */,
 				84A660DD2720333000501FE6 /* ChatChannelSwipeableListItem.swift in Sources */,
 				8425E3CE2728AFEE00EE7D68 /* ChannelAvatarsMerger.swift in Sources */,
 				84EAC85F2719A57E0042AA98 /* Fonts.swift in Sources */,

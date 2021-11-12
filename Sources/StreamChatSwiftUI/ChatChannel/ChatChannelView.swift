@@ -11,8 +11,10 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
     
     @StateObject private var viewModel: ChatChannelViewModel
     
-    private var factory: Factory
+    @State private var messageDisplayInfo: MessageDisplayInfo?
     
+    private var factory: Factory
+            
     public init(
         viewFactory: Factory,
         channelController: ChatChannelController
@@ -35,20 +37,43 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                 isGroup: !viewModel.channel.isDirectMessageChannel,
                 unreadCount: viewModel.channel.unreadCount.messages,
                 onMessageAppear: viewModel.handleMessageAppear(index:),
-                onScrollToBottom: viewModel.scrollToLastMessage
+                onScrollToBottom: viewModel.scrollToLastMessage,
+                onLongPress: { displayInfo in
+                    self.messageDisplayInfo = displayInfo
+                    viewModel.showReactionOverlay()
+                }
             )
             .onAppear {
                 viewModel.subscribeToChannelChanges()
             }
             
             Divider()
+                .navigationBarBackButtonHidden(viewModel.reactionsShown)
+                .if(viewModel.reactionsShown, transform: { view in
+                    view.navigationBarHidden(true)
+                })
+                .if(!viewModel.reactionsShown) { view in
+                    view.modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))
+                }
             
             factory.makeMessageComposerViewType(
                 with: viewModel.channelController,
                 onMessageSent: viewModel.scrollToLastMessage
             )
         }
-        .modifier(factory.makeChannelHeaderViewModifier(for: viewModel.channel))
         .accentColor(colors.tintColor)
+        .overlay(
+            viewModel.reactionsShown ?
+                ReactionsOverlayView(
+                    factory: factory,
+                    currentSnapshot: viewModel.currentSnapshot!,
+                    messageDisplayInfo: messageDisplayInfo!,
+                    onBackgroundTap: {
+                        viewModel.reactionsShown = false
+                    }
+                )
+                .edgesIgnoringSafeArea(.all)
+                : nil
+        )
     }
 }

@@ -98,6 +98,13 @@ public struct ChatChannelListView<Factory: ViewFactory>: View {
         }
         .overlay(viewModel.customAlertShown ? customViewOverlay() : nil)
         .accentColor(colors.tintColor)
+        .if(isIphone, transform: { view in
+            view.navigationViewStyle(.stack)
+        })
+    }
+    
+    private var isIphone: Bool {
+        UIDevice.current.userInterfaceIdiom == .phone
     }
     
     @ViewBuilder
