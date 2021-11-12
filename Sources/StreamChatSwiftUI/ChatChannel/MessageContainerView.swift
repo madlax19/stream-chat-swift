@@ -156,7 +156,7 @@ struct MessageSpacer: View {
     }
 }
 
-struct MessageDisplayInfo {
+public struct MessageDisplayInfo {
     let message: ChatMessage
     let frame: CGRect
     let contentWidth: CGFloat

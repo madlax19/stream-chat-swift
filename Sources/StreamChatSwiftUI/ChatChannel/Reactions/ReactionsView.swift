@@ -7,18 +7,17 @@ import SwiftUI
 
 struct ReactionsContainer: View {
     let message: ChatMessage
+    var useLargeIcons = false
     
     var body: some View {
         VStack {
-            HStack {
-                if !message.isSentByCurrentUser {
-                    Spacer()
-                }
-                
-                ReactionsView(message: message)
-                
-                if message.isSentByCurrentUser {
-                    Spacer()
+            ReactionsHStack(message: message) {
+                ReactionsView(
+                    message: message,
+                    useLargeIcons: useLargeIcons,
+                    reactions: reactions
+                ) { _ in
+                    log.debug("tapped on reaction")
                 }
             }
             
@@ -28,6 +27,15 @@ struct ReactionsContainer: View {
             x: offsetX,
             y: -20
         )
+    }
+    
+    private var reactions: [MessageReactionType] {
+        message.reactionScores.keys.filter { reactionType in
+            (message.reactionScores[reactionType] ?? 0) > 0
+        }
+        .sorted(by: { lhs, rhs in
+            lhs.rawValue < rhs.rawValue
+        })
     }
     
     private var reactionsSize: CGFloat {
@@ -45,26 +53,41 @@ struct ReactionsContainer: View {
 }
 
 struct ReactionsView: View {
-    let message: ChatMessage
-    
-    @Injected(\.images) var images
     @Injected(\.colors) var colors
+    @Injected(\.images) var images
+    
+    let message: ChatMessage
+    var useLargeIcons = false
+    var reactions: [MessageReactionType]
+    var onReactionTap: (MessageReactionType) -> Void
     
     var body: some View {
         HStack {
             ForEach(reactions) { reaction in
                 if let image = iconProvider(for: reaction) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .renderingMode(.template)
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(color(for: reaction))
-                        .frame(width: 20)
+                    Button {
+                        onReactionTap(reaction)
+                    } label: {
+                        Image(uiImage: image)
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(color(for: reaction))
+                            .frame(width: 20)
+                    }
                 }
             }
         }
         .padding(.all, 6)
         .reactionsBubble(for: message)
+    }
+    
+    private func iconProvider(for reaction: MessageReactionType) -> UIImage? {
+        if useLargeIcons {
+            return images.availableReactions[reaction]?.largeIcon
+        } else {
+            return images.availableReactions[reaction]?.smallIcon
+        }
     }
     
     private func color(for reaction: MessageReactionType) -> Color {
@@ -74,16 +97,6 @@ struct ReactionsView: View {
     
     private var userReactionIDs: Set<MessageReactionType> {
         Set(message.currentUserReactions.map(\.type))
-    }
-    
-    private var reactions: [MessageReactionType] {
-        message.reactionScores.keys.filter { reactionType in
-            (message.reactionScores[reactionType] ?? 0) > 0
-        }
-    }
-    
-    private func iconProvider(for reaction: MessageReactionType) -> UIImage? {
-        images.availableReactions[reaction]?.smallIcon
     }
 }
 

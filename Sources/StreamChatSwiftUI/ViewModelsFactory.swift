@@ -62,4 +62,10 @@ public class ViewModelsFactory {
     ) -> MessageComposerViewModel {
         MessageComposerViewModel(channelController: channelController)
     }
+    
+    public static func makeReactionsOverlayViewModel(
+        message: ChatMessage
+    ) -> ReactionsOverlayViewModel {
+        ReactionsOverlayViewModel(message: message)
+    }
 }
