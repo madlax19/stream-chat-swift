@@ -59,6 +59,7 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                 .overlay(
                     ReactionsOverlayContainer(
                         message: viewModel.message,
+                        contentRect: messageDisplayInfo.frame,
                         onReactionTap: { reaction in
                             viewModel.reactionTapped(reaction)
                             onBackgroundTap()

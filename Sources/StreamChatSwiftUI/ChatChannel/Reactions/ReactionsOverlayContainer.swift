@@ -10,6 +10,7 @@ struct ReactionsOverlayContainer: View {
     @Injected(\.images) var images
     
     let message: ChatMessage
+    let contentRect: CGRect
     var onReactionTap: (MessageReactionType) -> Void
     
     var body: some View {
@@ -40,15 +41,30 @@ struct ReactionsOverlayContainer: View {
     }
     
     private var reactionsSize: CGFloat {
-        let entrySize = 32
-        return CGFloat(message.reactionScores.count * entrySize)
+        let entrySize = 28
+        return CGFloat(reactions.count * entrySize)
     }
     
     private var offsetX: CGFloat {
-        var offset = reactionsSize / 3
-        if message.reactionScores.count == 1 {
-            offset = 16
+        let padding: CGFloat = 16
+        if message.isSentByCurrentUser {
+            var originX = contentRect.origin.x - reactionsSize / 2
+            let total = originX + reactionsSize
+            if total > availableWidth {
+                originX = availableWidth - reactionsSize
+            }
+            return -(contentRect.origin.x - originX)
+        } else {
+            var originX = contentRect.origin.x - reactionsSize / 2
+            if originX < 0 {
+                originX = padding
+            }
+            
+            return contentRect.origin.x - originX
         }
-        return message.isSentByCurrentUser ? -offset : offset
+    }
+    
+    private var availableWidth: CGFloat {
+        UIScreen.main.bounds.width
     }
 }
