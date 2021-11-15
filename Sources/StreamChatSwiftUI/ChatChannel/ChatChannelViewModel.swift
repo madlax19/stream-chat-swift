@@ -226,13 +226,17 @@ extension ChatMessage: Identifiable {
         
         if statesId.isEmpty {
             if !reactionScores.isEmpty {
-                return id + reactionScoresId
+                return baseId + reactionScoresId
             } else {
-                return id
+                return baseId
             }
         }
         
-        return id + statesId + reactionScoresId
+        return baseId + statesId + reactionScoresId
+    }
+    
+    private var baseId: String {
+        isDeleted ? "\(id)-deleted" : id
     }
     
     var uploadingStatesId: String {
