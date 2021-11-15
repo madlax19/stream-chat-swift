@@ -73,7 +73,7 @@ struct ReactionsView: View {
                             .renderingMode(.template)
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(color(for: reaction))
-                            .frame(width: useLargeIcons ? 25 : 20, height: useLargeIcons ? 27 : 24)
+                            .frame(width: useLargeIcons ? 25 : 20, height: useLargeIcons ? 27 : 20)
                     }
                 }
             }

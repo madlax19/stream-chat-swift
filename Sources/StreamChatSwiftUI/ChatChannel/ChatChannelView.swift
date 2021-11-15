@@ -39,8 +39,10 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                 onMessageAppear: viewModel.handleMessageAppear(index:),
                 onScrollToBottom: viewModel.scrollToLastMessage,
                 onLongPress: { displayInfo in
-                    self.messageDisplayInfo = displayInfo
-                    viewModel.showReactionOverlay()
+                    withAnimation {
+                        self.messageDisplayInfo = displayInfo
+                        viewModel.showReactionOverlay()
+                    }
                 }
             )
             .onAppear {
@@ -72,6 +74,7 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                         viewModel.reactionsShown = false
                     }
                 )
+                .transition(.identity)
                 .edgesIgnoringSafeArea(.all)
                 : nil
         )

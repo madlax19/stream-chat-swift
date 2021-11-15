@@ -50,7 +50,7 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                 )
                 .offset(
                     x: messageDisplayInfo.frame.origin.x,
-                    y: messageDisplayInfo.frame.origin.y
+                    y: originY
                 )
                 .frame(
                     width: messageDisplayInfo.frame.width,
@@ -68,11 +68,25 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                     .id(viewModel.message.reactionScoresId)
                     .offset(
                         x: messageDisplayInfo.frame.origin.x,
-                        y: messageDisplayInfo.frame.origin.y - 20
+                        y: originY - 24
                     )
                 )
             }
         }
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    private var originY: CGFloat {
+        var originY = messageDisplayInfo.frame.origin.y
+        let screenHeight = UIScreen.main.bounds.size.height
+        let minOrigin: CGFloat = 100
+        let maxOrigin: CGFloat = screenHeight - messageDisplayInfo.frame.height - minOrigin
+        if originY < minOrigin {
+            originY = minOrigin
+        } else if originY > maxOrigin {
+            originY = maxOrigin
+        }
+        
+        return originY
     }
 }
