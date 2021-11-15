@@ -12,6 +12,11 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
     var messageDisplayInfo: MessageDisplayInfo
     var onBackgroundTap: () -> Void
     
+    private var messageActionsCount: Int
+    private let padding: CGFloat = 16
+    private let messageItemSize: CGFloat = 40
+    private let maxMessageActionsSize: CGFloat = UIScreen.main.bounds.size.height / 3
+    
     public init(
         factory: Factory,
         currentSnapshot: UIImage,
@@ -27,6 +32,11 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
         self.currentSnapshot = currentSnapshot
         self.messageDisplayInfo = messageDisplayInfo
         self.onBackgroundTap = onBackgroundTap
+        messageActionsCount = factory.suppotedMessageActions(
+            for: messageDisplayInfo.message,
+            onDismiss: {},
+            onError: { _ in }
+        ).count
     }
     
     public var body: some View {
@@ -40,8 +50,11 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
+                .alert(isPresented: $viewModel.errorShown) {
+                    Alert.defaultErrorAlert
+                }
             
-            VStack {
+            VStack(alignment: .leading) {
                 MessageView(
                     factory: factory,
                     message: messageDisplayInfo.message,
@@ -49,12 +62,7 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                     isFirst: messageDisplayInfo.isFirst
                 )
                 .offset(
-                    x: messageDisplayInfo.frame.origin.x,
-                    y: originY
-                )
-                .frame(
-                    width: messageDisplayInfo.frame.width,
-                    height: messageDisplayInfo.frame.height
+                    x: messageDisplayInfo.frame.origin.x
                 )
                 .overlay(
                     ReactionsOverlayContainer(
@@ -68,19 +76,41 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
                     .id(viewModel.message.reactionScoresId)
                     .offset(
                         x: messageDisplayInfo.frame.origin.x,
-                        y: originY - 24
+                        y: -24
                     )
                 )
+                .frame(
+                    width: messageDisplayInfo.frame.width,
+                    height: messageDisplayInfo.frame.height
+                )
+                
+                factory.makeMessageActionsView(
+                    for: messageDisplayInfo.message,
+                    onDismiss: onBackgroundTap,
+                    onError: { _ in
+                        viewModel.errorShown = true
+                    }
+                )
+                .frame(width: messageActionsWidth)
+                .offset(
+                    x: messageActionsOriginX
+                )
+                .padding(.top, 16)
             }
+            .offset(y: originY)
         }
         .edgesIgnoringSafeArea(.all)
     }
     
     private var originY: CGFloat {
+        var messageActionsSize = messageItemSize * CGFloat(messageActionsCount)
+        if messageActionsSize > maxMessageActionsSize {
+            messageActionsSize = maxMessageActionsSize
+        }
         var originY = messageDisplayInfo.frame.origin.y
         let screenHeight = UIScreen.main.bounds.size.height
         let minOrigin: CGFloat = 100
-        let maxOrigin: CGFloat = screenHeight - messageDisplayInfo.frame.height - minOrigin
+        let maxOrigin: CGFloat = screenHeight - messageDisplayInfo.frame.height - messageActionsSize - minOrigin
         if originY < minOrigin {
             originY = minOrigin
         } else if originY > maxOrigin {
@@ -88,5 +118,23 @@ public struct ReactionsOverlayView<Factory: ViewFactory>: View {
         }
         
         return originY
+    }
+    
+    private var messageActionsOriginX: CGFloat {
+        if messageDisplayInfo.message.isSentByCurrentUser {
+            let screenWidth = UIScreen.main.bounds.size.width
+            return screenWidth - messageActionsWidth - padding / 2
+        } else {
+            return CGSize.messageAvatarSize.width + padding
+        }
+    }
+    
+    private var messageActionsWidth: CGFloat {
+        var width = messageDisplayInfo.contentWidth
+        if messageDisplayInfo.message.isSentByCurrentUser {
+            width -= 2 * padding
+        }
+        
+        return width
     }
 }

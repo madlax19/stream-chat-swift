@@ -57,15 +57,30 @@ public class ViewModelsFactory {
         return viewModel
     }
     
+    /// Makes the message composer view model.
+    /// - Parameter channelController: the channel controller.
+    /// - Returns: `MessageComposerViewModel`.
     public static func makeMessageComposerViewModel(
         with channelController: ChatChannelController
     ) -> MessageComposerViewModel {
         MessageComposerViewModel(channelController: channelController)
     }
     
+    /// Makes the reactions overlay view model.
+    /// - Parameter message: the chat message.
+    /// - Returns: `ReactionsOverlayViewModel`.
     public static func makeReactionsOverlayViewModel(
         message: ChatMessage
     ) -> ReactionsOverlayViewModel {
         ReactionsOverlayViewModel(message: message)
+    }
+    
+    /// Makes the message actions view model.
+    /// - Parameter messageActions: the available message actions.
+    /// - Returns: `MessageActionsViewModel`.
+    public static func makeMessageActionsViewModel(
+        messageActions: [MessageAction]
+    ) -> MessageActionsViewModel {
+        MessageActionsViewModel(messageActions: messageActions)
     }
 }

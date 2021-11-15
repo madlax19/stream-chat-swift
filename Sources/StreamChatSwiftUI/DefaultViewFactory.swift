@@ -345,6 +345,33 @@ extension ViewFactory {
     public func makeAssetsAccessPermissionView() -> some View {
         AssetsAccessPermissionView()
     }
+    
+    public func suppotedMessageActions(
+        for message: ChatMessage,
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void
+    ) -> [MessageAction] {
+        MessageAction.defaultActions(
+            for: message,
+            chatClient: chatClient,
+            onDismiss: onDismiss,
+            onError: onError
+        )
+    }
+    
+    public func makeMessageActionsView(
+        for message: ChatMessage,
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void
+    ) -> some View {
+        let messageActions = suppotedMessageActions(
+            for: message,
+            onDismiss: onDismiss,
+            onError: onError
+        )
+        
+        return MessageActionsView(messageActions: messageActions)
+    }
 }
 
 /// Default class conforming to `ViewFactory`, used throughout the SDK.

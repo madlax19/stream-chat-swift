@@ -53,7 +53,11 @@ public struct MoreChannelActionsView: View {
                                 action.action()
                             }
                         } label: {
-                            ChannelActionItem(action: action)
+                            ActionItemView(
+                                title: action.title,
+                                iconName: action.iconName,
+                                isDestructive: action.isDestructive
+                            )
                         }
                     }
                 }
@@ -110,59 +114,6 @@ public struct MoreChannelActionsView: View {
             }
         }
         .padding(.vertical, 16)
-    }
-}
-
-/// View for the channel action item in an action list.
-public struct ChannelActionItem: View {
-    @Injected(\.colors) var colors
-    @Injected(\.images) var images
-    @Injected(\.fonts) var fonts
-
-    let action: ChannelAction
-
-    public var body: some View {
-        HStack(spacing: 16) {
-            Image(uiImage: image(for: action))
-                .resizable()
-                .renderingMode(.template)
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 16)
-                .foregroundColor(
-                    action.isDestructive ? Color(colors.alert) : Color(colors.textLowEmphasis)
-                )
-            
-            Text(action.title)
-                .font(fonts.bodyBold)
-                .foregroundColor(
-                    action.isDestructive ? Color(colors.alert) : Color(colors.text)
-                )
-            
-            Spacer()
-        }
-        .frame(height: 40)
-    }
-    
-    private func image(for action: ChannelAction) -> UIImage {
-        let imageName = action.iconName
-        
-        // Check if it's in the app bundle.
-        if let image = UIImage(named: imageName) {
-            return image
-        }
-        
-        // Support for system images.
-        if let image = UIImage(systemName: action.iconName) {
-            return image
-        }
-        
-        // Check if it's bundled.
-        if let image = UIImage(named: imageName, in: .streamChatUI) {
-            return image
-        }
-        
-        // Default image.
-        return UIImage(systemName: "photo")!
     }
 }
 

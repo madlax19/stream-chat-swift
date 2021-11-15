@@ -10,6 +10,8 @@ public class ReactionsOverlayViewModel: ObservableObject, ChatMessageControllerD
     @Injected(\.chatClient) var chatClient
     
     @Published var message: ChatMessage
+    @Published var errorShown = false
+    
     private var messageController: ChatMessageController?
     
     public init(message: ChatMessage) {

@@ -332,4 +332,29 @@ public protocol ViewFactory: AnyObject {
     associatedtype AssetsAccessPermissionViewType: View
     /// Creates the assets access permission view.
     func makeAssetsAccessPermissionView() -> AssetsAccessPermissionViewType
+    
+    /// Returns the supported  message actions.
+    /// - Parameters:
+    ///  - message: the message where the actions are applied.
+    ///  - onDismiss: handler when the more actions view is dismissed.
+    ///  - onError: handler when an error happened.
+    /// - Returns: list of `MessageAction` items.
+    func suppotedMessageActions(
+        for message: ChatMessage,
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void
+    ) -> [MessageAction]
+    
+    associatedtype MessageActionsViewType: View
+    /// Creates the message actions view.
+    /// - Parameters:
+    ///  - message: the message where the actions are applied.
+    ///  - onDismiss: handler when the more actions view is dismissed.
+    ///  - onError: handler when an error happened.
+    /// - Returns: view displayed in the message actions slot.
+    func makeMessageActionsView(
+        for message: ChatMessage,
+        onDismiss: @escaping () -> Void,
+        onError: @escaping (Error) -> Void
+    ) -> MessageActionsViewType
 }
