@@ -53,7 +53,28 @@ struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                                 isInGroup: isGroup,
                                 width: width,
                                 showsAllInfo: showsAllData(for: message),
-                                onLongPress: onLongPress
+                                onLongPress: { messageDisplayInfo in
+                                    if keyboardShown {
+                                        resignFirstResponder()
+                                        let updatedFrame = CGRect(
+                                            x: messageDisplayInfo.frame.origin.x,
+                                            y: messageDisplayInfo.frame.origin.y,
+                                            width: messageDisplayInfo.frame.width,
+                                            height: messageDisplayInfo.frame.height
+                                        )
+                                        
+                                        let updatedDisplayInfo = MessageDisplayInfo(
+                                            message: messageDisplayInfo.message,
+                                            frame: updatedFrame,
+                                            contentWidth: messageDisplayInfo.contentWidth,
+                                            isFirst: messageDisplayInfo.isFirst
+                                        )
+                                        
+                                        onLongPress(updatedDisplayInfo)
+                                    } else {
+                                        onLongPress(messageDisplayInfo)
+                                    }
+                                }
                             )
                             .padding(.horizontal, 8)
                             .padding(.bottom, showsAllData(for: message) ? 8 : 2)
