@@ -2,8 +2,6 @@
 title: SwiftUI Overview
 ---
 
-## Overview 
-
 The SwiftUI SDK is built on top of the `StreamChat` framework and it's a SwfitUI alternative to the `StreamChatUI` SDK. It's built completely in SwiftUI, using declarative patterns, that will be familiar to developers working with SwiftUI. The SDK includes an extensive set of performant and customizable UI components which allow you to get started quickly with little to no plumbing required.
 
 ## Architecture

@@ -54,14 +54,14 @@
         "swiftui/view-customizations",
         {
           "Components" : [
-            "swiftui/channel-list-header",
-            "swiftui/swipe-actions-channels",
-            "swiftui/query-filters",
-            "swiftui/helper-views",
-            "swiftui/list-tap-events",
-            "swiftui/custom-avatar",
-            "swiftui/channel-header",
-            "swiftui/attachments"
+            "swiftui/components/channel-list-header",
+            "swiftui/components/swipe-actions-channels",
+            "swiftui/components/query-filters",
+            "swiftui/components/helper-views",
+            "swiftui/components/list-tap-events",
+            "swiftui/components/custom-avatar",
+            "swiftui/components/channel-header",
+            "swiftui/components/attachments"
           ]
         }
       ]
