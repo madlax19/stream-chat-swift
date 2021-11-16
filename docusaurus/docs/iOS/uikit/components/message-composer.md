@@ -2,9 +2,9 @@
 title: Message Composer
 ---
 
-import ComposerProperties from '../common-content/reference-docs/stream-chat-ui/composer/composer-vc-properties.md'
-import ComposerViewProperties from '../common-content/reference-docs/stream-chat-ui/composer/composer-view-properties.md'
-import ComposerContentProperties from '../common-content/reference-docs/stream-chat-ui/composer/composer-vc.content-properties.md'
+import ComposerProperties from '../../common-content/reference-docs/stream-chat-ui/composer/composer-vc-properties.md'
+import ComposerViewProperties from '../../common-content/reference-docs/stream-chat-ui/composer/composer-view-properties.md'
+import ComposerContentProperties from '../../common-content/reference-docs/stream-chat-ui/composer/composer-vc.content-properties.md'
 
 The Message Composer provides all the UI and necessary functionality for writing and sending messages. It supports sending text, handling chat commands, suggestions autocompletion, uploading attachments like images, files, and videos. The composer is a combination of two components, the `ComposerVC` and the `ComposerView`, the first one is a view controller responsible for the functionality, where the latter is only responsible for the UI and layout.
 
@@ -94,7 +94,7 @@ The `ComposerView` class holds all the composer subviews and implements the comp
 
 In the picture below you can see all the containers and main views of the composer:
 
-<img src={require("../assets/ComposerVC_documentation.default-light.png").default} width="100%"/>
+<img src={require("../../assets/ComposerVC_documentation.default-light.png").default} width="100%"/>
 
 ### Customization
 
@@ -137,7 +137,7 @@ The composer has three states: `.new`, `.edit`, and `.quote`. The `.new` state i
 
 | `.new`  | `.edit` | `.quote` |
 | ------------- | ------------- | ------------- |
-| <img src={require("../assets/composer-ui-state-new.png").default} width="100%"/> | <img src={require("../assets/composer-ui-state-edit.png").default} width="100%"/> | <img src={require("../assets/composer-ui-state-quote.png").default} width="100%"/> |
+| <img src={require("../../assets/composer-ui-state-new.png").default} width="100%"/> | <img src={require("../../assets/composer-ui-state-edit.png").default} width="100%"/> | <img src={require("../../assets/composer-ui-state-quote.png").default} width="100%"/> |
 
 The `.new` state is the composer's default state, and it is initialized by the `initial()` static function of `ComposerVC.Content`:
 ```swift
