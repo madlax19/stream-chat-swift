@@ -38,6 +38,7 @@ public struct ChatChannelListItem: View {
                             HStack(spacing: 4) {
                                 Image(uiImage: image)
                                     .resizable()
+                                    .renderingMode(.template)
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxHeight: 12)
                                     .foregroundColor(Color(colors.subtitleText))

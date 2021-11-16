@@ -17,7 +17,7 @@ struct ShadowViewModifier: ViewModifier {
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(
-                        Color(colors.background1),
+                        Color(colors.innerBorder),
                         lineWidth: 0.5
                     )
             )

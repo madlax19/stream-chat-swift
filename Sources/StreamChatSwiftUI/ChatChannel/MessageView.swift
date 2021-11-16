@@ -80,7 +80,7 @@ struct MessageView<Factory: ViewFactory>: View {
             } else {
                 if message.shouldRenderAsJumbomoji {
                     EmojiTextView(message: message)
-                } else {
+                } else if !message.text.isEmpty {
                     factory.makeMessageTextView(
                         for: message,
                         isFirst: isFirst,
