@@ -10,9 +10,8 @@
     {
       "UIKit" : [
         "uikit/uikit-overview",
-        "uikit/theming",
-        "uikit/custom-components",
         "uikit/localization",
+        "uikit/theming",
         {
             "Controllers and Delegates": [
               "uikit/controllers/controllers-overview",
@@ -29,7 +28,8 @@
               "uikit/components/channel",
               "uikit/components/thread",
               "uikit/components/message",
-              "uikit/components/message-composer"
+              "uikit/components/message-composer",
+              "uikit/components/custom-components"
             ]
           },
          {
