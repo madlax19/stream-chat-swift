@@ -33,7 +33,7 @@ If you have a navigation controller setup the SDK will navigate from the channel
 
 ## UI Customization
 
-You can customize how channels are rendered in the list by replacing the [`ChannelListItemView`](../../views/channel-list-item-view) component with your own. Like every component from this library, this component will also follow the [theming](../../customization/theming.md) of your application.
+You can customize how channels are rendered in the list by replacing the [`ChannelListItemView`](../../views/channel-list-item-view) component with your own. Like every component from this library, this component will also follow the [theming](../theming.md) of your application.
 
 ### Channel Header
 

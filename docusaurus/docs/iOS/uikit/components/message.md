@@ -82,7 +82,7 @@ ChatMessageContentView is the container class for a message. Internally this cla
 
 ## Customizing Messages
 
-Creating subclasses of `ChatMessageContentView` let's you alter views, create custom ones, and create complex layouts for your app. More information on lifecycle and subclassing is available [here](../customization/custom-components#components-lifecycle-methods).
+Creating subclasses of `ChatMessageContentView` let's you alter views, create custom ones, and create complex layouts for your app. More information on lifecycle and subclassing is available [here](../custom-components#components-lifecycle-methods).
 
 :::note
 `ChatMessageContentView` sets up its own layout on the `layout(options: ChatMessageLayoutOptions)` method and not in `setupLayout()` like other regular views.

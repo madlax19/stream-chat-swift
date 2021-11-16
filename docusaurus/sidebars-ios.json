@@ -8,14 +8,11 @@
       ]
     },
     {
-      "Customization": [
-        "customization/theming",
-        "customization/custom-components",
-        "customization/localization"
-      ]
-    },
-    {
       "UIKit" : [
+        "uikit/uikit-overview",
+        "uikit/theming",
+        "uikit/custom-components",
+        "uikit/localization",
         {
             "Controllers and Delegates": [
               "uikit/controllers/controllers-overview",

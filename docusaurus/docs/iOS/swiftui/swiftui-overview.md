@@ -1,5 +1,6 @@
 ---
 title: SwiftUI Overview
+slug: /swiftui
 ---
 
 The SwiftUI SDK is built on top of the `StreamChat` framework and it's a SwfitUI alternative to the `StreamChatUI` SDK. It's built completely in SwiftUI, using declarative patterns, that will be familiar to developers working with SwiftUI. The SDK includes an extensive set of performant and customizable UI components which allow you to get started quickly with little to no plumbing required.
@@ -21,7 +22,7 @@ This SDK tries to keep the list of external dependencies to a minimum, these are
 - [Nuke](https://github.com/kean/Nuke) for loading images
 - [NukeUI](https://github.com/kean/NukeUI) for SwiftUI async image loading  
 - [SwiftyGif](https://github.com/kirualex/SwiftyGif) for high performance GIF rendering
-- [StreamChat](#streamchat) the low-level client to Stream Chat API
+- StreamChat the low-level client to Stream Chat API
 
 #### StreamChat
 
