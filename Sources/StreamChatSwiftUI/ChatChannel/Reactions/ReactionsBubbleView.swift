@@ -12,6 +12,7 @@ public struct ReactionsBubbleModifier: ViewModifier {
     var message: ChatMessage
     
     var borderColor: Color? = nil
+    var injectedBackground: UIColor? = nil
     
     private let cornerRadius: CGFloat = 18
     
@@ -40,6 +41,10 @@ public struct ReactionsBubbleModifier: ViewModifier {
     }
     
     private var backgroundColor: UIColor {
+        if let injectedBackground = injectedBackground {
+            return injectedBackground
+        }
+        
         if message.isSentByCurrentUser {
             return colors.background8
         } else {
@@ -49,7 +54,7 @@ public struct ReactionsBubbleModifier: ViewModifier {
 }
 
 extension View {
-    public func reactionsBubble(for message: ChatMessage) -> some View {
-        modifier(ReactionsBubbleModifier(message: message))
+    public func reactionsBubble(for message: ChatMessage, background: UIColor? = nil) -> some View {
+        modifier(ReactionsBubbleModifier(message: message, injectedBackground: background))
     }
 }

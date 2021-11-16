@@ -12,11 +12,21 @@ struct ReactionsOverlayContainer: View {
     let message: ChatMessage
     let contentRect: CGRect
     var onReactionTap: (MessageReactionType) -> Void
+        
+    init(
+        message: ChatMessage,
+        contentRect: CGRect,
+        onReactionTap: @escaping (MessageReactionType) -> Void
+    ) {
+        self.message = message
+        self.contentRect = contentRect
+        self.onReactionTap = onReactionTap
+    }
     
     var body: some View {
         VStack {
             ReactionsHStack(message: message) {
-                ReactionsView(
+                ReactionsAnimatableView(
                     message: message,
                     useLargeIcons: true,
                     reactions: reactions,
@@ -66,5 +76,95 @@ struct ReactionsOverlayContainer: View {
     
     private var availableWidth: CGFloat {
         UIScreen.main.bounds.width
+    }
+}
+
+struct ReactionsAnimatableView: View {
+    @Injected(\.colors) var colors
+    @Injected(\.images) var images
+    
+    let message: ChatMessage
+    var useLargeIcons = false
+    var reactions: [MessageReactionType]
+    var onReactionTap: (MessageReactionType) -> Void
+    
+    @State var animationStates: [CGFloat]
+    
+    init(
+        message: ChatMessage,
+        useLargeIcons: Bool = false,
+        reactions: [MessageReactionType],
+        onReactionTap: @escaping (MessageReactionType) -> Void
+    ) {
+        self.message = message
+        self.useLargeIcons = useLargeIcons
+        self.reactions = reactions
+        self.onReactionTap = onReactionTap
+        _animationStates = State(
+            initialValue: [CGFloat](repeating: 0, count: reactions.count)
+        )
+    }
+    
+    var body: some View {
+        HStack {
+            ForEach(reactions) { reaction in
+                if let image = iconProvider(for: reaction) {
+                    Button {
+                        onReactionTap(reaction)
+                    } label: {
+                        Image(uiImage: image)
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(color(for: reaction))
+                            .frame(width: useLargeIcons ? 25 : 20, height: useLargeIcons ? 27 : 20)
+                    }
+                    .scaleEffect(index(for: reaction) != nil ? animationStates[index(for: reaction)!] : 1)
+                    .onAppear {
+                        guard let index = index(for: reaction) else {
+                            return
+                        }
+                        
+                        withAnimation(
+                            .interpolatingSpring(
+                                stiffness: 170,
+                                damping: 8
+                            )
+                            .delay(0.1 * CGFloat(index + 1))
+                        ) {
+                            animationStates[index] = 1
+                        }
+                    }
+                }
+            }
+        }
+        .padding(.all, 6)
+        .padding(.horizontal, 4)
+        .reactionsBubble(for: message, background: colors.background8)
+    }
+    
+    private func index(for reaction: MessageReactionType) -> Int? {
+        let index = reactions.firstIndex(where: { type in
+            type == reaction
+        })
+        
+        return index
+    }
+    
+    private func iconProvider(for reaction: MessageReactionType) -> UIImage? {
+        if useLargeIcons {
+            return images.availableReactions[reaction]?.largeIcon
+        } else {
+            return images.availableReactions[reaction]?.smallIcon
+        }
+    }
+    
+    private func color(for reaction: MessageReactionType) -> Color {
+        userReactionIDs
+            .contains(reaction) ? Color(colors.highlightedAccentBackground) : Color(colors.textLowEmphasis)
+    }
+    
+    private var userReactionIDs: Set<MessageReactionType> {
+        Set(message.currentUserReactions.map(\.type))
     }
 }
