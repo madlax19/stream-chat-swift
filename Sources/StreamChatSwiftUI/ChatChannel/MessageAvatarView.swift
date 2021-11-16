@@ -7,16 +7,28 @@ import StreamChat
 import SwiftUI
 
 public struct MessageAvatarView: View {
+    @Injected(\.utils) var utils
+    
+    private var imageCDN: ImageCDN {
+        utils.imageCDN
+    }
+    
     var author: ChatUser
     
     public var body: some View {
-        if let url = author.imageURL?.absoluteString {
-            LazyImage(source: url)
+        if let urlString = author.imageURL?.absoluteString, let url = URL(string: urlString) {
+            let adjustedURL = imageCDN.thumbnailURL(
+                originalURL: url,
+                preferredSize: .messageAvatarSize
+            )
+            
+            LazyImage(source: adjustedURL)
                 .clipShape(Circle())
                 .frame(
                     width: CGSize.messageAvatarSize.width,
                     height: CGSize.messageAvatarSize.height
                 )
+                .id(url)
         } else {
             Image(systemName: "person.circle")
                 .resizable()
@@ -24,6 +36,7 @@ public struct MessageAvatarView: View {
                     width: CGSize.messageAvatarSize.width,
                     height: CGSize.messageAvatarSize.height
                 )
+                .id("placeholder")
         }
     }
 }

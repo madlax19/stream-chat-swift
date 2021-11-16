@@ -49,6 +49,7 @@ public struct ImageAttachmentContainer: View {
 struct ImageAttachmentView: View {
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts
+    @Injected(\.utils) var utils
     
     let message: ChatMessage
     let width: CGFloat
@@ -57,13 +58,22 @@ struct ImageAttachmentView: View {
     private let spacing: CGFloat = 2
     private let maxDisplayedImages = 4
     
+    private var imageCDN: ImageCDN {
+        utils.imageCDN
+    }
+    
     private var sources: [URL] {
         if isGiphy {
             return message.giphyAttachments.map { attachment in
                 if let state = attachment.uploadingState {
                     return state.localFileURL
                 } else {
-                    return attachment.previewURL
+                    let url = imageCDN.thumbnailURL(
+                        originalURL: attachment.previewURL,
+                        preferredSize: CGSize(width: width, height: width)
+                    )
+                    
+                    return url
                 }
             }
         } else {
