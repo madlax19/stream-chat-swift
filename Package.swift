@@ -18,7 +18,7 @@ let package = Package(
         .library(
             name: "StreamChatUI",
             targets: ["StreamChatUI"]
-        )
+        ),
         .library(
             name: "StreamChatSwiftUI",
             targets: ["StreamChatSwiftUI"]
@@ -47,7 +47,7 @@ let package = Package(
             dependencies: ["StreamChat", "Nuke", "SwiftyGif"],
             exclude: ["README.md", "Info.plist", "Generated/L10n_template.stencil"] + streamChatUIFilesExcluded,
             resources: [.process("Resources")]
-        )
+        ),
         .target(
             name: "StreamChatUI",
             dependencies: ["StreamChat", "Nuke", "SwiftyGif", "NukeUI"],
