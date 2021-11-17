@@ -9,15 +9,19 @@ import SwiftUI
 public struct VideoAttachmentsContainer: View {
     let message: ChatMessage
     let width: CGFloat
-    
+        
     public var body: some View {
         VStack {
             ForEach(message.videoAttachments, id: \.self) { attachment in
-                VideoAttachmentView(videoURL: attachment.videoURL, width: width)
-                    .withUploadingStateIndicator(
-                        for: attachment.uploadingState,
-                        url: attachment.videoURL
-                    )
+                VideoAttachmentView(
+                    attachment: attachment,
+                    message: message,
+                    width: width
+                )
+                .withUploadingStateIndicator(
+                    for: attachment.uploadingState,
+                    url: attachment.videoURL
+                )
             }
         }
     }
@@ -30,11 +34,13 @@ public struct VideoAttachmentView: View {
         utils.videoPreviewLoader
     }
     
-    let videoURL: URL
+    let attachment: ChatMessageVideoAttachment
+    let message: ChatMessage
     let width: CGFloat
     
     @State var previewImage: UIImage?
     @State var error: Error?
+    @State var fullScreenShown = false
                 
     public var body: some View {
         ZStack {
@@ -45,11 +51,12 @@ public struct VideoAttachmentView: View {
                     .clipped()
                 
                 Button {
-                    // TODO: implement video tap
+                    fullScreenShown = true
                 } label: {
                     Image(systemName: "play.fill")
                         .font(.system(size: 30))
                         .foregroundColor(.white)
+                        .padding(.all, 32)
                 }
             } else if error != nil {
                 Color(.secondarySystemBackground)
@@ -62,8 +69,15 @@ public struct VideoAttachmentView: View {
         }
         .frame(width: width, height: 3 * width / 4)
         .cornerRadius(24)
+        .fullScreenCover(isPresented: $fullScreenShown) {
+            VideoPlayerView(
+                attachment: attachment,
+                author: message.author,
+                isShown: $fullScreenShown
+            )
+        }
         .onAppear {
-            videoPreviewLoader.loadPreviewForVideo(at: videoURL) { result in
+            videoPreviewLoader.loadPreviewForVideo(at: attachment.videoURL) { result in
                 switch result {
                 case let .success(image):
                     self.previewImage = image
