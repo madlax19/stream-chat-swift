@@ -49,7 +49,7 @@ let package = Package(
             resources: [.process("Resources")]
         ),
         .target(
-            name: "StreamChatUI",
+            name: "StreamChatSwiftUI",
             dependencies: ["StreamChat", "Nuke", "SwiftyGif", "NukeUI"],
             exclude: ["README.md", "Info.plist", "Generated/L10n_template.stencil"],
             resources: [.process("Resources")]
