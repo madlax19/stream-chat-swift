@@ -3,13 +3,13 @@
     {
       "Basics": [
         "basics/overview",
-        "basics/getting-started",
         "basics/glossary"
       ]
     },
     {
       "UIKit" : [
         "uikit/uikit-overview",
+        "uikit/getting-started",
         "uikit/localization",
         "uikit/theming",
         {
