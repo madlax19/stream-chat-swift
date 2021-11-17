@@ -1,6 +1,12 @@
 ---
-title: StreamChat object
+title: Getting Started
 ---
+
+This section provides a high level overview of the SwiftUI components library. It is a great starting point for you to discover how to use Stream's SwiftUI components in your app. For a complete, step-by-step guide check out [iOS Chat tutorial](/tutorials/ios-chat/).
+
+## Your First App with Stream Chat
+
+Before starting, make sure you have installed `StreamChatUI` as explained in the [Installation](./swiftui-overview.md#installation) section.
 
 ## Creating the SwiftUI context provider object
 
