@@ -44,6 +44,7 @@ public struct AttachmentPickerTypeView: View {
                     pickerType: .giphy,
                     selected: attachmentPickerType
                 )
+                .disabled(true)
             case .collapsed:
                 Button {
                     withAnimation {

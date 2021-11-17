@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Nuke
 import StreamChat
 import SwiftUI
 
@@ -40,7 +41,6 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
 
     @Published var showScrollToLatestButton = false
     @Published var currentDateString: String?
-    @Published var typingUsers = [String]()
     @Published var messages = LazyCachedMapCollection<ChatMessage>() {
         didSet {
             var temp = [String: [String]]()
@@ -85,19 +85,18 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
     public init(channelController: ChatChannelController) {
         self.channelController = channelController
         setupChannelController()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didReceiveMemoryWarning),
+            name: UIApplication.didReceiveMemoryWarningNotification,
+            object: nil
+        )
     }
     
-    func subscribeToChannelChanges() {
-        channelController.messagesChangesPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-            self.messages = self.channelController.messages
-        }
-        .store(in: &cancellables)
-
-        if let typingEvents = channelController.channel?.config.typingEventsEnabled,
-           typingEvents == true {
-            subscribeToTypingChanges()
-        }
+    @objc
+    private func didReceiveMemoryWarning() {
+        Nuke.ImageCache.shared.removeAll()
     }
     
     func scrollToLastMessage() {
@@ -154,18 +153,6 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
         
         return nil
     }
-
-    // TODO: temp implementation
-    func addReaction(to message: ChatMessage) {
-        guard let cId = message.cid else { return }
-        
-        let messageController = chatClient.messageController(
-            cid: cId, messageId: message.id
-        )
-        
-        let reaction: MessageReactionType = "love"
-        messageController.addReaction(reaction)
-    }
     
     // MARK: - private
     
@@ -198,18 +185,6 @@ public class ChatChannelViewModel: ObservableObject, ChatChannelControllerDelega
                 self?.currentDate = nil
             }
         )
-    }
-    
-    private func subscribeToTypingChanges() {
-        channelController.typingUsersPublisher.sink { [weak self] users in
-            guard let self = self else { return }
-            self.typingUsers = users.filter { user in
-                user.id != self.channelController.client.currentUserId
-            }.map { user in
-                user.name ?? ""
-            }
-        }
-        .store(in: &cancellables)
     }
     
     private func maybeSendReadEvent(for message: ChatMessage) {

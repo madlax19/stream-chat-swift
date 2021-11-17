@@ -136,10 +136,10 @@ public class ChatChannelListViewModel: ObservableObject, ChatChannelListControll
             for: .init(type: .messaging, id: channel.cid.id)
         )
          
-        controller.deleteChannel { error in
+        controller.deleteChannel { [weak self] error in
             if error != nil {
                 // handle error
-                self.channelAlertType = .error
+                self?.channelAlertType = .error
             }
         }
     }

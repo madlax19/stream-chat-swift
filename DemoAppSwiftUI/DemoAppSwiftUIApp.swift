@@ -9,19 +9,19 @@ import StreamChatSwiftUI
 @main
 struct DemoAppSwiftUIApp: App {
     
-    //@StateObject var launchAnimationState = LaunchAnimationState()
+    @StateObject var launchAnimationState = LaunchAnimationState()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Injected(\.chatClient) public var chatClient: ChatClient
     
     var body: some Scene {
         WindowGroup {
-//            if launchAnimationState.showAnimation {
-//                StreamLogoLaunch()
-//            } else {
-//                ChatChannelListView(viewFactory: CustomFactory.shared)
-//            }
-            ChatChannelListView()
+            if launchAnimationState.showAnimation {
+                StreamLogoLaunch()
+            } else {
+                ChatChannelListView()
+            }
+//            ChatChannelListView()
             /*
             //Example of custom query filters.
             ChatChannelListView(

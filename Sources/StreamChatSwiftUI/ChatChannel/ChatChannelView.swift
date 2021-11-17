@@ -45,9 +45,6 @@ public struct ChatChannelView<Factory: ViewFactory>: View {
                     }
                 }
             )
-            .onAppear {
-                viewModel.subscribeToChannelChanges()
-            }
             
             Divider()
                 .navigationBarBackButtonHidden(viewModel.reactionsShown)
