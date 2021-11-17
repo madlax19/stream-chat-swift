@@ -8,7 +8,7 @@ let package = Package(
     name: "StreamChat",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v11), .macOS(.v10_15)
+        .iOS(.v14), .macOS(.v10_15)
     ],
     products: [
         .library(
@@ -19,6 +19,10 @@ let package = Package(
             name: "StreamChatUI",
             targets: ["StreamChatUI"]
         )
+        .library(
+            name: "StreamChatSwiftUI",
+            targets: ["StreamChatSwiftUI"]
+        )
     ],
     dependencies: [
         // StreamChat
@@ -26,7 +30,10 @@ let package = Package(
         
         // StreamChatUI
         .package(url: "https://github.com/kean/Nuke.git", from: "10.0.0"),
-        .package(url: "https://github.com/kirualex/SwiftyGif.git", from: "5.3.0")
+        .package(url: "https://github.com/kirualex/SwiftyGif.git", from: "5.3.0"),
+
+        // StreamChatSwiftUI
+        .package(url: "https://github.com/kean/NukeUI.git", from: "0.7.0")
     ],
     targets: [
         .target(
@@ -39,6 +46,12 @@ let package = Package(
             name: "StreamChatUI",
             dependencies: ["StreamChat", "Nuke", "SwiftyGif"],
             exclude: ["README.md", "Info.plist", "Generated/L10n_template.stencil"] + streamChatUIFilesExcluded,
+            resources: [.process("Resources")]
+        )
+        .target(
+            name: "StreamChatUI",
+            dependencies: ["StreamChat", "Nuke", "SwiftyGif", "NukeUI"],
+            exclude: ["README.md", "Info.plist", "Generated/L10n_template.stencil"],
             resources: [.process("Resources")]
         )
     ]
