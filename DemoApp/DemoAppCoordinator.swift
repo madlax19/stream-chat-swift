@@ -66,7 +66,7 @@ final class DemoAppCoordinator: NSObject, UNUserNotificationCenterDelegate {
 
     func presentChat(userCredentials: UserCredentials, channelID: ChannelId? = nil) {
         // Create a token
-        guard let token = try? Token(rawValue: userCredentials.token) else {
+        guard let token = try? Token(rawValue: genToken(secret: secret, userID: userCredentials.id, validFor: 600)) else {
             fatalError("There has been a problem getting the token, please check Stream API status")
         }
         
@@ -155,12 +155,24 @@ class CustomChannelVC: ChatChannelVC {
             target: self,
             action: #selector(debugTap)
         )
-        navigationItem.rightBarButtonItems?.append(debugButton)
+        let pinButton = UIBarButtonItem(
+            image: UIImage(systemName: "pin")!,
+            style: .plain,
+            target: self,
+            action: #selector(pinTap)
+        )
+        navigationItem.rightBarButtonItems?.append(contentsOf: [debugButton, pinButton])
     }
     
     @objc func debugTap() {
         if let cid = channelController.cid {
             (navigationController?.viewControllers.first as? ChatChannelListVC)?.router.didTapMoreButton(for: cid)
         }
+    }
+    
+    @objc func pinTap() {
+        let pinnedMessagesVC = PinnedMessagesVC()
+        pinnedMessagesVC.channelController = channelController
+        show(pinnedMessagesVC, sender: self)
     }
 }

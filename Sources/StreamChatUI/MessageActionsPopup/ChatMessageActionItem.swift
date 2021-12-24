@@ -240,3 +240,31 @@ public struct FlagActionItem: ChatMessageActionItem {
         icon = appearance.images.messageActionFlag
     }
 }
+
+public struct PinActionItem: ChatMessageActionItem {
+    public var title: String { "Pin" }
+    public let icon: UIImage
+    public let action: (ChatMessageActionItem) -> Void
+    
+    public init(
+        action: @escaping (ChatMessageActionItem) -> Void,
+        appearance: Appearance = .default
+    ) {
+        self.action = action
+        icon = appearance.images.messageActionFlag
+    }
+}
+
+public struct UnpinActionItem: ChatMessageActionItem {
+    public var title: String { "Unpin" }
+    public let icon: UIImage
+    public let action: (ChatMessageActionItem) -> Void
+    
+    public init(
+        action: @escaping (ChatMessageActionItem) -> Void,
+        appearance: Appearance = .default
+    ) {
+        self.action = action
+        icon = appearance.images.messageActionDelete
+    }
+}

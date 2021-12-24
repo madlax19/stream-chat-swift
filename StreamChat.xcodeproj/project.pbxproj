@@ -538,6 +538,7 @@
 		847E946E269C687300E31D0C /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E946D269C687300E31D0C /* EventsController.swift */; };
 		847F3CEA2689FDEB00D240E0 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F3CE92689FDEB00D240E0 /* ChatMessageCell.swift */; };
 		8486CAF926FA51EE00A9AD96 /* EventDTOConverterMiddleware_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486CAF826FA51EE00A9AD96 /* EventDTOConverterMiddleware_Tests.swift */; };
+		848EE3F62775E21C00B21ECA /* PinnedMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE3F52775E21C00B21ECA /* PinnedMessagesVC.swift */; };
 		848EE3F8277628CB00B21ECA /* User_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE3F7277628CB00B21ECA /* User_Tests.swift */; };
 		848EE3FA27762C4D00B21ECA /* MessageReaction_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EE3F927762C4D00B21ECA /* MessageReaction_Tests.swift */; };
 		849980F1277246DB00ABA58B /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849980F0277246DB00ABA58B /* UIScrollView+Extensions.swift */; };
@@ -560,6 +561,7 @@
 		84CC56EC267B3F6B00DF2784 /* AnyAttachmentPayload_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC56EA267B3D5900DF2784 /* AnyAttachmentPayload_Tests.swift */; };
 		84D5BC59277B188E00A65C75 /* PinnedMessagesPagination_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC58277B188E00A65C75 /* PinnedMessagesPagination_Tests.swift */; };
 		84D5BC5B277B18AF00A65C75 /* PinnedMessagesQuery_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC5A277B18AF00A65C75 /* PinnedMessagesQuery_Tests.swift */; };
+		84D5BC5D277B321700A65C75 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC5C277B321700A65C75 /* JWT.swift */; };
 		84D5BC6F277B619D00A65C75 /* PinnedMessagesSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC6D277B619200A65C75 /* PinnedMessagesSortingKey.swift */; };
 		84D5BC70277B61A000A65C75 /* PinnedMessagesSortingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC6D277B619200A65C75 /* PinnedMessagesSortingKey.swift */; };
 		84D5BC71277B61B900A65C75 /* PinnedMessagesSortingKey_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5BC6E277B619200A65C75 /* PinnedMessagesSortingKey_Tests.swift */; };
@@ -2512,6 +2514,7 @@
 		847E946D269C687300E31D0C /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		847F3CE92689FDEB00D240E0 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		8486CAF826FA51EE00A9AD96 /* EventDTOConverterMiddleware_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDTOConverterMiddleware_Tests.swift; sourceTree = "<group>"; };
+		848EE3F52775E21C00B21ECA /* PinnedMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessagesVC.swift; sourceTree = "<group>"; };
 		848EE3F7277628CB00B21ECA /* User_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_Tests.swift; sourceTree = "<group>"; };
 		848EE3F927762C4D00B21ECA /* MessageReaction_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReaction_Tests.swift; sourceTree = "<group>"; };
 		849980F0277246DB00ABA58B /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
@@ -2534,6 +2537,7 @@
 		84CC56EA267B3D5900DF2784 /* AnyAttachmentPayload_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAttachmentPayload_Tests.swift; sourceTree = "<group>"; };
 		84D5BC58277B188E00A65C75 /* PinnedMessagesPagination_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinnedMessagesPagination_Tests.swift; sourceTree = "<group>"; };
 		84D5BC5A277B18AF00A65C75 /* PinnedMessagesQuery_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinnedMessagesQuery_Tests.swift; sourceTree = "<group>"; };
+		84D5BC5C277B321700A65C75 /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
 		84D5BC6D277B619200A65C75 /* PinnedMessagesSortingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessagesSortingKey.swift; sourceTree = "<group>"; };
 		84D5BC6E277B619200A65C75 /* PinnedMessagesSortingKey_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessagesSortingKey_Tests.swift; sourceTree = "<group>"; };
 		84DA54DE2680C66A003A26CD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -3753,6 +3757,8 @@
 				E7D68C5C26B1BE4500FCF3B8 /* Localizable.strings */,
 				E7D68C6226B1CBA400FCF3B8 /* Localizable.stringsdict */,
 				43016E1526B734410054E805 /* ChatUser+CustomFields.swift */,
+				848EE3F52775E21C00B21ECA /* PinnedMessagesVC.swift */,
+				84D5BC5C277B321700A65C75 /* JWT.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -7198,6 +7204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6428DD5526201DCC0065DA1D /* BannerShowingConnectionDelegate.swift in Sources */,
+				848EE3F62775E21C00B21ECA /* PinnedMessagesVC.swift in Sources */,
 				43016E1426B7189D0054E805 /* CustomMessageContentView.swift in Sources */,
 				647F66D5261E22C200111B19 /* BannerView.swift in Sources */,
 				648EC576261EF9D400B8F05F /* DemoAppCoordinator.swift in Sources */,
@@ -7205,6 +7212,7 @@
 				792DDAA825753BEA001DB91B /* CreateGroupViewController.swift in Sources */,
 				7933064925712C8B00FBB586 /* DemoUsers.swift in Sources */,
 				792DDA5A256FB69E001DB91B /* AppDelegate.swift in Sources */,
+				84D5BC5D277B321700A65C75 /* JWT.swift in Sources */,
 				792DDAA125711AF2001DB91B /* CreateChatViewController.swift in Sources */,
 				792DDA5C256FB69E001DB91B /* SceneDelegate.swift in Sources */,
 				43016E1626B734410054E805 /* ChatUser+CustomFields.swift in Sources */,

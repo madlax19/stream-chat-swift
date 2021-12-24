@@ -43,8 +43,12 @@ public extension ChatMessage {
         guard type != .ephemeral else {
             return nil
         }
+        
+        guard !isDeleted else {
+            return L10n.Message.deletedMessagePlaceholder
+        }
 
-        return isDeleted ? L10n.Message.deletedMessagePlaceholder : text
+        return isPinned ? "📌 \(text)" : text
     }
 
     /// A boolean value that checks if the message is visible for current user only.

@@ -102,6 +102,10 @@ open class ChatMessageActionsVC: _ViewController, ThemeProvider {
                     actions.append(isMuted ? unmuteActionItem() : muteActionItem())
                 }
             }
+            
+            actions += [
+                message.isPinned ? unpinActionItem() : pinActionItem()
+            ]
 
             return actions
         case .pendingSend, .sendingFailed, .pendingSync, .syncingFailed, .deletingFailed:
@@ -228,6 +232,32 @@ open class ChatMessageActionsVC: _ViewController, ThemeProvider {
                     self.messageController.flag { _ in
                         self.delegate?.chatMessageActionsVCDidFinish(self)
                     }
+                }
+            },
+            appearance: appearance
+        )
+    }
+    
+    open func pinActionItem() -> ChatMessageActionItem {
+        PinActionItem(
+            action: { [weak self] _ in
+                guard let self = self else { return }
+                
+                self.messageController.pin(.noExpiration) { _ in
+                    self.delegate?.chatMessageActionsVCDidFinish(self)
+                }
+            },
+            appearance: appearance
+        )
+    }
+    
+    open func unpinActionItem() -> ChatMessageActionItem {
+        UnpinActionItem(
+            action: { [weak self] _ in
+                guard let self = self else { return }
+                
+                self.messageController.unpin { _ in
+                    self.delegate?.chatMessageActionsVCDidFinish(self)
                 }
             },
             appearance: appearance
