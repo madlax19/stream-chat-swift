@@ -55,12 +55,12 @@ extension LazyCachedMapCollection: ExpressibleByArrayLiteral {
     }
 }
 
-extension LazyCachedMapCollection: Equatable where Element: Equatable {
-    public static func == (lhs: LazyCachedMapCollection<Element>, rhs: LazyCachedMapCollection<Element>) -> Bool {
-        guard lhs.count == rhs.count else { return false }
-        return zip(lhs, rhs).allSatisfy(==)
-    }
-}
+//extension LazyCachedMapCollection: Equatable where Element: Equatable {
+//    public static func == (lhs: LazyCachedMapCollection<Element>, rhs: LazyCachedMapCollection<Element>) -> Bool {
+//        guard lhs.count == rhs.count else { return false }
+//        return zip(lhs, rhs).allSatisfy(==)
+//    }
+//}
 
 extension RandomAccessCollection where Index == Int {
     /// Lazily apply transformation to sequence
