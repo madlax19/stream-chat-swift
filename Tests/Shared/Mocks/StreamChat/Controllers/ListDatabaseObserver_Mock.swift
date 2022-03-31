@@ -9,13 +9,13 @@ import XCTest
 final class ListDatabaseObserverMock<Item, DTO: NSManagedObject>: ListDatabaseObserver<Item, DTO> {
     var synchronizeError: Error?
     
-    override func startObserving() throws {
-        if let error = synchronizeError {
-            throw error
-        } else {
-            try super.startObserving()
-        }
+override func startObserving() throws {
+    if let synchronizeError {
+        throw synchronizeError
+    } else {
+        try super.startObserving()
     }
+}
     
     var items_mock: LazyCachedMapCollection<Item>?
     override var items: LazyCachedMapCollection<Item> {
