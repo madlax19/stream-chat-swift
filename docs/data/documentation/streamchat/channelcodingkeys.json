@@ -1,0 +1,933 @@
+{
+  "abstract" : [
+    {
+      "text" : "Coding keys channel related payloads.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat17ChannelCodingKeysO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ChannelCodingKeys"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ChannelCodingKeys"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "ChannelCodingKeys"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ChannelCodingKeys"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/s12CaseIterableP",
+        "doc:\/\/StreamChat\/s9CodingKeyP",
+        "doc:\/\/StreamChat\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/StreamChat\/s23CustomStringConvertibleP",
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/SH",
+        "doc:\/\/StreamChat\/SY",
+        "doc:\/\/StreamChat\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/cid",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/config",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/cooldownDuration",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/createdAt",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/createdBy",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/deletedAt",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/frozen",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/hidden",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/id",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/imageURL",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/invites",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/lastMessageAt",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/memberCount",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/members",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/name",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/team",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/truncatedAt",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/typeRawValue",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/updatedAt"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(intValue:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(rawValue:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(stringValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/CodingKey-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/Equatable-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/channelcodingkeys"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SH": {
+  "identifier" : "doc:\/\/StreamChat\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SY": {
+  "identifier" : "doc:\/\/StreamChat\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys": {
+  "abstract" : [
+    {
+      "text" : "Coding keys channel related payloads.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChannelCodingKeys"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChannelCodingKeys"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/CodingKey-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/CodingKey-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CodingKey Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/codingkey-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/rawrepresentable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/cid": {
+  "abstract" : [
+    {
+      "text" : "A combination of channel id and type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cid"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/cid",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.cid",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/cid"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/config": {
+  "abstract" : [
+    {
+      "text" : "A channel config.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "config"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/config",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.config",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/config"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/cooldownDuration": {
+  "abstract" : [
+    {
+      "text" : "Cooldown duration for the channel, if it’s in slow mode.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "This value will be 0 if the channel is not in slow mode.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "cooldownDuration"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/cooldownDuration",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.cooldownDuration",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/cooldownduration"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/createdAt": {
+  "abstract" : [
+    {
+      "text" : "A created date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "createdAt"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/createdAt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.createdAt",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/createdat"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/createdBy": {
+  "abstract" : [
+    {
+      "text" : "A user created by.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "createdBy"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/createdBy",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.createdBy",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/createdby"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/deletedAt": {
+  "abstract" : [
+    {
+      "text" : "A deleted date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deletedAt"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/deletedAt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.deletedAt",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/deletedat"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/frozen": {
+  "abstract" : [
+    {
+      "text" : "A frozen flag.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "frozen"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/frozen",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.frozen",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/frozen"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/hidden": {
+  "abstract" : [
+    {
+      "text" : "Hidden flag.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hidden"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/hidden",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.hidden",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/hidden"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/id": {
+  "abstract" : [
+    {
+      "text" : "The id of the channel",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.id",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/id"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/imageURL": {
+  "abstract" : [
+    {
+      "text" : "Optional image URL for the channel.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "imageURL"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/imageURL",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.imageURL",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/imageurl"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/init(intValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "intValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(intValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(intValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/init(intvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/init(rawvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/init(stringValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "stringValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/init(stringValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(stringValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/init(stringvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/invites": {
+  "abstract" : [
+    {
+      "text" : "Invites.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "invites"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/invites",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.invites",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/invites"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/lastMessageAt": {
+  "abstract" : [
+    {
+      "text" : "A last message date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lastMessageAt"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/lastMessageAt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.lastMessageAt",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/lastmessageat"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/memberCount": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "memberCount"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/memberCount",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.memberCount",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/membercount"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/members": {
+  "abstract" : [
+    {
+      "text" : "Members.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "members"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/members",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.members",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/members"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/name": {
+  "abstract" : [
+    {
+      "text" : "Name for the channel.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.name",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/name"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/team": {
+  "abstract" : [
+    {
+      "text" : "The team the channel belongs to.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "team"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/team",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.team",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/team"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/truncatedAt": {
+  "abstract" : [
+    {
+      "text" : "A truncated date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "truncatedAt"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/truncatedAt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.truncatedAt",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/truncatedat"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/typeRawValue": {
+  "abstract" : [
+    {
+      "text" : "A type.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "typeRawValue"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/typeRawValue",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.typeRawValue",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/typerawvalue"
+},
+"doc://StreamChat/documentation/StreamChat/ChannelCodingKeys/updatedAt": {
+  "abstract" : [
+    {
+      "text" : "A created date.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "updatedAt"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ChannelCodingKeys\/updatedAt",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChannelCodingKeys.updatedAt",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/channelcodingkeys\/updatedat"
+},
+"doc://StreamChat/s12CaseIterableP": {
+  "identifier" : "doc:\/\/StreamChat\/s12CaseIterableP",
+  "title" : "Swift.CaseIterable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/StreamChat\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/StreamChat\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s8SendableP": {
+  "identifier" : "doc:\/\/StreamChat\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s9CodingKeyP": {
+  "identifier" : "doc:\/\/StreamChat\/s9CodingKeyP",
+  "title" : "Swift.CodingKey",
+  "type" : "unresolvable"
+}
+}
+}

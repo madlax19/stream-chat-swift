@@ -1,0 +1,401 @@
+{
+  "abstract" : [
+    {
+      "text" : "An extra-data-specific namespace for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "FilterKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s suitable to be used for ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelMemberListQuery",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/MemberListFilterScope"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat21MemberListFilterScopeC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "MemberListFilterScope"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "MemberListFilterScope"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "MemberListFilterScope"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "MemberListFilterScope"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/UserListFilterScope"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/AnyMemberListFilterScope",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/AnyUserListFilterScope",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterScope"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/memberlistfilterscope"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/AnyMemberListFilterScope": {
+  "abstract" : [
+    {
+      "text" : "A namespace for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "FilterKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s suitable to be used for ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelMemberListQuery",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". This scope is not aware of any",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "extra data types.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyMemberListFilterScope"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/AnyMemberListFilterScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyMemberListFilterScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyMemberListFilterScope",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/anymemberlistfilterscope"
+},
+"doc://StreamChat/documentation/StreamChat/AnyUserListFilterScope": {
+  "abstract" : [
+    {
+      "text" : "A namespace for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "FilterKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s suitable to be used for ",
+      "type" : "text"
+    },
+    {
+      "code" : "UserListQuery",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ". This scope is not aware of any extra data types.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyUserListFilterScope"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/AnyUserListFilterScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyUserListFilterScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyUserListFilterScope",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/anyuserlistfilterscope"
+},
+"doc://StreamChat/documentation/StreamChat/FilterScope": {
+  "abstract" : [
+    {
+      "text" : "A phantom protocol used to limit the scope of ",
+      "type" : "text"
+    },
+    {
+      "code" : "Filter",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FilterScope"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FilterScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FilterScope",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filterscope"
+},
+"doc://StreamChat/documentation/StreamChat/MemberListFilterScope": {
+  "abstract" : [
+    {
+      "text" : "An extra-data-specific namespace for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "FilterKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s suitable to be used for ",
+      "type" : "text"
+    },
+    {
+      "code" : "ChannelMemberListQuery",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MemberListFilterScope"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/MemberListFilterScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MemberListFilterScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MemberListFilterScope",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/memberlistfilterscope"
+},
+"doc://StreamChat/documentation/StreamChat/UserListFilterScope": {
+  "abstract" : [
+    {
+      "text" : "An extra-data-specific namespace for the ",
+      "type" : "text"
+    },
+    {
+      "code" : "FilterKey",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : "s suitable to be used for ",
+      "type" : "text"
+    },
+    {
+      "code" : "UserListQuery",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UserListFilterScope"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/UserListFilterScope",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UserListFilterScope"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UserListFilterScope",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/userlistfilterscope"
+}
+}
+}

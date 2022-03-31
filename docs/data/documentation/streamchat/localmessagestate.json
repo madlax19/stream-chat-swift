@@ -1,0 +1,489 @@
+{
+  "abstract" : [
+    {
+      "text" : "A possible additional local state of the message. Applies only for the messages of the current user.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat17LocalMessageStateO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "LocalMessageState"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "LocalMessageState"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "LocalMessageState"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "LocalMessageState"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/SH",
+        "doc:\/\/StreamChat\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/deleting",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/deletingFailed",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/pendingSend",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/pendingSync",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/sending",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/sendingFailed",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/syncing",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/syncingFailed"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/Equatable-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/localmessagestate"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SH": {
+  "identifier" : "doc:\/\/StreamChat\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SY": {
+  "identifier" : "doc:\/\/StreamChat\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState": {
+  "abstract" : [
+    {
+      "text" : "A possible additional local state of the message. Applies only for the messages of the current user.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LocalMessageState"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LocalMessageState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LocalMessageState",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/rawrepresentable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/deleting": {
+  "abstract" : [
+    {
+      "text" : "The message is waiting to be deleted.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deleting"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/deleting",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.deleting",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/deleting"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/deletingFailed": {
+  "abstract" : [
+    {
+      "text" : "Deleting of the message failed after multiple of tries. The system is not trying to delete this message anymore.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deletingFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/deletingFailed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.deletingFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/deletingfailed"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/init(rawvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/pendingSend": {
+  "abstract" : [
+    {
+      "text" : "The message is waiting to be sent.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pendingSend"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/pendingSend",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.pendingSend",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/pendingsend"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/pendingSync": {
+  "abstract" : [
+    {
+      "text" : "The message is waiting to be synced.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pendingSync"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/pendingSync",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.pendingSync",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/pendingsync"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/sending": {
+  "abstract" : [
+    {
+      "text" : "The message is currently being sent to the servers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sending"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/sending",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.sending",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/sending"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/sendingFailed": {
+  "abstract" : [
+    {
+      "text" : "Sending of the message failed after multiple of tries. The system is not trying to send this message anymore.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sendingFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/sendingFailed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.sendingFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/sendingfailed"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/syncing": {
+  "abstract" : [
+    {
+      "text" : "The message is currently being synced",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "syncing"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/syncing",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.syncing",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/syncing"
+},
+"doc://StreamChat/documentation/StreamChat/LocalMessageState/syncingFailed": {
+  "abstract" : [
+    {
+      "text" : "Syncing of the message failed after multiple of tries. The system is not trying to sync this message anymore.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "syncingFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalMessageState\/syncingFailed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalMessageState.syncingFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localmessagestate\/syncingfailed"
+}
+}
+}

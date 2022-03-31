@@ -1,0 +1,258 @@
+{
+  "abstract" : [
+    {
+      "text" : "The current connection status of ",
+      "type" : "text"
+    },
+    {
+      "code" : "Client",
+      "type" : "codeVoice"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatusUpdated"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatusUpdated\/connectionStatus"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat23ConnectionStatusUpdatedV010connectionD0AA0cD0Ovp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "connectionStatus"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10StreamChat16ConnectionStatusO",
+        "text" : "ConnectionStatus"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "connectionStatus"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "connectionStatus"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatus",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10StreamChat16ConnectionStatusO",
+              "text" : "ConnectionStatus"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/connectionstatusupdated\/connectionstatus"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/ConnectionStatus": {
+  "abstract" : [
+    {
+      "text" : "Describes the possible states of the client connection to the servers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionStatus"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatus",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionStatus"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConnectionStatus",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/connectionstatus"
+},
+"doc://StreamChat/documentation/StreamChat/ConnectionStatusUpdated": {
+  "abstract" : [
+    {
+      "text" : "Emitted when ",
+      "type" : "text"
+    },
+    {
+      "code" : "Client",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " changes it’s connection status. You can listen to this event and indicate the different connection",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "states in the UI (banners like “Offline”, “Reconnecting””, etc.).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionStatusUpdated"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatusUpdated",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionStatusUpdated"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConnectionStatusUpdated",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/connectionstatusupdated"
+},
+"doc://StreamChat/documentation/StreamChat/ConnectionStatusUpdated/connectionStatus": {
+  "abstract" : [
+    {
+      "text" : "The current connection status of ",
+      "type" : "text"
+    },
+    {
+      "code" : "Client",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "connectionStatus"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat16ConnectionStatusO",
+      "text" : "ConnectionStatus"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConnectionStatusUpdated\/connectionStatus",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "connectionStatus",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/connectionstatusupdated\/connectionstatus"
+}
+}
+}

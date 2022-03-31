@@ -1,0 +1,1264 @@
+{
+  "abstract" : [
+    {
+      "text" : "Base class for log destinations. Already implements basic functionaly to allow easy destination implementation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Extending this class, instead of implementing ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogDestination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is easier (and recommended) for creating new destinations.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat18BaseLogDestinationC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "BaseLogDestination"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "BaseLogDestination"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "BaseLogDestination"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "BaseLogDestination"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ConsoleLogDestination"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherited By",
+      "type" : "inheritedBy"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogDestination"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/init(identifier:level:subsystems:showDate:dateFormatter:formatters:showLevel:showIdentifier:showThreadName:showFileName:showLineNumber:showFunctionName:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/dateFormatter",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/formatters",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/identifier",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/level",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showDate",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showFileName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showFunctionName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showIdentifier",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showLevel",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showLineNumber",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showThreadName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/subsystems-6c7ip"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/applyFormatters(logDetails:message:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/isEnabled(level:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/isEnabled(level:subsystems:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/process(logDetails:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/write(message:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/LogDestination-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/baselogdestination"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination": {
+  "abstract" : [
+    {
+      "text" : "Base class for log destinations. Already implements basic functionaly to allow easy destination implementation.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Extending this class, instead of implementing ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogDestination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " is easier (and recommended) for creating new destinations.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BaseLogDestination"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BaseLogDestination"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BaseLogDestination",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/LogDestination-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/LogDestination-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "LogDestination Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/logdestination-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/applyFormatters(logDetails:message:)": {
+  "abstract" : [
+    {
+      "text" : "Apply formatters to the log message to be outputted",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Be aware that formatters are order dependent.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "applyFormatters"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logDetails"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat10LogDetailsV",
+      "text" : "LogDetails"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "message"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/applyFormatters(logDetails:message:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "applyFormatters(logDetails:message:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/applyformatters(logdetails:message:)"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/dateFormatter": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dateFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSDateFormatter",
+      "text" : "DateFormatter"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/dateFormatter",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dateFormatter",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/dateformatter"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/formatters": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "formatters"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogFormatterP",
+      "text" : "LogFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/formatters",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "formatters",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/formatters"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/identifier": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "identifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/identifier",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "identifier",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/identifier"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/init(identifier:level:subsystems:showDate:dateFormatter:formatters:showLevel:showIdentifier:showThreadName:showFileName:showLineNumber:showFunctionName:)": {
+  "abstract" : [
+    {
+      "text" : "Initialize the log destination with given parameters.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "identifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat8LogLevelO",
+      "text" : "LogLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "subsystems"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogSubsystemV",
+      "text" : "LogSubsystem"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showDate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dateFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSDateFormatter",
+      "text" : "DateFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "formatters"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogFormatterP",
+      "text" : "LogFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showThreadName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showFileName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showLineNumber"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "showFunctionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/init(identifier:level:subsystems:showDate:dateFormatter:formatters:showLevel:showIdentifier:showThreadName:showFileName:showLineNumber:showFunctionName:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(identifier:level:subsystems:showDate:dateFormatter:formatters:showLevel:showIdentifier:showThreadName:showFileName:showLineNumber:showFunctionName:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/init(identifier:level:subsystems:showdate:dateformatter:formatters:showlevel:showidentifier:showthreadname:showfilename:showlinenumber:showfunctionname:)"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/isEnabled(level:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isEnabled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat8LogLevelO",
+      "text" : "LogLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/isEnabled(level:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isEnabled(level:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/isenabled(level:)"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/isEnabled(level:subsystems:)": {
+  "abstract" : [
+    {
+      "text" : "Checks if this destination is enabled for the given level and subsystems.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isEnabled"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat8LogLevelO",
+      "text" : "LogLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "subsystems"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogSubsystemV",
+      "text" : "LogSubsystem"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/isEnabled(level:subsystems:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isEnabled(level:subsystems:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/isenabled(level:subsystems:)"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/level": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat8LogLevelO",
+      "text" : "LogLevel"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/level",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "level",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/level"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/process(logDetails:)": {
+  "abstract" : [
+    {
+      "text" : "Process the log details before outputting the log.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "process"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "logDetails"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat10LogDetailsV",
+      "text" : "LogDetails"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/process(logDetails:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "process(logDetails:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/process(logdetails:)"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showDate": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showDate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showDate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showDate",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showdate"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showFileName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showFileName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showFileName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showFileName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showfilename"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showFunctionName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showFunctionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showFunctionName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showFunctionName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showfunctionname"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showIdentifier": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showIdentifier",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showidentifier"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showLevel": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showLevel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showlevel"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showLineNumber": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showLineNumber"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showLineNumber",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showLineNumber",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showlinenumber"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/showThreadName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showThreadName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/showThreadName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showThreadName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/showthreadname"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/subsystems-6c7ip": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "subsystems"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogSubsystemV",
+      "text" : "LogSubsystem"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/subsystems-6c7ip",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subsystems",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/subsystems-6c7ip"
+},
+"doc://StreamChat/documentation/StreamChat/BaseLogDestination/write(message:)": {
+  "abstract" : [
+    {
+      "text" : "Writes a given message to the desired output.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "By minimum, subclasses should implement this function, since it handles outputting the message.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "write"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "message"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/BaseLogDestination\/write(message:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "write(message:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/baselogdestination\/write(message:)"
+},
+"doc://StreamChat/documentation/StreamChat/ConsoleLogDestination": {
+  "abstract" : [
+    {
+      "text" : "Basic destination for outputting messages to console.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConsoleLogDestination"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ConsoleLogDestination",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConsoleLogDestination"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ConsoleLogDestination",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/consolelogdestination"
+},
+"doc://StreamChat/documentation/StreamChat/LogDestination": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LogDestination"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogDestination",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LogDestination"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LogDestination",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logdestination"
+}
+}
+}

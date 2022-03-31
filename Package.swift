@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 // When used via SPM the minimum Swift version is 5.3 because we need support for resources
 
 import Foundation
@@ -19,6 +19,9 @@ let package = Package(
             name: "StreamChatUI",
             targets: ["StreamChatUI"]
         )
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-docc-plugin", branch: "main"),
     ],
     targets: [
         .target(

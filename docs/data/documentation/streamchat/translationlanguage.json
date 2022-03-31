@@ -1,0 +1,2648 @@
+{
+  "abstract" : [
+    {
+      "text" : "No overview available.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat19TranslationLanguageV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "TranslationLanguage"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "TranslationLanguage"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "TranslationLanguage"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "TranslationLanguage"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/SH"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/init(languageCode:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/afrikaans",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/albanian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/allCases",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/amharic",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/arabic",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/azerbaijani",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bengali",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bosnian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bulgarian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/chineseSimplified",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/chineseTraditional",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/croatian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/czech",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/danish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/dari",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/dutch",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/english",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/estonian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/finnish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/french",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/frenchCanada",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/georgian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/german",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/greek",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hausa",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hebrew",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hindi",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hungarian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/indonesian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/italian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/japanese",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/korean",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/latvian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/malay",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/norwegian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/pashto",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/persian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/polish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/portuguese",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/romanian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/russian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/serbian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/slovak",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/slovenian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/somali",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/spanish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/spanishMexico",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/swahili",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/swedish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/tagalog",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/tamil",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/thai",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/turkish",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/ukrainian",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/urdu",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/vietnamese"
+      ],
+      "title" : "Type Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/Equatable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/translationlanguage"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SH": {
+  "identifier" : "doc:\/\/StreamChat\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranslationLanguage",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/afrikaans": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "afrikaans"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/afrikaans",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "afrikaans",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/afrikaans"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/albanian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "albanian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/albanian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "albanian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/albanian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/allCases": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "allCases"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/allCases",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "allCases",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/allcases"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/amharic": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "amharic"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/amharic",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "amharic",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/amharic"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/arabic": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "arabic"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/arabic",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "arabic",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/arabic"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/azerbaijani": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "azerbaijani"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/azerbaijani",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "azerbaijani",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/azerbaijani"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/bengali": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bengali"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bengali",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bengali",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/bengali"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/bosnian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bosnian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bosnian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bosnian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/bosnian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/bulgarian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bulgarian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/bulgarian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bulgarian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/bulgarian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/chineseSimplified": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "chineseSimplified"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/chineseSimplified",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "chineseSimplified",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/chinesesimplified"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/chineseTraditional": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "chineseTraditional"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/chineseTraditional",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "chineseTraditional",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/chinesetraditional"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/croatian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "croatian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/croatian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "croatian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/croatian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/czech": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "czech"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/czech",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "czech",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/czech"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/danish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "danish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/danish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "danish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/danish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/dari": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dari"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/dari",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dari",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/dari"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/dutch": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dutch"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/dutch",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dutch",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/dutch"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/english": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "english"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/english",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "english",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/english"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/estonian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "estonian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/estonian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "estonian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/estonian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/finnish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "finnish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/finnish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "finnish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/finnish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/french": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "french"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/french",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "french",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/french"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/frenchCanada": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "frenchCanada"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/frenchCanada",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "frenchCanada",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/frenchcanada"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/georgian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "georgian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/georgian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "georgian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/georgian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/german": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "german"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/german",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "german",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/german"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/greek": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "greek"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/greek",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "greek",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/greek"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/hausa": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hausa"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hausa",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hausa",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/hausa"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/hebrew": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hebrew"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hebrew",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hebrew",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/hebrew"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/hindi": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hindi"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hindi",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hindi",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/hindi"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/hungarian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "hungarian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/hungarian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "hungarian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/hungarian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/indonesian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "indonesian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/indonesian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "indonesian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/indonesian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/init(languageCode:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "languageCode"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/init(languageCode:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(languageCode:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/init(languagecode:)"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/italian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "italian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/italian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "italian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/italian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/japanese": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "japanese"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/japanese",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "japanese",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/japanese"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/korean": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "korean"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/korean",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "korean",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/korean"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/latvian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "latvian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/latvian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "latvian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/latvian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/malay": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "malay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/malay",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "malay",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/malay"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/norwegian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "norwegian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/norwegian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "norwegian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/norwegian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/pashto": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pashto"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/pashto",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "pashto",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/pashto"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/persian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "persian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/persian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "persian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/persian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/polish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "polish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/polish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "polish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/polish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/portuguese": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "portuguese"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/portuguese",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "portuguese",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/portuguese"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/romanian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "romanian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/romanian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "romanian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/romanian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/russian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "russian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/russian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "russian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/russian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/serbian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "serbian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/serbian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "serbian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/serbian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/slovak": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "slovak"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/slovak",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "slovak",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/slovak"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/slovenian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "slovenian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/slovenian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "slovenian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/slovenian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/somali": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "somali"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/somali",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "somali",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/somali"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/spanish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "spanish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/spanish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "spanish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/spanish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/spanishMexico": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "spanishMexico"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/spanishMexico",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "spanishMexico",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/spanishmexico"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/swahili": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "swahili"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/swahili",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "swahili",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/swahili"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/swedish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "swedish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/swedish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "swedish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/swedish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/tagalog": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tagalog"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/tagalog",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "tagalog",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/tagalog"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/tamil": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "tamil"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/tamil",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "tamil",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/tamil"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/thai": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "thai"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/thai",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "thai",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/thai"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/turkish": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "turkish"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/turkish",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "turkish",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/turkish"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/ukrainian": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ukrainian"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/ukrainian",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ukrainian",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/ukrainian"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/urdu": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "urdu"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/urdu",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "urdu",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/urdu"
+},
+"doc://StreamChat/documentation/StreamChat/TranslationLanguage/vietnamese": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "vietnamese"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat19TranslationLanguageV",
+      "text" : "TranslationLanguage"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/TranslationLanguage\/vietnamese",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "vietnamese",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/translationlanguage\/vietnamese"
+}
+}
+}

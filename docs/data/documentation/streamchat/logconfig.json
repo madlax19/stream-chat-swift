@@ -1,0 +1,895 @@
+{
+  "abstract" : [
+    {
+      "text" : "No overview available.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat9LogConfigO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "LogConfig"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "LogConfig"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "LogConfig"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "LogConfig"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/dateFormatter",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/destinationTypes",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/destinations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/formatters",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/identifier",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/level",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/logger",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showDate",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showFileName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showFunctionName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showIdentifier",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showLevel",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showLineNumber",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showThreadName",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/subsystems"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/logconfig"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LogConfig"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LogConfig"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LogConfig",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/dateFormatter": {
+  "abstract" : [
+    {
+      "text" : "Date formatter for the logger. Defaults to ISO8601",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dateFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSDateFormatter",
+      "text" : "DateFormatter"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/dateFormatter",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dateFormatter",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/dateformatter"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/destinationTypes": {
+  "abstract" : [
+    {
+      "text" : "Destination types this logger will use.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "destinationTypes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat14LogDestinationP",
+      "text" : "LogDestination"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type]"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/destinationTypes",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "destinationTypes",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/destinationtypes"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/destinations": {
+  "abstract" : [
+    {
+      "text" : "Destinations for the default logger. Please see ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogDestination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Defaults to only ",
+      "type" : "text"
+    },
+    {
+      "code" : "ConsoleLogDestination",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ", which only prints the messages.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "destinations"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat14LogDestinationP",
+      "text" : "LogDestination"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/destinations",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "destinations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/destinations"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/formatters": {
+  "abstract" : [
+    {
+      "text" : "Log formatters to be applied in order before logs are outputted. Defaults to empty (no formatters).",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Please see ",
+      "type" : "text"
+    },
+    {
+      "code" : "LogFormatter",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " for more info.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "formatters"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogFormatterP",
+      "text" : "LogFormatter"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/formatters",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "formatters",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/formatters"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/identifier": {
+  "abstract" : [
+    {
+      "text" : "Identifier for the logger. Defaults to empty.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "identifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/identifier",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "identifier",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/identifier"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/level": {
+  "abstract" : [
+    {
+      "text" : "Output level for the logger.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "level"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat8LogLevelO",
+      "text" : "LogLevel"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/level",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "level",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/level"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/logger": {
+  "abstract" : [
+    {
+      "text" : "Logger instance to be used by StreamChat.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "logger"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat6LoggerC",
+      "text" : "Logger"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/logger",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "logger",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/logger"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showDate": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing date in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showDate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showDate",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showDate",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showdate"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showFileName": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing file name in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showFileName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showFileName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showFileName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showfilename"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showFunctionName": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing function name in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showFunctionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showFunctionName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showFunctionName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showfunctionname"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showIdentifier": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing identifier in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showIdentifier"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showIdentifier",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showIdentifier",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showidentifier"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showLevel": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing log level in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showLevel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showLevel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showLevel",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showlevel"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showLineNumber": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing line number in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showLineNumber"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showLineNumber",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showLineNumber",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showlinenumber"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/showThreadName": {
+  "abstract" : [
+    {
+      "text" : "Toggle for showing thread name in logs",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "showThreadName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/showThreadName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "showThreadName",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/showthreadname"
+},
+"doc://StreamChat/documentation/StreamChat/LogConfig/subsystems": {
+  "abstract" : [
+    {
+      "text" : "Subsystems for the logger",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "subsystems"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat12LogSubsystemV",
+      "text" : "LogSubsystem"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LogConfig\/subsystems",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subsystems",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/logconfig\/subsystems"
+}
+}
+}

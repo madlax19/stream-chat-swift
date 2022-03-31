@@ -1,0 +1,457 @@
+{
+  "abstract" : [
+    {
+      "text" : "No overview available.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat18LocalReactionStateO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "LocalReactionState"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "LocalReactionState"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "LocalReactionState"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "LocalReactionState"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/SH",
+        "doc:\/\/StreamChat\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/deleting",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/deletingFailed",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/pendingDelete",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/pendingSend",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/sending",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/sendingFailed",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/unknown"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/Equatable-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/localreactionstate"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SH": {
+  "identifier" : "doc:\/\/StreamChat\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SY": {
+  "identifier" : "doc:\/\/StreamChat\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LocalReactionState"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LocalReactionState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LocalReactionState",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/rawrepresentable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/deleting": {
+  "abstract" : [
+    {
+      "text" : "The reaction is being deleted",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deleting"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/deleting",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.deleting",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/deleting"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/deletingFailed": {
+  "abstract" : [
+    {
+      "text" : "Deleting of the reaction failed and cannot be fulfilled",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "deletingFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/deletingFailed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.deletingFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/deletingfailed"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/init(rawvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/pendingDelete": {
+  "abstract" : [
+    {
+      "text" : "The reaction is waiting to be deleted from the server",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pendingDelete"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/pendingDelete",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.pendingDelete",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/pendingdelete"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/pendingSend": {
+  "abstract" : [
+    {
+      "text" : "The reaction is waiting to be sent to the server",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "pendingSend"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/pendingSend",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.pendingSend",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/pendingsend"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/sending": {
+  "abstract" : [
+    {
+      "text" : "The reaction is being sent",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sending"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/sending",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.sending",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/sending"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/sendingFailed": {
+  "abstract" : [
+    {
+      "text" : "Creating the reaction failed and cannot be fulfilled",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sendingFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/sendingFailed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.sendingFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/sendingfailed"
+},
+"doc://StreamChat/documentation/StreamChat/LocalReactionState/unknown": {
+  "abstract" : [
+    {
+      "text" : "The reaction state is unknown",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "unknown"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/LocalReactionState\/unknown",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "LocalReactionState.unknown",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/localreactionstate\/unknown"
+}
+}
+}

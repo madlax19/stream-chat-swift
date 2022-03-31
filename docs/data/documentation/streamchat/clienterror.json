@@ -1,0 +1,1018 @@
+{
+  "abstract" : [
+    {
+      "text" : "A Client error.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat11ClientErrorC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ClientError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ClientError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "ClientError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ClientError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ClientIsNotInActiveMode",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionNotSuccessful",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionWasNotInitiated",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/EventDecoding",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidChannelId",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidToken",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingLocalStorageURL",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingToken",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unexpected",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unknown",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedEventType",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedUploadableAttachmentType",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/WebSocket"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherited By",
+      "type" : "inheritedBy"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/s23CustomStringConvertibleP",
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/s5ErrorP",
+        "doc:\/\/StreamChat\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ClientIsNotInActiveMode",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionNotSuccessful",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionWasNotInitiated",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/EventDecoding",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/FetchFailed",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidChannelId",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidToken",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingLocalStorageURL",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingToken",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unexpected",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unknown",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedEventType",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedUploadableAttachmentType",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/WebSocket"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Location-swift.struct"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/init(_:_:_:)",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/init(with:_:_:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/description",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/localizedDescription-6cwqn",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/location-swift.property",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/underlyingError"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Equatable-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Error-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/clienterror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError": {
+  "abstract" : [
+    {
+      "text" : "A Client error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClientError"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClientError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/ClientIsNotInActiveMode": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ClientIsNotInActiveMode"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ClientIsNotInActiveMode",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ClientIsNotInActiveMode"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.ClientIsNotInActiveMode",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/clientisnotinactivemode"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/ConnectionNotSuccessful": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionNotSuccessful"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionNotSuccessful",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionNotSuccessful"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.ConnectionNotSuccessful",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/connectionnotsuccessful"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/ConnectionWasNotInitiated": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionWasNotInitiated"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/ConnectionWasNotInitiated",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectionWasNotInitiated"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.ConnectionWasNotInitiated",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/connectionwasnotinitiated"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/error-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/EventDecoding": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EventDecoding"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/EventDecoding",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EventDecoding"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.EventDecoding",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/eventdecoding"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/FetchFailed": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FetchFailed"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/FetchFailed",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FetchFailed"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.FetchFailed",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/fetchfailed"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/InvalidChannelId": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InvalidChannelId"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidChannelId",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InvalidChannelId"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.InvalidChannelId",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/invalidchannelid"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/InvalidToken": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "InvalidToken"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/InvalidToken",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "InvalidToken"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.InvalidToken",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/invalidtoken"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/Location-swift.struct": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Location"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Location-swift.struct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Location"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.Location",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/location-swift.struct"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/MissingLocalStorageURL": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MissingLocalStorageURL"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingLocalStorageURL",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MissingLocalStorageURL"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.MissingLocalStorageURL",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/missinglocalstorageurl"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/MissingToken": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MissingToken"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/MissingToken",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MissingToken"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.MissingToken",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/missingtoken"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/Unexpected": {
+  "abstract" : [
+    {
+      "text" : "An unexpected error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Unexpected"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unexpected",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Unexpected"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.Unexpected",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/unexpected"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/Unknown": {
+  "abstract" : [
+    {
+      "text" : "An unknown error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Unknown"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/Unknown",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Unknown"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.Unknown",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/unknown"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/UnsupportedEventType": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UnsupportedEventType"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedEventType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UnsupportedEventType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.UnsupportedEventType",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/unsupportedeventtype"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/UnsupportedUploadableAttachmentType": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UnsupportedUploadableAttachmentType"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/UnsupportedUploadableAttachmentType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UnsupportedUploadableAttachmentType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.UnsupportedUploadableAttachmentType",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/unsupporteduploadableattachmenttype"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/WebSocket": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "WebSocket"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/WebSocket",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "WebSocket"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ClientError.WebSocket",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/websocket"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/description": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/description"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/init(_:_:_:)": {
+  "abstract" : [
+    {
+      "text" : "An error based on a message.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/init(_:_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/init(_:_:_:)"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/init(with:_:_:)": {
+  "abstract" : [
+    {
+      "text" : "A client error based on an external general error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s12StaticStringV",
+      "text" : "StaticString"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/init(with:_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(with:_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/init(with:_:_:)"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/localizedDescription-6cwqn": {
+  "abstract" : [
+    {
+      "text" : "Retrieve the localized description for this error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "localizedDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/localizedDescription-6cwqn",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "localizedDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/localizeddescription-6cwqn"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/location-swift.property": {
+  "abstract" : [
+    {
+      "text" : "The file and line number which emitted the error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "location"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat11ClientErrorC",
+      "text" : "ClientError"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10StreamChat11ClientErrorC8LocationV",
+      "text" : "Location"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/location-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "location",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/location-swift.property"
+},
+"doc://StreamChat/documentation/StreamChat/ClientError/underlyingError": {
+  "abstract" : [
+    {
+      "text" : "An underlying error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "underlyingError"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5ErrorP",
+      "text" : "Error"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/ClientError\/underlyingError",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "underlyingError",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/clienterror\/underlyingerror"
+},
+"doc://StreamChat/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/StreamChat\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s5ErrorP": {
+  "identifier" : "doc:\/\/StreamChat\/s5ErrorP",
+  "title" : "Swift.Error",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/s8SendableP": {
+  "identifier" : "doc:\/\/StreamChat\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

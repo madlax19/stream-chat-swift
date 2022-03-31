@@ -1,0 +1,692 @@
+{
+  "abstract" : [
+    {
+      "text" : "An enum with possible operators to use in filters.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/StreamChat\/documentation\/StreamChat"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10StreamChat14FilterOperatorO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "FilterOperator"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "StreamChat"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "FilterOperator"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "FilterOperator"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "FilterOperator"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/SQ",
+        "doc:\/\/StreamChat\/SH",
+        "doc:\/\/StreamChat\/SY"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 2,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/and",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/autocomplete",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/contains",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/equal",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/exists",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/greater",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/greaterOrEqual",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/in",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/less",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/lessOrEqual",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/nor",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/notEqual",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/notIn",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/or",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/query"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/Equatable-Implementations",
+        "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/RawRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/streamchat\/filteroperator"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://StreamChat/SH": {
+  "identifier" : "doc:\/\/StreamChat\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SQ": {
+  "identifier" : "doc:\/\/StreamChat\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/SY": {
+  "identifier" : "doc:\/\/StreamChat\/SY",
+  "title" : "Swift.RawRepresentable",
+  "type" : "unresolvable"
+},
+"doc://StreamChat/documentation/StreamChat": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "StreamChat",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator": {
+  "abstract" : [
+    {
+      "text" : "An enum with possible operators to use in filters.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FilterOperator"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FilterOperator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FilterOperator",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/equatable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/rawrepresentable-implementations"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/and": {
+  "abstract" : [
+    {
+      "text" : "Matches all the values specified in an array.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "and"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/and",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.and",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/and"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/autocomplete": {
+  "abstract" : [
+    {
+      "text" : "Matches values with the specified prefix.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "autocomplete"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/autocomplete",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.autocomplete",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/autocomplete"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/contains": {
+  "abstract" : [
+    {
+      "text" : "Matches if the key array contains the given value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "contains"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/contains",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.contains",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/contains"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/equal": {
+  "abstract" : [
+    {
+      "text" : "Matches values that are equal to a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "equal"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/equal",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.equal",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/equal"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/exists": {
+  "abstract" : [
+    {
+      "text" : "Matches values that exist\/don’t exist based on the specified boolean value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "exists"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/exists",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.exists",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/exists"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/greater": {
+  "abstract" : [
+    {
+      "text" : "Matches values that are greater than a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "greater"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/greater",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.greater",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/greater"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/greaterOrEqual": {
+  "abstract" : [
+    {
+      "text" : "Matches values that are greater than a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "greaterOrEqual"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/greaterOrEqual",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.greaterOrEqual",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/greaterorequal"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/in": {
+  "abstract" : [
+    {
+      "text" : "Matches any of the values specified in an array.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "`in`"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/in",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.in",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/in"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/init(rawvalue:)"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/less": {
+  "abstract" : [
+    {
+      "text" : "Matches values that are less than a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "less"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/less",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.less",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/less"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/lessOrEqual": {
+  "abstract" : [
+    {
+      "text" : "Matches values that are less than or equal to a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lessOrEqual"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/lessOrEqual",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.lessOrEqual",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/lessorequal"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/nor": {
+  "abstract" : [
+    {
+      "text" : "Matches none of the values specified in an array.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "nor"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/nor",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.nor",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/nor"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/notEqual": {
+  "abstract" : [
+    {
+      "text" : "Matches all values that are not equal to a specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "notEqual"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/notEqual",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.notEqual",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/notequal"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/notIn": {
+  "abstract" : [
+    {
+      "text" : "Matches none of the values specified in an array.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "notIn"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/notIn",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.notIn",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/notin"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/or": {
+  "abstract" : [
+    {
+      "text" : "Matches at least one of the values specified in an array.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "or"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/or",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.or",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/or"
+},
+"doc://StreamChat/documentation/StreamChat/FilterOperator/query": {
+  "abstract" : [
+    {
+      "text" : "Matches values by performing text search with the specified value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "query"
+    }
+  ],
+  "identifier" : "doc:\/\/StreamChat\/documentation\/StreamChat\/FilterOperator\/query",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FilterOperator.query",
+  "type" : "topic",
+  "url" : "\/documentation\/streamchat\/filteroperator\/query"
+}
+}
+}
