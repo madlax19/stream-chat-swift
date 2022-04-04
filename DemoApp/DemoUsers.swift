@@ -4,7 +4,7 @@
 
 import Foundation
 
-public let apiKeyString = "8br4watad788"
+public let apiKeyString = "uykdzqamca7z"
 public let applicationGroupIdentifier = "group.io.getstream.iOS.ChatDemoApp"
 public let currentUserIdRegisteredForPush = "currentUserIdRegisteredForPush"
 
@@ -23,10 +23,10 @@ public extension UserCredentials {
 
     static let builtInUsers: [UserCredentials] = [
         (
-            "luke_skywalker",
-            "Luke Skywalker",
+            "tim",
+            "tim",
             "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg",
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibHVrZV9za3l3YWxrZXIifQ.kFSLHRB5X62t0Zlc7nwczWUfsQMwfkpylC6jCUZ6Mc0",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGltIn0.kKN6tKi0OeLb_yM8yLX9ZcoT02NhPPkNybsPAhrYtek",
             "Tatooine"
         ),
         (

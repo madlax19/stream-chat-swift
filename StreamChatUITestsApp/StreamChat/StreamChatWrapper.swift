@@ -15,6 +15,7 @@ final class StreamChatWrapper {
         self.userCredentials = userCredentials
 
         let config = ChatClientConfig(apiKey: .init(apiKey))
+        config.isLocalStorageEnabled = false
 
         /// create an instance of ChatClient and share it using the singleton
         ChatClient.shared = ChatClient(config: config)

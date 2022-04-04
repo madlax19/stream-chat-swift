@@ -23,7 +23,7 @@ public struct BaseURL: CustomStringConvertible {
     
     public var description: String { restAPIBaseURL.absoluteString }
     
-    /// Create a base URL from an URL string.
+    /// Create a base URL from an URL string.rrrrr
     ///
     /// - Parameter urlString: a Stream Chat server location url string.
     init?(urlString: String) {
@@ -62,6 +62,7 @@ public struct BaseURL: CustomStringConvertible {
 
         restAPIBaseURL = URL(string: "https://\(urlString)/")!
         webSocketBaseURL = URL(string: "wss://\(urlString)/")!
+        //webSocketBaseURL = URL(string: "ws://localhost:8080/")!
     }
 }
 

@@ -213,8 +213,8 @@ public class ChatClient {
     }
     
     /// Stream-specific request headers.
-    private let sessionHeaders: [String: String] = [
-        "X-Stream-Client": SystemEnvironment.xStreamClientHeader
+    private let sessionHeaders: [String: String] = [:
+//        "X-Stream-Client": SystemEnvironment.xStreamClientHeader
     ]
     
     /// The current connection id

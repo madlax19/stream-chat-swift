@@ -71,12 +71,13 @@ final class DemoAppCoordinator: NSObject, UNUserNotificationCenterDelegate {
 
     func presentChat(userCredentials: UserCredentials, channelID: ChannelId? = nil) {
         // Create a token
-        guard let token = try? Token(rawValue: userCredentials.token) else {
+        guard let token = try? Token(rawValue: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGltIn0.kKN6tKi0OeLb_yM8yLX9ZcoT02NhPPkNybsPAhrYtek") else {
             fatalError("There has been a problem getting the token, please check Stream API status")
         }
-        
+//
+//        let token = Token.development(userId: "tim")
         // Set the log level
-        LogConfig.level = .warning
+        LogConfig.level = .debug
         LogConfig.formatters = [
             PrefixLogFormatter(prefixes: [.info: "ℹ️", .debug: "🛠", .warning: "⚠️", .error: "🚨"])
         ]
