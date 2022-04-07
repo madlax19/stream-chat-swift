@@ -135,7 +135,7 @@ public class ChatClient {
 
         if let currentUserId = currentUserId {
             webSocketClient?.connectEndpoint = Endpoint<EmptyResponse>.webSocketConnect(
-                userInfo: UserInfo(id: currentUserId)
+                userInfo: UserInfo(id: currentUserId), token: currentToken
             )
         }
         

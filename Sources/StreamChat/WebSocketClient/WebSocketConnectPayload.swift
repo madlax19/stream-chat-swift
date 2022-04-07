@@ -4,21 +4,38 @@
 
 import Foundation
 
+struct WebsocketAuthorizedPayload: Encodable {
+
+    enum CodingKeys: String, CodingKey {
+        case streamAuthType = "stream-auth-type"
+        case token = "authorization"
+    }
+    let streamAuthType = "jwt"
+    let token: String?
+
+    init(token: String?) {
+        self.token = token
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Self.CodingKeys)
+        try container.encode(streamAuthType, forKey: .streamAuthType)
+        try container.encodeIfPresent(token, forKey: .token)
+    }
+}
+
 class WebSocketConnectPayload: Encodable {
     private enum CodingKeys: String, CodingKey {
         case userId = "user_id"
         case userDetails = "user_details"
-        case serverDeterminesConnectionId = "server_determines_connection_id"
     }
     
     let userId: UserId
     let userDetails: UserWebSocketPayload
-    let serverDeterminesConnectionId: Bool
 
     init(userInfo: UserInfo) {
         userId = userInfo.id
         userDetails = UserWebSocketPayload(userInfo: userInfo)
-        serverDeterminesConnectionId = true
     }
 }
 

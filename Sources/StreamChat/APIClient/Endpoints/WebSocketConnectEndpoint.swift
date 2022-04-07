@@ -6,12 +6,13 @@ import Foundation
 
 extension Endpoint {
     static func webSocketConnect(
-        userInfo: UserInfo
+        userInfo: UserInfo,
+        token: Token?
     ) -> Endpoint<EmptyResponse> {
         .init(
             path: .connect,
             method: .get,
-            queryItems: nil,
+            queryItems: WebsocketAuthorizedPayload(token: token?.rawValue),
             requiresConnectionId: false,
             body: [
                 "json": WebSocketConnectPayload(userInfo: userInfo)
