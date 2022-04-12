@@ -69,6 +69,11 @@ class MessageDTO: NSManagedObject {
     override func willSave() {
         super.willSave()
         
+        if isUpdated {
+            previewIn?.willAccessValue(forKey: "cid")
+            previewIn?.didChangeValue(forKey: "cid")
+        }
+        
         prepareDefaultSortKeyIfNeeded()
     }
 
@@ -282,17 +287,35 @@ class MessageDTO: NSManagedObject {
         return request
     }
     
-    static func load(for cid: String, limit: Int, offset: Int = 0, context: NSManagedObjectContext) -> [MessageDTO] {
+    static func load(
+        for cid: String,
+        limit: Int,
+        offset: Int = 0,
+        deletedMessagesVisibility: ChatClientConfig.DeletedMessageVisibility,
+        shouldShowShadowedMessages: Bool,
+        context: NSManagedObjectContext
+    ) -> [MessageDTO] {
         let request = NSFetchRequest<MessageDTO>(entityName: entityName)
         request.predicate = channelMessagesPredicate(
             for: cid,
-            deletedMessagesVisibility: context.deletedMessagesVisibility ?? .visibleForCurrentUser,
-            shouldShowShadowedMessages: context.shouldShowShadowedMessages ?? false
+            deletedMessagesVisibility: deletedMessagesVisibility,
+            shouldShowShadowedMessages: shouldShowShadowedMessages
         )
         request.sortDescriptors = [NSSortDescriptor(keyPath: \MessageDTO.createdAt, ascending: false)]
         request.fetchLimit = limit
         request.fetchOffset = offset
         return load(by: request, context: context)
+    }
+    
+    static func loadPreview(for cid: String, context: NSManagedObjectContext) -> MessageDTO? {
+        load(
+            for: cid,
+            limit: 1,
+            offset: 0,
+            deletedMessagesVisibility: .alwaysHidden,
+            shouldShowShadowedMessages: context.shouldShowShadowedMessages ?? false,
+            context: context
+        ).first
     }
     
     static func load(id: String, context: NSManagedObjectContext) -> MessageDTO? {
@@ -447,6 +470,9 @@ extension NSManagedObjectContext: MessageDatabaseSession {
             parentMessageDTO.replies.insert(message)
             parentMessageDTO.replyCount += 1
         }
+        
+        // When the current user submits the new message for sending - make it a channel preview.
+        channelDTO.previewMessage = message
         
         return message
     }

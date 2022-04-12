@@ -421,18 +421,29 @@ extension DatabaseSession {
             channelDTO: channelDTO,
             syncOwnReactions: false
         )
-
-        if payload.eventType == .messageDeleted && payload.hardDelete {
-            delete(message: savedMessage)
-            return
-        }
-
-        // When a message is updated, make sure to update
-        // the messages quoting the edited message by triggering a DB Update.
-        if payload.eventType == .messageUpdated {
+        
+        switch payload.eventType {
+        case .messageDeleted:
+            if payload.hardDelete {
+                delete(message: savedMessage)
+            }
+            
+            if channelDTO.previewMessage == savedMessage {
+                channelDTO.updatePreviewMessage()
+            }
+        
+        case .messageUpdated:
+            // When a message is updated, make sure to update
+            // the messages quoting the edited message by triggering a DB Update.
             savedMessage.quotedBy.forEach { message in
                 message.updatedAt = savedMessage.updatedAt
             }
+        
+        case .messageNew, .notificationMessageNew, .channelTruncated:
+            channelDTO.updatePreviewMessage()
+        
+        default:
+            break
         }
     }
 }

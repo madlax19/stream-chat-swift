@@ -214,6 +214,20 @@ extension NSManagedObjectContext {
         
         try payload.messages.forEach { _ = try saveMessage(payload: $0, channelDTO: dto, syncOwnReactions: true) }
 
+        var shouldUpdatePreview: Bool {
+            guard let previewMessage = dto.previewMessage else {
+                return true
+            }
+            guard let newestMessage = payload.newestMessage else {
+                return false
+            }
+            return newestMessage.createdAt > previewMessage.createdAt
+        }
+        
+        if shouldUpdatePreview {
+            dto.updatePreviewMessage()
+        }
+        
         dto.updateOldestMessageAt(payload: payload)
 
         try payload.pinnedMessages.forEach {
@@ -376,6 +390,8 @@ extension ChatChannel {
                 .load(
                     for: dto.cid,
                     limit: dto.managedObjectContext?.localCachingSettings?.chatChannel.latestMessagesLimit ?? 25,
+                    deletedMessagesVisibility: dto.managedObjectContext?.deletedMessagesVisibility ?? .visibleForCurrentUser,
+                    shouldShowShadowedMessages: dto.managedObjectContext?.shouldShowShadowedMessages ?? false,
                     context: context
                 )
                 .map { $0.asModel() }
@@ -440,7 +456,7 @@ extension ChatChannel {
 }
 
 // Helpers
-private extension ChannelDTO {
+extension ChannelDTO {
     /// Updates the `oldestMessageAt` of the channel. It should only updates if the current `messages: [Message]`
     /// is older than the current `ChannelDTO.oldestMessageAt`, unless the current `ChannelDTO.oldestMessageAt`
     /// is the default one, which is by default a very old date, so are sure the first messages are always fetched.
@@ -451,5 +467,14 @@ private extension ChannelDTO {
                 oldestMessageAt = payloadOldestMessageAt
             }
         }
+    }
+    
+    func updatePreviewMessage() {
+        guard let context = managedObjectContext else {
+            log.error("Context must exist")
+            return
+        }
+        
+        previewMessage = MessageDTO.loadPreview(for: cid, context: context)
     }
 }

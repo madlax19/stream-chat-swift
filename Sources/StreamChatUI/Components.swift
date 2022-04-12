@@ -226,7 +226,11 @@ public struct Components {
     public var messageListUnreadCountView: ChatMessageListUnreadCountView.Type =
         ChatMessageListUnreadCountView.self
     
-    /// The view that shows messages delivery status.
+    /// The view that shows messages delivery status checkmark in channel preview and in message view.
+    public var messageDeliveryStatusCheckmarkView: ChatMessageDeliveryStatusCheckmarkView.Type =
+        ChatMessageDeliveryStatusCheckmarkView.self
+    
+    /// The view that shows messages delivery status in message view.
     public var messageDeliveryStatusView: ChatMessageDeliveryStatusView.Type =
         ChatMessageDeliveryStatusView.self
 
@@ -307,10 +311,6 @@ public struct Components {
 
     /// The view that shows a number of unread messages in channel.
     public var channelUnreadCountView: ChatChannelUnreadCountView.Type = ChatChannelUnreadCountView.self
-
-    /// The view that shows a read/unread status of the last message in channel.
-    public var channelReadStatusView: ChatChannelReadStatusCheckmarkView.Type =
-        ChatChannelReadStatusCheckmarkView.self
 
     // MARK: - Composer components
 

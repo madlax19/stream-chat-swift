@@ -179,25 +179,15 @@ open class ChatMessageLayoutOptionsResolver {
     }
     
     func canShowDeliveryStatus(for message: ChatMessage, in channel: ChatChannel) -> Bool {
-        guard message.isSentByCurrentUser else {
-            // Delivery status can only be shown for a message sent by the current user.
-            return false
-        }
+        guard let status = message.deliveryStatus else { return false }
         
-        guard message.type != .deleted, message.type != .ephemeral else {
-            // Delivery status should not be shown for deleted & ephemeral messages.
-            return false
-        }
-        
-        switch message.localState {
-        case .pendingSend, .sending, .pendingSync, .syncing, .deleting:
-            // Delivery status should always be shown for message in `pending` state.
+        switch status {
+        case .pending:
             return true
-        case .sendingFailed, .syncingFailed, .deletingFailed:
-            // Delivery status should not be shown for failed message (the error indicator is shown instead).
-            return false
-        case nil:
+        case .sent, .read:
             return channel.config.readEventsEnabled
+        default:
+            return false
         }
     }
 }

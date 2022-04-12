@@ -50,7 +50,7 @@ open class ChatChannelListItemView: _View, ThemeProvider, SwiftUIRepresentable {
 
     /// By default contains `subtitle` and `timestampLabel`.
     /// This container is embed inside `mainContainer ` and is the one below `topContainer`
-    open private(set) lazy var bottomContainer: ContainerStackView = ContainerStackView()
+    open private(set) lazy var bottomContainer: ContainerStackView = ContainerStackView(alignment: .center)
         .withoutAutoresizingMaskConstraints
         .withAccessibilityIdentifier(identifier: "bottomContainer")
     
@@ -102,8 +102,10 @@ open class ChatChannelListItemView: _View, ThemeProvider, SwiftUIRepresentable {
         guard let content = content else { return nil }
         if let typingUsersInfo = typingUserString {
             return typingUsersInfo
-        } else if let latestMessage = content.channel.latestMessages.first {
-            return "\(latestMessage.author.name ?? latestMessage.author.id): \(latestMessage.textContent ?? latestMessage.text)"
+        } else if let previewMessage = content.channel.previewMessage {
+            let author = previewMessage.author.name ?? previewMessage.author.id
+            let text = previewMessage.textContent ?? previewMessage.text
+            return "\(author): \(text)"
         } else {
             return L10n.Channel.Item.emptyMessages
         }
@@ -117,14 +119,12 @@ open class ChatChannelListItemView: _View, ThemeProvider, SwiftUIRepresentable {
             return nil
         }
     }
-
-    /*
-         TODO: ReadStatusView, Missing LLC API
-     /// The view showing indicator for read status of the last message in channel.
-     open private(set) lazy var readStatusView: ChatChannelReadStatusCheckmarkView = uiConfigSubviews
-         .readStatusView.init()
-         .withoutAutoresizingMaskConstraints
-      */
+    
+    /// The view showing indicator for read status of the last message in channel.
+    open private(set) lazy var deliveryCheckmark: ChatMessageDeliveryStatusCheckmarkView = components
+        .messageDeliveryStatusCheckmarkView
+        .init()
+        .withoutAutoresizingMaskConstraints
 
     override open func setUpAppearance() {
         super.setUpAppearance()
@@ -156,7 +156,7 @@ open class ChatChannelListItemView: _View, ThemeProvider, SwiftUIRepresentable {
         ])
 
         bottomContainer.addArrangedSubviews([
-            subtitleLabel.flexible(axis: .horizontal), timestampLabel
+            subtitleLabel.flexible(axis: .horizontal), deliveryCheckmark, timestampLabel
         ])
         
         rightContainer.addArrangedSubviews([
@@ -188,6 +188,23 @@ open class ChatChannelListItemView: _View, ThemeProvider, SwiftUIRepresentable {
 
         unreadCountView.content = content?.channel.unreadCount ?? .noUnread
         unreadCountView.invalidateIntrinsicContentSize()
+        
+        deliveryCheckmark.content = content.flatMap {
+            guard let previewMessage = $0.channel.previewMessage else { return nil }
+            
+            log.info(
+                "💡 CHANNEL \($0.channel.cid.rawValue) CHANGES PREVIEW TO \(previewMessage.textContent ?? "no content")",
+                subsystems: .webSocket
+            )
+            
+            let canShow = components.messageLayoutOptionsResolver.canShowDeliveryStatus(
+                for: previewMessage,
+                in: $0.channel
+            )
+            
+            return canShow ? previewMessage.deliveryStatus : nil
+        }
+        deliveryCheckmark.isHidden = deliveryCheckmark.content == nil
     }
 }
 
