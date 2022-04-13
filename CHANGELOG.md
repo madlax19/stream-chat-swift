@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### 🐞 Fixed
 - Fixed support for multiple active channel lists at the same time [#1879](https://github.com/GetStream/stream-chat-swift/pull/1879)
+- Fix DB errors happening when logging in after a logout / user switch [#1926](https://github.com/GetStream/stream-chat-swift/issues/1926)
 
 ## StreamChatUI
 ### 💥 Removed
